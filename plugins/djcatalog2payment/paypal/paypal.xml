@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="plugin"
+	version="3.0"
+	client="site"
+	method="upgrade"
+	group="djcatalog2payment">
+	<name>plg_djcatalog2payment_paypal</name>
+	<creationDate>November 2016</creationDate>
+	<author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2010-2016 DJ-Extensions.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>1.0</version>
+	<description>PLG_DJCATALOG2PAYMENT_PAYPAL_DESCRIPTION</description>
+	<files>
+		<filename plugin="paypal">paypal.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>config</folder>
+		<folder>lib</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<!-- <field name="debug" class="btn-group" type="radio" default="0" label="PLG_DJCATALOG2PAYMENT_PAYPAL_DEBUG" description="PLG_DJCATALOG2PAYMENT_PAYPAL_DEBUG_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field> -->
+			</fieldset>
+		</fields>
+	</config>
+</extension>

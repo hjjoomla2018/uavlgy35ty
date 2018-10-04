@@ -1,0 +1,80 @@
+//--------------------------------------------------------------
+// Copyright (C) joomla-monster.com
+// License: http://www.joomla-monster.com/license.html Joomla-Monster Proprietary Use License
+// Website: http://www.joomla-monster.com
+// Support: info@joomla-monster.com
+//---------------------------------------------------------------
+
+// VARIABLES import
+//---------------------------------------------------------------
+
+@import "bootstrap_variables.less";
+@import "template_variables.less";
+
+// MIXINS import
+//---------------------------------------------------------------
+
+@import "../../../plugins/system/ef4_jmframework/includes/assets/template/bootstrap/less-ext/mixins-ext.less"; //JM extended mixins
+@import "template_mixins.less";
+
+// NIGHT LAYOUT
+//---------------------------------------------------------------
+
+@JMnightModeFactor: 20%;
+@JMTopNightOpacity: 80; //80%
+
+body.night {
+	//backgrounds
+	background: jmdarken(@JMpageBackground, @JMnightModeFactor);
+	#jm-allpage	{
+		background: jmdarken(@JMpageBackground, @JMnightModeFactor);
+	}
+	#jm-logo-nav {
+		background: jmdarken(@JMlogonavBackground, @JMnightModeFactor);
+	}
+	#jm-top-menu {
+		background: jmdarken(@JMtopmenuBackground, @JMnightModeFactor);
+	}
+	#jm-header {
+		background: jmdarken(@JMheaderBackground, @JMnightModeFactor);
+	}
+	#jm-top1 {
+		background: jmdarken(@JMtop1Background, @JMnightModeFactor);
+	}
+	#jm-top2 {
+		background: jmdarken(@JMtop2Background, @JMnightModeFactor);
+	}
+	#jm-main {
+		background: jmdarken(@JMmainBackground, @JMnightModeFactor);
+	}
+	#jm-bottom1 {
+		background: jmdarken(@JMbottom1Background, @JMnightModeFactor);
+	}
+	#jm-bottom2 {
+		background: jmdarken(@JMbottom2Background, @JMnightModeFactor);
+	}
+	#jm-footer-mod {
+		background: jmdarken(@JMfooterBackground, @JMnightModeFactor);
+	}
+	//offcanvas
+	#jm-offcanvas {
+		background: jmdarken(@JMoffCanvasBackground, @JMnightModeFactor);
+	}
+	#jm-offcanvas-toolbar {
+		background: jmdarken(@JMoffCanvasToolbarBackground, @JMnightModeFactor);
+	}
+	#jm-allpage .jm-module.color1-ms {
+		background: jmdarken(@JMcolor1msBackground, @JMnightModeFactor);
+	}
+	#jm-allpage .jm-module.color2-ms .jm-module-content {
+		background: jmdarken(@JMcolor2msBackground, @JMnightModeFactor);
+	}
+	.dj-megamenu-override li:hover div.dj-subwrap div.dj-subwrap-in,
+	.dj-megamenu-override li.hover div.dj-subwrap div.dj-subwrap-in {
+		background: jmdarken(@JMtopSubmenuBackground, @JMnightModeFactor);
+		box-shadow: inset 0 0 0 1px jmdarken(@JMtopSubmenuBackground, @JMnightModeFactor);
+	}
+	.items-row .item, .items-leading div[class*="leading-"] {
+		background: jmdarken(@JMblogBackground, @JMnightModeFactor);
+	}
+}

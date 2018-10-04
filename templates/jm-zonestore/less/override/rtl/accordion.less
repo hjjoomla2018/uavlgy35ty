@@ -1,0 +1,93 @@
+//
+// Accordion
+// --------------------------------------------------
+
+// Parent container
+.accordion,
+.pane-sliders {
+	margin-bottom: @baseLineHeight;
+}
+
+.accordion-heading,
+.pane-sliders h3.title {
+	font-size: @JMbaseFontSize;
+	margin: 0;
+}
+
+.accordion-heading .accordion-toggle,
+.pane-sliders h3.title a {
+	display: block;
+	cursor: pointer;
+	color: @JMaccordionFontColor;
+	font-weight: @JMaccordionFontWeight;
+	.box-sizing(border-box);
+	margin: 0;
+	line-height: @JMbaseLineHeight;
+	padding: 15px 30px;
+	position: relative;
+	text-decoration: none;
+	text-transform: @JMaccordionTextTransform;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 20px;
+		right: auto;
+		top: 50%;
+		.translate(0,-50%);
+		width: 11px;
+		height: 20px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-image: url('../images/plus.png');
+	}
+	.border-radius(@baseBorderRadius);
+	&:focus {
+		outline: 0;
+	}
+	&:focus,
+	&:hover {
+		color: @JMaccordionFontColorHover;
+	}
+}
+
+.accordion-heading .accordion-toggle {
+	&:after {
+		background-image: url('../images/minus.png');
+	}
+	&.collapsed:after {
+		background-image: url('../images/plus.png');
+	}
+}
+
+.pane-sliders h3.title.pane-toggler-down a:after {
+	background-image: url('../images/minus.png');
+}
+
+.accordion .accordion-group,
+.pane-sliders .panel {
+	background: @JMaccordionBackground;
+	border: 1px solid @JMaccordionBorder;
+}
+
+.accordion .accordion-group + .accordion-group,
+.pane-sliders .panel + .panel {
+	margin-top: 10px;
+}
+
+// General toggle styles
+.accordion-toggle,
+.pane-sliders h3.title {
+	cursor: pointer;
+}
+
+// Inner needs the styles because you can't animate properly with any styles on the element
+.pane-sliders h3.title + .content {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.pane-sliders h3.title.pane-toggler-down + .content,
+.accordion-inner {
+	border-top: 1px solid @JMaccordionBorder !important;
+	padding: 30px !important;
+}

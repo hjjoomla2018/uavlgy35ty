@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_DJCATALOG2_ITEM_VIEW">
+	</layout>
+	<fields name="request">
+		<fieldset name="request"
+		addfieldpath="/administrator/components/com_djcatalog2/models/fields"
+		 >
+			<field name="id" type="djitem" default="" label="COM_DJCATALOG2_ITEM" required="true" extension="com_djcatalog2"/>
+		</fieldset>
+	</fields>
+	<fields name="params">
+		<fieldset name="item-view" label="COM_DJCATALOG2_CONFIG_ITEM_VIEW_SETTINGS_LABEL" addfieldpath="/administrator/components/com_djcatalog2/models/fields">
+			
+		    <field type="djfieldspacer" class="djtitle" label="COM_DJCATALOG2_CONFIG_SPACER_ITEM" />
+			
+			<field name="show_contact_form" default="" type="list" label="COM_DJCATALOG2_CONFIG_CONTACT_FORM" description="COM_DJCATALOG2_CONFIG_CONTACT_FORM_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="comments" default="" type="list" label="COM_DJCATALOG2_CONFIG_COMMENTS">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNONE</option>
+				<option value="1">Facebook</option>
+				<option value="2">DISQUS</option>
+			</field>
+			<field name="price_restrict" default="" type="list" label="COM_DJCATALOG2_CONFIG_PRICE_RESTRICTION" description="COM_DJCATALOG2_CONFIG_PRICE_RESTRICTION_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="item_heading_override" type="list"  default="" label="COM_DJCATALOG2_CONFIG_OVERRIDE_HEADING" description="COM_DJCATALOG2_CONFIG_OVERRIDE_HEADING_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_INHERIT</option>
+				<option value="-1">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			
+			<field name="show_image_item" default="" label="COM_DJCATALOG2_CONFIG_SHOW_PRODUCT_IMAGE" description="COM_DJCATALOG2_CONFIG_SHOW_PRODUCT_IMAGE_DESC" type="list" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+			</field>
+			<field name="show_category_name_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_CATEGORY_NAME" description="COM_DJCATALOG2_CONFIG_SHOW_CATEGORY_NAME_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="2">COM_DJCATALOG2_CONFIG_TEXT</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_LINK</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_producer_name_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_PRODUCER_NAME" description="COM_DJCATALOG2_CONFIG_SHOW_PRODUCER_NAME_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="3">COM_DJCATALOG2_CONFIG_PRODUCER_LIGHTBOX</option>
+				<option value="2">COM_DJCATALOG2_CONFIG_TEXT</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_PRODUCER_LINK</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_price_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_PRICE" description="COM_DJCATALOG2_CONFIG_SHOW_PRICE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="2">COM_DJCATALOG2_CONFIG_PRICE_ALWAYS</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_PRICE_ONLY_IF_GTT0</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_old_price_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_OLD_PRICE" description="COM_DJCATALOG2_CONFIG_SHOW_OLD_PRICE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_sku_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_SHOW_SKU" description="COM_DJCATALOG2_CONFIG_SHOW_SKU_DESC">
+		    	<option value="">JGLOBAL_USE_GLOBAL</option>
+		    	<option value="0">JNO</option>
+		    	<option value="1">JYES</option>
+		    </field>
+			<field name="show_author_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_AUTHOR_NAME" description="COM_DJCATALOG2_CONFIG_SHOW_AUTHOR_NAME_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="2">COM_DJCATALOG2_CONFIG_TEXT</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_LINK</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_hits_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_HITS" description="COM_DJCATALOG2_CONFIG_SHOW_HITS_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_date_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_DATE" description="COM_DJCATALOG2_CONFIG_SHOW_DATE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_publishdate_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_PUBLISH_DATE" description="COM_DJCATALOG2_CONFIG_SHOW_PUBLISH_DATE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_labels_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_SHOW_LABELS" description="COM_DJCATALOG2_CONFIG_SHOW_LABELS_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="group_attributes_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_GROUP_ATTRIBUTES" description="COM_DJCATALOG2_CONFIG_GROUP_ATTRIBUTES_DESC" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="items_show_cart_button_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_CART_BUTTON" description="COM_DJCATALOG2_CONFIG_SHOW_CART_BUTTON_DESC" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_intro_desc_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_INTRO_DESCRIPTION" description="COM_DJCATALOG2_CONFIG_SHOW_INTRO_DESCRIPTION_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_navigation" type="list" default="" label="COM_DJCATALOG2_CONFIG_SHOW_NAVIGATION" description="COM_DJCATALOG2_CONFIG_SHOW_NAVIGATION_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_NONE</option>
+				<option value="top">COM_DJCATALOG2_CONFIG_TOP</option>
+				<option value="bottom">COM_DJCATALOG2_CONFIG_BOTTOM</option>
+				<option value="all">COM_DJCATALOG2_CONFIG_SHOW</option>
+			</field>
+			<field name="show_print_button_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_PRINT_BUTTON" description="COM_DJCATALOG2_CONFIG_SHOW_PRINT_BUTTON_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<!--<field name="show_pdf_button_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_PDF_BUTTON" description="COM_DJCATALOG2_CONFIG_SHOW_PDF_BUTTON_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>-->
+			<field name="show_files_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_FILES" description="COM_DJCATALOG2_CONFIG_SHOW_FILES_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_fileinfos_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_FILE_INFORMATION" description="COM_DJCATALOG2_CONFIG_SHOW_FILE_INFORMATION_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="show_comments_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_COMMENTS" description="COM_DJCATALOG2_CONFIG_SHOW_COMMENTS_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="related_items_columns" type="text" default="" label="COM_DJCATALOG2_CONFIG_RELATED_PRODUCTS_COLUMNS" description="COM_DJCATALOG2_CONFIG_RELATED_PRODUCTS_COLUMNS_DESC" menu="hide" />
+			<field name="related_items_count" type="text" default="" label="COM_DJCATALOG2_CONFIG_RELATED_ITEMS_COUNT" description="COM_DJCATALOG2_CONFIG_RELATED_ITEMS_COUNT_DESC"/>
+			
+			<field type="djfieldspacer" class="djtitle" label="COM_DJCATALOG2_CONFIG_SPACER_VARIANTS_SETTINGS" />
+			<field name="items_show_variants" default="" label="COM_DJCATALOG2_CONFIG_SHOW_VARIANTS" description="COM_DJCATALOG2_CONFIG_SHOW_VARIANTS_DESC" type="list" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+			</field>
+			<field name="items_show_image_variants" default="" label="COM_DJCATALOG2_IMAGE" description="COM_DJCATALOG2_CONFIG_SHOW_PRODUCT_IMAGE_DESC" type="list" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+			</field>
+			<field name="items_show_price_variants" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_PRICE" description="COM_DJCATALOG2_CONFIG_SHOW_PRICE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="2">COM_DJCATALOG2_CONFIG_PRICE_ALWAYS</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_PRICE_ONLY_IF_GTT0</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="items_show_sku_variants" type="list" default="" label="COM_DJCATALOG2_CONFIG_SHOW_SKU" description="COM_DJCATALOG2_CONFIG_SHOW_SKU_DESC">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+		    	<option value="0">JNO</option>
+		    	<option value="1">JYES</option>
+		    </field>
+			<field name="items_show_intro_variants" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_ITEM_INTRO_DESCRIPTION" description="COM_DJCATALOG2_CONFIG_SHOW_ITEM_INTRO_DESCRIPTION_DESC" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="items_intro_trunc_variants" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_ITEM_INTRO_DESCRIPTION_TRUNCATE" description="COM_DJCATALOG2_CONFIG_SHOW_ITEM_INTRO_DESCRIPTION_TRUNCATE_DESC" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_YES</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_NO</option>
+			</field>
+			<field name="items_intro_length_variants" type="text" default="" label="COM_DJCATALOG2_CONFIG_SHOW_ITEM_INTRO_DESCRIPTION_LENGTH" description="COM_DJCATALOG2_CONFIG_SHOW_ITEM_INTRO_DESCRIPTION_LENGTH_DESC" menu="hide"/>
+						
+			<field name="items_show_cart_button_variants" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_CART_BUTTON" description="COM_DJCATALOG2_CONFIG_SHOW_CART_BUTTON_DESC" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="items_show_attributes_variants" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_ITEM_ATTRIBUTES" description="COM_DJCATALOG2_CONFIG_SHOW_ITEM_ATTRIBUTES_DESC" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>	
+			
+			<field type="djfieldspacer" class="djtitle" label="COM_DJCATALOG2_CONFIG_SPACER_LOCATION_SETTINGS" />
+			
+			<field name="show_location_details_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_LOCATION_DETAILS" description="COM_DJCATALOG2_CONFIG_SHOW_LOCATION_DETAILS_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			
+			<field name="location_country_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_COUNTRY">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_city_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_CITY">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_address_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_ADDRESS">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_postcode_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_POSTCODE">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_phone_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_PHONE">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_mobile_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_MOBILE">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_fax_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_FAX">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_website_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_WEBSITE">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			<field name="location_email_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_LOCATION_SHOW_EMAIL">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="0">JNO</option>
+			    <option value="1">JYES</option>
+			</field>
+			
+			<field type="djfieldspacer" class="djtitle" label="COM_DJCATALOG2_CONFIG_SPACER_MAP_ITEM" />
+			
+			<field name="show_location_map_item" type="list"  default="" label="COM_DJCATALOG2_CONFIG_SHOW_LOCATION_MAP" description="COM_DJCATALOG2_CONFIG_SHOW_LOCATION_MAP_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_DJCATALOG2_CONFIG_SHOW</option>
+				<option value="0">COM_DJCATALOG2_CONFIG_HIDE</option>
+			</field>
+			<field name="gm_map_width_item" type="text" default="" label="COM_DJCATALOG2_CONFIG_MAP_WIDTH" description="COM_DJCATALOG2_CONFIG_MAP_WIDTH_DESC" />
+			<field name="gm_map_height_item" type="text" default="" label="COM_DJCATALOG2_CONFIG_MAP_HEIGHT" description="COM_DJCATALOG2_CONFIG_MAP_HEIGHT_DESC" />
+			
+			<field name="gm_type_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_MAP_TYPE" description="COM_DJCATALOG2_CONFIG_MAP_TYPE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="ROADMAP">COM_DJCATALOG2_MAP_TYPE_ROADMAP</option>
+				<option value="SATELLITE">COM_DJCATALOG2_MAP_TYPE_SATELLITE</option>
+				<option value="HYBRID">COM_DJCATALOG2_MAP_TYPE_HYBRID</option>
+				<option value="TERRAIN">COM_DJCATALOG2_MAP_TYPE_TERRAIN</option>
+			</field>
+			<field name="gm_zoom_item" type="list" default="" label="COM_DJCATALOG2_CONFIG_MAP_ZOOM" description="COM_DJCATALOG2_CONFIG_MAP_ZOOM_DESC">
+			    <option value="">JGLOBAL_USE_GLOBAL</option>
+			    <option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    <option value="4">4</option>
+			    <option value="5">5</option>
+			    <option value="6">6</option>
+			    <option value="7">7</option>
+			    <option value="8">8</option>
+			    <option value="9">9</option>
+			    <option value="10">10</option>
+			    <option value="12">12</option>
+			    <option value="14">14</option>
+			    <option value="16">16</option>
+			    <option value="18">18</option>
+			    <option value="20">20</option>
+			</field>
+			
+		</fieldset>
+	</fields>
+</metadata>

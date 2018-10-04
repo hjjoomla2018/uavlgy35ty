@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" 
+				readonly="true" class="readonly" />
+		
+		<field name="name" type="text" class="input"
+				label="COM_DJCATALOG2_NAME"
+				description="COM_DJCATALOG2_NAME" required="true" />
+		
+		<field name="unit" type="text" class="input"  required="true"
+			label="COM_DJCATALOG2_UNIT_SYMBOL" description="COM_DJCATALOG2_UNIT_SYMBOL_DESC" />
+			
+		<field name="is_default" type="radio" class="btn-group" default="0" label="COM_DJCATALOG2_DEFAULT">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_box" type="radio" default="1" class="btn-group" label="COM_DJCATALOG2_UNIT_SHOW_BOX" description="COM_DJCATALOG2_UNIT_SHOW_BOX_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_unit" showon="show_box:1" type="radio" default="1" class="btn-group" label="COM_DJCATALOG2_UNIT_SHOW_UNIT" description="COM_DJCATALOG2_UNIT_SHOW_UNIT_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_buttons" showon="show_box:1" type="radio" default="1" class="btn-group" label="COM_DJCATALOG2_UNIT_SHOW_BUTTONS" description="COM_DJCATALOG2_UNIT_SHOW_BUTTONS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="is_int" type="radio" default="1" class="btn-group" label="COM_DJCATALOG2_UNIT_IS_INT">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="min_quantity" type="text" default="1" 
+			label="COM_DJCATALOG2_UNIT_MIN_QTY" description="COM_DJCATALOG2_UNIT_MIN_QTY_DESC" />
+			
+		<field name="max_quantity" type="text" default="0" 
+			label="COM_DJCATALOG2_UNIT_MAX_QTY" description="COM_DJCATALOG2_UNIT_MAX_QTY_DESC" />
+		
+		<field name="step" type="text" default="1" 
+			label="COM_DJCATALOG2_UNIT_STEP" description="COM_DJCATALOG2_UNIT_STEP_DESC" />
+			
+	</fieldset>
+</form>

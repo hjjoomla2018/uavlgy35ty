@@ -1,0 +1,90 @@
+#djmediatools {}
+
+#djmediatools a.dj-category {
+	float: left;
+	background: #fafafa;
+	border: 1px solid #ccc;
+	padding: 8px;
+	margin: 10px;
+	box-shadow: 0 0 5px #aaa;
+	border-radius: 3px;
+	-webkit-transition: all 200ms ease 50ms;
+	transition: all 200ms ease 50ms;
+}
+#djmediatools a.dj-category:hover {
+	background: #f6f6f6;
+	box-shadow: 0 0 5px #666;
+	border-color: #387BA4;
+	cursor: pointer;
+}
+#djmediatools .dj-category-in {
+	position: relative;
+	display: block;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+#djmediatools .dj-ctitle {
+	position: absolute;
+	display: block;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#djmediatools .dj-ctitle-in {
+	position: relative;
+	display: block;
+	padding: 5px 10px;
+	font-weight: bold;
+	color: #fff;
+}
+#djmediatools .dj-ctitle-bg {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	opacity: 0.5;
+}
+
+#djmediatools a.dj-category .showOnOver {
+	opacity: 0;
+	-webkit-transition: opacity 200ms ease 50ms;
+	transition: opacity 200ms ease 50ms;
+	visibility: hidden;
+}
+#djmediatools a.dj-category:hover .showOnOver {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* linked album cover */
+.djalbum_link {
+	background: #fafafa;
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+.djalbum_link a {
+	color: #666 !important;
+	text-decoration: none;
+	cursor: resize;
+}
+.djalbum_link a:hover {
+	color: #333 !important;
+}
+.djalbum_link .djalbum_img {}
+.djalbum_link .djalbum_link_tip {
+	display: block;
+	text-align: center;
+	padding: 8px 0 0;
+}
+
+/* image Ken Burns effect */
+.dj-kenburns .dj-slide img.dj-image {
+	-webkit-transition: -webkit-transform 10s ease;
+	transition: transform 20s ease;
+}
+.dj-kenburns .dj-slide.dj-active img.dj-image,
+.dj-kenburns .dj-slide.dj-visible img.dj-image {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}

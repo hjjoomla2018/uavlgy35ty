@@ -1,0 +1,12 @@
+/**
+ * @version $Id$
+ * @package DJ-MediaTools
+ * @subpackage DJ-MediaTools tabber layout
+ * @copyright Copyright (C) 2017 DJ-Extensions.com, All rights reserved.
+ * @license DJ-Extensions.com Proprietary Use License
+ * @author url: http://dj-extensions.com
+ * @author email contact@dj-extensions.com
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
+ *
+ */
+!function(t){var i=window.DJImageTabber=window.DJImageTabber||function(t,i){this.options={autoplay:0,transition:"linear",duration:800,delay:3e3,ifade_multiplier:2,tab_height:45,tab_indicator:2,wcag:1},this.init(t,i)};i.prototype=Object.create(DJImageSlideshow.prototype),i.prototype.init=function(t,i){var o=this;DJImageSlideshow.prototype.init.call(o,t,i),o.focusTimer=null},i.prototype.setIndicators=function(){var i=this;i.tabs=i.slider.find(".dj-tabs .dj-tab"),i.tabs.length&&(i.tabs.each(function(o){t(this).on("click",function(t){i.loadSlide(o),t.preventDefault()}).on("focus",function(t){i.focusTimer=setTimeout(i.slideTabs.bind(i,o),50)})}),i.tabIndicator=i.slider.find(".dj-tab-indicator").first(),i.tabIndicatorBox=i.slider.find(".dj-tabs-in").first(),i.options.tab_height=t(i.tabs[0]).outerHeight(),i.options.tab_height+=Math.max(0,parseInt(t(i.tabs[0]).css("margin-top")),parseInt(t(i.tabs[0]).css("margin-bottom")))),DJImageSlideshow.prototype.setIndicators.call(i)},i.prototype.setCurrentSlide=function(i){var o=this;o.tabs.length&&(t(o.tabs[o.current]).removeClass("dj-tab-active"),t(o.tabs[i]).addClass("dj-tab-active"),o.slideTabs(i)),DJImageSlideshow.prototype.setCurrentSlide.call(o,i)},i.prototype.responsive=function(){var t=this;t.tabs.length&&t.slideTabs(t.current),DJImageSlideshow.prototype.responsive.call(t)},i.prototype.slideTabs=function(i){var o=this,a=o.getSize(o.slider.find(".dj-tabs").first()).y,e=-i*o.options.tab_height+(a-o.options.tab_height)/2;t(o.tabs[i]).position().top<a/2||o.tabs.length*o.options.tab_height<a?e=0:t(o.tabs[i]).position().top+o.options.tab_height>o.tabs.length*o.options.tab_height-a/2&&(e=-o.tabs.length*o.options.tab_height+a-t(o.tabs[0]).position().top),o.tabIndicatorBox.animate({marginTop:e},{queue:!1,duration:o.options.duration}),o.tabIndicator.length&&(2==o.options.tab_indicator?o.tabIndicator.animate({top:o.options.tab_height*i},{queue:!1,duration:o.options.duration/2}):1==o.options.tab_indicator&&o.tabIndicator.css("top",o.options.tab_height*i))}}(jQuery);

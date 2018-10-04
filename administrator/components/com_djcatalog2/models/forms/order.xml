@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="header">
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL"
+			readonly="true" class="readonly" />
+		<!-- <field name="salesman_id" type="user" label="COM_DJCATALOG2_ORDER_SALESMAN_ID" /> -->
+		<field name="order_number" type="text" class="inputbox readonly"
+			readonly="true" default="" label="COM_DJCATALOG2_ORDER_NUMBER" />
+		<field name="invoice_number" type="text" class="inputbox"
+			 default="" label="COM_DJCATALOG2_ORDER_INVOICE_NUMBER" />
+		<field name="created_date" type="calendar"
+			label="COM_DJCATALOG2_ORDER_CREATED_DATE" description="COM_DJCATALOG2_ORDER_CREATED_DATE_DESC"
+			class="inputbox" size="22" format="%Y-%m-%d" filter="server_utc" />
+		<field name="invoice_date" type="calendar"
+			label="COM_DJCATALOG2_ORDER_INVOICE_DATE" description="COM_DJCATALOG2_ORDER_INVOICE_DATE_DESC"
+			class="inputbox" size="22" format="%Y-%m-%d" filter="server_utc" />
+		<field name="service_date" type="calendar"
+			label="COM_DJCATALOG2_ORDER_SERVICE_DATE" description="COM_DJCATALOG2_ORDER_SERVICE_DATE_DESC"
+			class="inputbox" size="22" format="%Y-%m-%d" filter="server_utc" />
+		<field name="payment_date" type="calendar"
+			label="COM_DJCATALOG2_ORDER_PAYMENT_DATE" description="COM_DJCATALOG2_ORDER_PAYMENT_DATE_DESC"
+			class="inputbox" size="22" format="%Y-%m-%d" filter="server_utc" />
+		<field name="currency" type="text" default=""
+			label="COM_DJCATALOG2_ORDER_CURRENCY" readonly="true" />
+		<field name="status" type="list" default="C"
+			label="COM_DJCATALOG2_ORDER_STATUS">
+			<option value="N">COM_DJCATALOG2_ORDER_STATUS_N</option>
+			<option value="A">COM_DJCATALOG2_ORDER_STATUS_A</option>
+			<option value="P">COM_DJCATALOG2_ORDER_STATUS_P</option>
+			<option value="C">COM_DJCATALOG2_ORDER_STATUS_C</option>
+			<option value="R">COM_DJCATALOG2_ORDER_STATUS_R</option>
+			<option value="W">COM_DJCATALOG2_ORDER_STATUS_W</option>
+			<option value="F">COM_DJCATALOG2_ORDER_STATUS_F</option>
+		</field>
+		<field name="customer_note" type="textarea" class="inputbox"
+			label="COM_DJCATALOG2_ORDER_NOTE"
+		/>
+		<field name="coupon_code" type="text" default=""
+			label="COM_DJCATALOG2_COUPON_CODE" readonly="true" />
+		<field name="coupon_value" type="text" default=""
+			label="COM_DJCATALOG2_COUPON_VALUE" readonly="true" />
+		<field name="coupon_type" type="text" default=""
+			label="COM_DJCATALOG2_COUPON_TYPE" readonly="true" />
+	</fieldset>
+	<fieldset name="order-prices">
+		<field name="total" type="text" default="0"
+			label="COM_DJCATALOG2_ORDER_TOTAL" readonly="true" />
+		<field name="tax" type="text" default="0" label="COM_DJCATALOG2_ORDER_TAX" readonly="true" />
+		<field name="grand_total" type="text" default="0"
+			label="COM_DJCATALOG2_ORDER_GRAND_TOTAL" readonly="true"  />
+	</fieldset>
+	<fieldset name="customer">
+		<field name="user_id" type="user" label="COM_DJCATALOG2_ORDER_USER_ID" />
+		
+		<field name="email" type="email" validate="email"
+			label="COM_DJCATALOG2_UP_EMAIL" class="inputbox input" required="true" />
+
+		<field name="firstname" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_FIRSTNAME" class="inputbox input" />
+		
+		<field name="lastname" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_LASTNAME" class="inputbox input" />
+		
+		<field name="company" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_COMPANY" class="inputbox input" />
+
+		<field name="address" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_ADDRESS" class="inputbox input" />
+		
+		<field name="city" type="text" filter="string" label="COM_DJCATALOG2_UP_CITY"
+			class="inputbox input" />
+		
+		<field name="postcode" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_POSTCODE" class="inputbox input" />
+
+		<field name="country" type="text" default=""
+			label="COM_DJCATALOG2_UP_COUNTRY" class="inputbox input" />
+		
+		<field name="phone" type="text" default=""
+			label="COM_DJCATALOG2_UP_PHONE" class="inputbox input" />
+		
+		<field name="state" type="text" default=""
+			label="COM_DJCATALOG2_UP_STATE" class="inputbox input" />
+			
+		<field name="vat_id" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_VATID" class="inputbox input" />
+			
+		<field name="gdpr_policy" type="radio" default="0" readonly="readonly" disabled="true" label="COM_DJCATALOG2_CONFIG_CONTACT_GDPR_POLICY">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="gdpr_agreement" type="radio" default="0" readonly="readonly" disabled="true" label="COM_DJCATALOG2_CONFIG_CONTACT_GDPR_AGREEMENT">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+	</fieldset>
+	<fieldset name="customer_delivery">
+	    <field name="delivery_to_billing" type="list" value="1" default="1" label="COM_DJCATALOG2_DELIVERY_IS_BILLING_LABEL">
+        	<option value="1">COM_DJCATALOG2_DELIVERY_IS_BILLING</option>
+        	<option value="0">COM_DJCATALOG2_DELIVERY_IS_NOT_BILLING</option>
+        </field>
+	        
+		<field name="delivery_firstname" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_FIRSTNAME" class="inputbox input" />
+		
+		<field name="delivery_lastname" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_LASTNAME" class="inputbox input" />
+		
+		<field name="delivery_company" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_COMPANY" class="inputbox input" />
+
+		<field name="delivery_address" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_ADDRESS" class="inputbox input" />
+		
+		<field name="delivery_city" type="text" filter="string" label="COM_DJCATALOG2_UP_CITY"
+			class="inputbox input"  />
+		
+		<field name="delivery_postcode" type="text" filter="string"
+			label="COM_DJCATALOG2_UP_POSTCODE" class="inputbox input" />
+		
+		<field name="delivery_country" type="text" default=""
+			label="COM_DJCATALOG2_UP_COUNTRY" class="inputbox input" />
+			
+		<field name="delivery_state" type="text" default=""
+			label="COM_DJCATALOG2_UP_STATE" class="inputbox input" />
+		
+		<field name="phone" type="text" default=""
+			label="COM_DJCATALOG2_UP_PHONE" class="inputbox input" />
+	</fieldset>
+	
+	<fieldset name="delivery_payment">
+	    <field name="delivery_separator" type="spacer" label="COM_DJCATALOG2_DELIVERY_METHOD_DETAILS" />
+	    
+	    <field name="delivery_method" type="text" default=""
+			label="COM_DJCATALOG2_ORDER_DELIVERY_METHOD" />
+	    
+	    <field name="delivery_price" type="text" default=""
+			label="COM_DJCATALOG2_PRICE"  />
+	    
+	    <field name="delivery_tax" type="text" default=""
+			label="COM_DJCATALOG2_ORDER_TAX" readonly="true" />
+	    
+	    <field name="delivery_tax_rate" type="text" default=""
+			label="COM_DJCATALOG2_TAX_RATE" />
+	    
+	    <field name="delivery_total" type="text" default=""
+			label="COM_DJCATALOG2_GROSS_PRICE" readonly="true" />
+	    
+	    <field name="payment_separator" type="spacer" label="COM_DJCATALOG2_PAYMENT_METHOD_DETAILS" />
+	    
+	    <field name="payment_method" type="text" default=""
+			label="COM_DJCATALOG2_ORDER_PAYMENT_METHOD"   />
+	    
+	    <field name="payment_price" type="text" default=""
+			label="COM_DJCATALOG2_PRICE"  />
+	    
+	    <field name="payment_tax" type="text" default=""
+			label="COM_DJCATALOG2_ORDER_TAX"  readonly="true" />
+	    
+	    <field name="payment_tax_rate" type="text" default=""
+			label="COM_DJCATALOG2_TAX_RATE"  />
+	    
+	    <field name="payment_total" type="text" default=""
+			label="COM_DJCATALOG2_GROSS_PRICE" readonly="true" />
+	    
+	    <field name="delivery_method_id" type="hidden" default="" />
+	    <field name="payment_method_id" type="hidden" default="" />
+	</fieldset>
+	
+	<field name="items" type="hidden" />
+	<field name="order_items" type="hidden" />
+	
+</form>

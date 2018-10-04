@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="file" version="3.0.0" client="site" method="upgrade">
+	<name>jm_apartments_theme</name>
+	<author>Joomla-Monster.com</author>
+	<copyright>Copyright (C) 2016 Joomla-Monster.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>support@joomla-monster.com</authorEmail>
+	<authorUrl>http://joomla-monster.com</authorUrl>
+	<version>1.00</version>
+	<creationDate>July 2016</creationDate>
+	<description><![CDATA[
+	<div class="alert alert-info" style="font-weight: normal;"><h4 class="alert-heading">DJ-Catalog2 Theme for JM Apartments template</h4>
+	<div class="alert-message">Please note that this theme works with the JM Apartments template only. Do not install the theme on other templates.</div></div>
+	]]></description>
+	<scriptfile>install.php</scriptfile>
+	<fileset>
+		<files folder="themes" target="components/com_djcatalog2/themes" extension_name="DJ-Catalog2">
+			<folder>jm-apartments</folder>
+		</files>
+	</fileset>
+</extension>

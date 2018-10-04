@@ -1,0 +1,896 @@
+//--------------------------------------------------------------
+// Copyright (C) joomla-monster.com
+// License: http://www.joomla-monster.com/license.html Joomla-Monster Proprietary Use License
+// Website: http://www.joomla-monster.com
+// Support: info@joomla-monster.com
+//---------------------------------------------------------------
+
+// VARIABLES import
+//---------------------------------------------------------------
+
+@import "bootstrap_variables.less";  
+@import "template_variables.less";
+
+// MIXINS import
+//---------------------------------------------------------------
+ 
+@import "../../../plugins/system/ef4_jmframework/includes/assets/template/bootstrap/less-ext/mixins-ext.less"; //JM extended mixins
+@import "template_mixins.less";
+
+// FONT SWITCHER
+//---------------------------------------------------------------
+
+.fsize(@JMfontFactor) {
+	font-size: @JMbaseFontSize * @JMfontFactor;
+
+	#jm-breadcrumbs {
+		font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+	}
+	
+	// MODULES.LESS
+	//------------------------------
+
+	.jm-module .jm-title {
+		font-size: @JMmoduleTitleFontSize * @JMfontFactor;
+	}
+	
+	.moduletable > h3 {
+		font-size: @JMmoduleTitleFontSize * @JMfontFactor;
+	}
+
+	.item-page {
+		.jm-module,
+		.moduletable {
+			font-size: @JMbaseFontSize * @JMfontFactor;
+		}
+	}
+
+	.jm-module.title-ms {
+		.jm-title {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+	}
+
+	.jm-module.large-title-ms {
+		.jm-title {
+			font-size: (round(@JMmoduleTitleFontSize * 1.375)) * @JMfontFactor;
+		}
+	}
+
+	.jm-module.vlarge-title-ms {
+		.jm-title {
+			font-size: (round(@JMmoduleTitleFontSize * 3.75)) * @JMfontFactor;
+		}
+		.jm-module-content {
+			font-size: (round(@JMbaseFontSize * 1.84)) * @JMfontFactor;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.jm-module.vlarge-title-ms {
+			.jm-title {
+				font-size: (round(@JMmoduleTitleFontSize * 1.375)) * @JMfontFactor;
+			}
+			.jm-module-content {
+				font-size: @JMbaseFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	.jm-category-module.default {
+		.mod-articles-category-title {
+			font-size: @JMblogTitleFontSize * @JMfontFactor;
+		}
+	}
+
+	#jm-allpage .jm-module.features1-ms,
+	#jm-allpage .jm-module.features2-ms {
+		.jmm-add-features.default.right .jmm-title,
+		.jmm-add-features.default.left .jmm-title {
+			font-size: 46px * @JMfontFactor;
+		}
+		.jmm-add-features.default.right .jmm-text,
+		.jmm-add-features.default.left .jmm-text {
+			font-size: 26px * @JMfontFactor;
+		}
+	}
+
+	#jm-allpage .jm-module.help-ms {
+		.jmm-add-features.default .jmm-title {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+	}
+
+	#jm-allpage .jm-module.promo-ms {
+		.jmm-add-features.default .jmm-title {
+			font-size: 36px * @JMfontFactor;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		#jm-allpage .jm-module.promo-ms {
+			.jmm-add-features.default .jmm-title {
+				font-size: 21px * @JMfontFactor;
+				&:before {
+					font-size: 40px * @JMfontFactor;
+				}
+
+			}
+		}
+	}
+
+	#jm-allpage .djreviews {
+		&.djrv_rating_full,
+		&.djrv_reviews_list {
+			h3 {
+				font-size: (round(@JMbaseFontSize * 1.61)) * @JMfontFactor;
+			}
+		}
+	}
+
+	#jm-allpage .djrv_single_review .djrv_poster,
+	#jm-allpage .djrv_single_review .djrv_review_date {
+		font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+	}
+
+	#jm-allpage .mod_djreviews {
+		.djrv_object_title,
+		.djrv_review_title {
+			font-size: (round(@JMbaseFontSize * 1.38)) * @JMfontFactor;
+		}
+		.djrv_single_review {
+			font-size: (round(@JMbaseFontSize * 1.38)) * @JMfontFactor;
+		}
+	}
+
+	#jm-allpage .contact-ps {
+		.page-header h2 {
+			font-size: @JMarticleTitleFontSize * @JMfontFactor;
+		}
+	}
+
+	// DJMEGAMENU.LESS
+	//------------------------------
+	
+	.dj-megamenu-override li.dj-up {
+		a.dj-up_a {
+			font-size: @JMtopmenuFontSize * @JMfontFactor;
+		}
+	}
+	
+	#jm-allpage .select-input .dj-select {
+		font-size: @JMinputFontSize * @JMfontFactor;
+		height: 38px;
+		line-height: 38px;
+	}
+
+	.dj-megamenu-override .dj-submenu {
+		> li {
+			> a {
+				font-size: @JMtopSubmenuFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	.dj-megamenu-override .dj-subtree {
+		> li > a {
+			font-size: @JMtopSubmenuFontSize * @JMfontFactor;
+		}
+	}
+	
+	// megamenu
+	.dj-megamenu-override {
+		.nav.menu {
+			> li > a,
+			> li > span.separator {
+				font-size: @JMtopSubmenuFontSize * @JMfontFactor;
+			}
+		}
+	}
+	
+	// MENUS.LESS
+	//------------------------------
+
+	.tagspopular ul,
+	.tagssimilar ul,
+	ul.tags {
+		li a {
+			font-size: @JMbaseFontSize * @JMfontFactor;
+		}
+	}
+
+
+	// JOOMLA.LESS
+	//------------------------------
+	
+	//page headings
+	h1.componentheading, //extension headings support
+	.tag-category > h1, //tag category
+	.page-header > h1, //global
+	.content-category > h1, //category-list
+	.categories-list > h1, //categories-list
+	.blog-featured > h1, //featured contacts
+	.contact-category > h1, //contact category
+	.contact > h1, //single contact
+	.newsfeed-category > h1, //newsfeed category
+	h1.page-title, //search form
+	.finder > h1, //smart search
+	.weblink-category > h1, //weblink category
+	.edit > h1, //submit weblink 
+	.blog > h2 //blog category
+	{
+		font-size: @JMcomponentHeadingFontSize * @JMfontFactor;
+	}
+
+	//single article
+	.item-page .page-header > h2 {
+		font-size: @JMarticleTitleFontSize * @JMfontFactor;
+	}
+
+	//component headings (eg. blog)
+	h2.item-title, //featured
+	.page-header > h2, //global
+	.content-category > h2, //category-list category
+	.cat-children > h3, //category children
+	.contact-category > h2, //contact category
+	.weblink-category > h2, //weblink category
+	.newsfeed > h2, //single newsfeed
+	.newsfeed-category > h2, //newsfeed category 
+	.weblink-category > h2, //weblink category
+	.contact > h3 //contact headings
+	{
+		font-size: @JMblogTitleFontSize * @JMfontFactor;
+	}
+
+	.item-page.article-ms {
+		font-size: (round(@JMbaseFontSize * 1.38)) * @JMfontFactor;
+		.article-info {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+	}
+	
+	//readmore
+	.readmore {
+		font-size: @JMreadmoreFontSize * @JMfontFactor;
+	}
+
+	//article categories
+	.categories-module {
+		li {
+			h1, h2, h3, h4, h5, h6 {
+				font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+			}
+		}
+	}
+	
+	//error page
+	.jm-error-page {
+		text-align: center;
+		> h1 {
+			font-size: 80px * @JMfontFactor;
+		}
+		> h2 {
+			font-size: 40px * @JMfontFactor;
+		}
+	}
+	
+	// ------------------------------------------------
+	// BOOTSTRAP
+	//-------------------------------------------------
+	
+	// TYPE.LESS
+	//------------------------------
+	
+	.lead {
+		font-size: (@baseFontSize * 1.5) * @JMfontFactor;
+	}
+
+	h1 {
+		font-size: (round(@baseFontSize * 2.14)) * @JMfontFactor;
+	}
+
+	h2 {
+		font-size: (round(@baseFontSize * 1.7)) * @JMfontFactor;
+	}
+
+	h3 {
+		font-size: (round(@baseFontSize * 1.5)) * @JMfontFactor;
+	}
+
+	h4 {
+		font-size: (round(@baseFontSize * 1.14)) * @JMfontFactor;
+	}
+
+	h5 {
+		font-size: @baseFontSize * @JMfontFactor;
+	}
+
+	h6 {
+		font-size: round(@baseFontSize * 0.85);
+	}
+	
+	h1 small { font-size: (@baseFontSize * 1.75) * @JMfontFactor; } 
+	h2 small { font-size: (@baseFontSize * 1.25) * @JMfontFactor; } 
+	h3 small { font-size: (@baseFontSize) * @JMfontFactor; }
+	h4 small { font-size: (@baseFontSize) * @JMfontFactor; }
+
+	blockquote {
+		p {
+			font-size: (@JMbaseFontSize * 1.61) * @JMfontFactor;
+		}
+		h4 {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+	}
+	
+	// LABELS-BADGES.LESS
+	//------------------------------
+	
+	.label,
+	.badge {
+		font-size: 11px * @JMfontFactor;
+	}
+	
+	//article tags
+	.tags .label {
+		font-size: @JMbaseFontSize * @JMfontFactor;
+	}
+	
+	// BUTTONS.LESS
+	//------------------------------
+	
+	// Core
+	.btn {
+		font-size: @JMbuttonFontSize * @JMfontFactor;
+	}
+
+	a.button,
+	input.button,
+	button.button,
+	input[type="submit"],
+	button[type="submit"],
+	input[type="reset"],
+	button[type="reset"] {
+		.btn();
+	}
+	
+	// FORMS.LESS
+	//------------------------------
+	
+	legend {
+		font-size: @baseFontSize * @JMfontFactor;
+		// Small
+		small {
+			font-size: (@baseLineHeight * .75) * @JMfontFactor;
+		}
+	}
+	
+	label {
+		font-size: @baseFontSize * @JMfontFactor;
+	}
+
+	label + .optional {
+		font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+	}
+	
+	select,
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	.uneditable-input {
+		font-size: @JMinputFontSize * @JMfontFactor;
+	}
+	
+	// BUTTON-GROUPS.LESS
+	//------------------------------
+	
+	//JM .btn-group > .btn,
+	.btn-group > .dropdown-menu,
+	.btn-group > .popover {
+		font-size: @baseFontSize * @JMfontFactor;
+	}
+	
+	.btn-group > .btn {
+		font-size: @JMbuttonFontSize * @JMfontFactor;  
+	}
+
+	// Reset fonts for other sizes
+	.btn-group > .btn-mini {
+		font-size: @fontSizeMini * @JMfontFactor;
+	}
+	.btn-group > .btn-small {
+		font-size: @fontSizeSmall * @JMfontFactor;
+	}
+	.btn-group > .btn-large {
+		font-size: @fontSizeLarge * @JMfontFactor;
+	}
+	
+	// PAGER.LESS
+	//------------------------------
+	
+	.pager li > a,
+	.pager li > span {
+		font-size: @JMpaginationFontSize * @JMfontFactor;
+	}
+	
+	// PAGINATION.LESS
+	//------------------------------
+	
+	.pagination ul > li > a,
+	.pagination ul > li > span {
+		font-size: @JMpaginationFontSize * @JMfontFactor;
+	}
+
+	// DJ-MEDIATOOLS
+	//------------------------------
+
+	.dj-cat-title {
+		font-size: @JMarticleTitleFontSize * @JMfontFactor;
+	}
+
+	.dj-slide-desc-text {
+		font-size: @JMmediatoolsDescriptionFontSize * @JMfontFactor !important;
+	}
+
+	.dj-slide-title {
+		font-size: @JMmediatoolsTitleFontSize * @JMfontFactor !important;
+	}
+
+	#djmediatools .dj-categories {
+		.dj-ctitle-in {
+			font-size: @JMmediatoolsTitleFontSize * @JMfontFactor !important;
+		}
+	}
+
+	.dj-tabber {
+		span.dj-tab-in {
+			font-size: @JMmediatoolsTitleFontSize * @JMfontFactor !important;
+		}
+	}
+
+	.box_skitter {
+		.label_skitter p {
+			font-size: @JMmediatoolsDescriptionFontSize * @JMfontFactor !important;
+		}
+	}
+
+	#jm-allpage .header-ms {
+		.dj-slide-desc-text {
+			.dj-slide-description {
+				font-size: 24px * @JMfontFactor !important;
+			}
+			.dj-slide-title {
+				font-size: 44px * @JMfontFactor !important;
+			}
+		}
+	}
+
+	#jm-allpage .rounded-ms {
+		.dj-slide-title {
+			font-size: @JMbaseFontSize * @JMfontFactor !important;
+		}
+	}
+
+	#jm-allpage .quick-ms {
+		.dj-extra {
+			.btn {
+				font-size: @JMbuttonFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	#jm-allpage .dj-readmore-wrapper {
+		.dj-readmore {
+			font-size: @JMreadmoreFontSize * @JMfontFactor;
+		}
+	}
+
+	// DJ-CATALOG2
+	//------------------------------
+
+	#djcatalog {
+		.djc_addtocart {
+			.djc_qty_btn {
+				font-size: @JMinputFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	.djc_cart_popup {
+		div {
+			a {
+				font-size: @JMbuttonFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	#djcatalog {
+		.djc_subcategories h2.djc_title {
+			font-size: @JMmoduleTitleFontSize * @JMfontFactor;
+		}
+		.djc_subcategory {
+			.djc_title {
+				h3 {
+					font-size: @JMbaseFontSize * @JMfontFactor;
+				}
+			}
+		}
+	}
+
+	#djcatalog {
+		.djc_heading_set .djc_category {
+			h2 {
+				font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+			}
+		}
+	}
+
+	#djcatalog .djc_items,
+	#djcatalog .djc_related_items {
+		.djc_item {
+			.djc_title {
+				h3 {
+					font-size: @JMblogTitleFontSize * @JMfontFactor;
+				}
+			}
+			.djrv_rating_avg {
+				font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+			}
+			.djc_item_info {
+				font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+				.djc_price_stock {
+					> span {
+						font-size: (round(@JMbaseFontSize * 1.54)) * @JMfontFactor;
+					}
+					.djc_price_old {
+						font-size: @JMbaseFontSize * @JMfontFactor;
+					}
+					.djc_price_without_tax,
+					.djc_price_with_tax {
+						font-size: @JMbaseFontSize * @JMfontFactor;
+					}
+				}
+			}
+			.djc_form_compare {
+				label {
+					font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+				}
+			}
+		}
+	}
+
+	#djcatalog.djc_list table.category,
+	#djcatalog.djc_mylist table.category {
+		.djc_td_title {
+			a {
+				font-size: @JMblogTitleFontSize * @JMfontFactor;
+			}
+		}
+		.djrv_rating_avg {
+			font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+		}
+		.djc_form_compare {
+			label {
+				font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+			}
+		}
+		.djc_price {
+			> span {
+				font-size: (round(@JMbaseFontSize * 1.54)) * @JMfontFactor;
+			}
+			.djc_price_old {
+				font-size: @JMbaseFontSize * @JMfontFactor;
+			}
+			.djc_price_without_tax,
+			.djc_price_with_tax {
+				font-size: @JMbaseFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	#djcatalog.djc_producer {
+		.btn {
+			font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+		}
+	}
+
+	#djcatalog.djc_item h2.djc_title,
+	#djcatalog.djc_producer h2.djc_title {
+		font-size: @JMarticleTitleFontSize * @JMfontFactor;
+	}
+
+	#djcatalog.djc_item {
+		.djc_category_info {
+			small {
+				font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+			}
+		}
+		.djc_post_title,
+		.djc_toolbar {
+			font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+		}
+		.djc_toolbar,
+		.djc_producer_info {
+			.btn {
+				font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+			}
+		}
+		.djc_producer_info {
+			.btn {
+				font-size: @JMbaseFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	#djcatalog.djc_item {
+		.djc_location h3,
+		.djc_files h3,
+		.djc_comments h3,
+		.djc_contact_form fieldset legend,
+		.djc_related_items .djc_related_title,
+		.djreviews.djrv_rating_full h3,
+		.djreviews.djrv_reviews_list h3,
+		.djc_attributes h4 {
+			font-size: @JMmoduleTitleFontSize * @JMfontFactor;
+		}
+	}
+
+	#djcatalog.djc_item .djc_title .btn-mini {
+		font-size: 10px * @JMfontFactor;
+	}
+
+	#djcatalog.djc_item {
+		.djc_addtocart {
+			.djc_qty_btn {
+				font-size: @JMinputFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	#djcatalog.djc_item .djc_description {
+		.container-fluid {
+			font-size: (round(@JMbaseFontSize * 1.38)) * @JMfontFactor;
+		}
+		h3 {
+			font-size: @JMarticleTitleFontSize * @JMfontFactor;
+		}
+	}
+
+	#djcatalog.djc_item .djc_item_variants {
+		.djc_price {
+			span {
+				font-size: (round(@JMbaseFontSize * 1.3)) * @JMfontFactor;
+			}
+		}
+	}
+
+	#djcatalog.djc_item .djc_files {
+		.djc_filesize {
+			font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+		}
+	}
+
+	#djcatalog .djc_product_top_nav a.djc_prev_btn,
+	#djcatalog .djc_product_bottom_nav a.djc_prev_btn,
+	#djcatalog .djc_product_top_nav a.djc_next_btn,
+	#djcatalog .djc_product_bottom_nav a.djc_next_btn {
+		.btn {
+			font-size: @JMpaginationFontSize * @JMfontFactor;
+		}
+	}
+
+	#djcatalog.djc_item  .djc_related_items {
+		.djc_description {
+			.djc_price {
+				> span {
+					font-size: (round(@JMbaseFontSize * 1.54)) * @JMfontFactor;
+				}
+				span.djc_price_old {
+					font-size: @JMbaseFontSize * @JMfontFactor;
+				}
+				.djc_price_without_tax,
+				.djc_price_with_tax {
+					font-size: @JMbaseFontSize * @JMfontFactor;
+				}
+			}
+		}
+	}
+
+	#djcatalog .djc_price {
+		.djc_price_new {
+			font-size: (round(@JMbaseFontSize * 1.53)) * @JMfontFactor;
+		}
+	}
+
+	#djcatalog .djc_cart_variants .djc_cartvariant_colors {
+		label.radio {
+			font-size: @JMbaseFontSize * @JMfontFactor;
+		}
+	}
+
+	#djcatalog.djc_compareview {
+		.djc_compare_items {
+			h3 {
+				font-size: @JMblogTitleFontSize * @JMfontFactor;
+			}
+			.djrv_rating_avg {
+				font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+			}
+			.djc_price {
+				> span:not(.djc_price_old):first-child,
+				.djc_price_new {
+					font-size: (round(@JMbaseFontSize * 1.54)) * @JMfontFactor;
+				}
+				.djc_price_old {
+					font-size: @JMbaseFontSize * @JMfontFactor;
+				}
+				.djc_price_without_tax,
+				.djc_price_with_tax {
+					font-size: @JMbaseFontSize * @JMfontFactor;
+				}
+			}
+		}
+	}
+
+	#djcatalog.djc_checkout,
+	#djcatalog.djc_cart {
+		h2 {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+		.djc_td_update_qty {
+			.djc_qty_btn {
+				font-size: @JMinputFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	//cart login
+	#djcatalog.djc_cart-login {
+		h3 {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+	}
+
+	.djc_checkout_progress {
+		.djc_checkout-step {
+			&.djc_checkout-step a,
+			&.djc_checkout-step span {
+				font-size: (round(@JMbaseFontSize * 1.3)) * @JMfontFactor;
+			}
+		}
+	}
+
+	#djcatalog.djc_question {
+		h2 {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+	}
+
+	#djcatalog.djc_order {
+		h2 {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+	}
+
+	#jm-allpage .djf_mod {
+		.djf_cat h2 {
+			font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+		}
+		h3 {
+			font-size: (round(@JMbaseFontSize * 1.23)) * @JMfontFactor;
+		}
+		.djc_producer,
+		.djc_price {
+			font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+		}
+		.djc_price {
+			> span {
+				font-size: (round(@JMbaseFontSize * 1.54)) * @JMfontFactor;
+			}
+			span.djc_price_old {
+				font-size: @JMbaseFontSize * @JMfontFactor;
+			}
+			.djc_price_without_tax,
+			.djc_price_with_tax {
+				font-size: @JMbaseFontSize * @JMfontFactor;
+			}
+		}
+	}
+
+	.mod_djc_items {
+		.mod_djc_item {
+			.djc_description {
+				font-size: (round(@JMbaseFontSize * 0.85)) * @JMfontFactor;
+			}
+			.djc_price {
+				> span.djc_price_new {
+					font-size: (round(@JMbaseFontSize * 1.54)) * @JMfontFactor;
+				}
+				span.djc_price_old {
+					font-size: @JMbaseFontSize * @JMfontFactor;
+				}
+				.djc_price_without_tax,
+				.djc_price_with_tax {
+					font-size: @JMbaseFontSize * @JMfontFactor;
+				}
+			}
+		}
+	}
+
+	.items-ms .mod_djc_items {
+		.djc_item {
+			.djc_readon {
+				.readmore {
+					font-size: @JMbuttonFontSize * @JMfontFactor;
+				}
+			}
+		}
+	}
+
+	.mod_djc2filters {
+		h4 {
+			font-size: @JMbaseFontSize * @JMfontFactor;
+		}
+	}
+
+}
+
+//main content size (bigger factor)
+.fcontentSize(@JMfontFactorContent) {
+	#jm-maincontent {
+		font-size: @JMbaseFontSize * @JMfontFactorContent;
+	}
+}
+
+
+//prepare styles for factors
+.fsize70 {
+	.fsize(@JMfontFactor70);
+	.fcontentSize(@JMfontFactorContent70);
+}
+
+.fsize80 {
+	.fsize(@JMfontFactor80);
+	.fcontentSize(@JMfontFactorContent80);
+}
+
+.fsize90 {
+	.fsize(@JMfontFactor90);
+	.fcontentSize(@JMfontFactorContent90);
+}
+
+.fsize110 {
+	.fsize(@JMfontFactor110);
+	.fcontentSize(@JMfontFactorContent110);
+}
+
+.fsize120 {
+	.fsize(@JMfontFactor120);
+	.fcontentSize(@JMfontFactorContent120);
+}
+
+.fsize130 {
+	.fsize(@JMfontFactor130);
+	.fcontentSize(@JMfontFactorContent130);
+}
+
+
+
+
+
+
+
+
+

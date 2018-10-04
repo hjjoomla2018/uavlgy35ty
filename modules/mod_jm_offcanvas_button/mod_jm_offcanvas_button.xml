@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+		<name>mod_jm_offcanvas_button</name>
+		<creationDate>16/02/2017</creationDate>
+	<author>Joomla-Monster.com</author>
+		<copyright>Copyright (C) 2017 Joomla-Monster.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>artur.kaczmarek@joomla-monster.com</authorEmail>
+	<authorUrl>https://joomla-monster.com</authorUrl>
+		<version>1.02</version>
+		<description>MOD_JM_OFFCANVAS_BUTTON_DESC</description>
+		<files>
+				<filename module="mod_jm_offcanvas_button">mod_jm_offcanvas_button.php</filename>
+				<filename>index.html</filename>
+				<folder>tmpl</folder>
+				<folder>language</folder>
+		</files>
+		<config>
+			<fields name="params">
+
+			<fieldset name="basic">
+
+				<field name="image_file" type="media" directory="" label="MOD_JM_OFFCANVAS_BUTTON_FIELD_IMAGE" />
+				<field name="icon" type="text" default="" label="MOD_JM_OFFCANVAS_BUTTON_FIELD_ICON" description="MOD_JM_OFFCANVAS_BUTTON_FIELD_ICON_DESC" />
+				<field type="note" name="icon_note" class="alert alert-info" label="MOD_JM_OFFCANVAS_BUTTON_FIELD_ICON_NOTE" description="MOD_JM_OFFCANVAS_BUTTON_FIELD_ICON_NOTE_DESC" />
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					default=" visible-desktop"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

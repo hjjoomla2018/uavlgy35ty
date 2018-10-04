@@ -1,0 +1,1 @@
+ALTER TABLE `#__djc2_labels` ADD `type` VARCHAR(20) NOT NULL DEFAULT 'label' AFTER `ordering`, ADD `params` MEDIUMTEXT NULL AFTER `type`; 

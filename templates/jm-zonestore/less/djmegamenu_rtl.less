@@ -1,0 +1,129 @@
+//--------------------------------------------------------------
+// Copyright (C) joomla-monster.com
+// License: http://www.joomla-monster.com/license.html Joomla-Monster Proprietary Use License
+// Website: http://www.joomla-monster.com
+// Support: info@joomla-monster.com
+//---------------------------------------------------------------
+
+// VARIABLES import
+//---------------------------------------------------------------
+
+@import "bootstrap_variables.less";
+@import "template_variables.less";
+
+// MIXINS import
+//---------------------------------------------------------------
+
+@import "template_mixins.less";
+
+// MEGAMENU RTL
+//---------------------------------------------------------------
+
+html[dir='RTL'] {
+	//wrapper
+
+	.dj-megamenu-override {
+		text-align: right;
+	}
+
+	.dj-megamenu-override li.dj-up {
+		float: right;
+	}
+
+	// submenu
+	// --------------------------
+
+	//first level submenu
+	.dj-megamenu-override {
+		li:hover,
+		li.hover {
+			div.dj-subwrap {
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+
+	//higher level submenu
+	.dj-megamenu-override {
+		li:hover,
+		li.hover {
+			div.dj-subwrap div.dj-subwrap {
+				left: auto;
+				right: 100%;
+			}
+		}
+	}
+
+	.dj-megamenu-override .dj-submenu {
+		> li.parent > a {
+			&:after {
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+
+	//image in menu
+	.dj-megamenu-override {
+		li.dj-up a.dj-up_a span.image-title {
+			margin: 0 10px 0 0;
+		}
+	}
+
+	// submenu tree
+	// --------------------------
+	.dj-megamenu-override .dj-subtree {
+		.dj-subtree {
+			padding-left: 0;
+			padding-right: 15px;
+		}
+		> li > a {
+			padding: 5px 15px 5px 0;
+			&:before {
+				left: auto;
+				right: 0;
+			}
+		}
+		> li.parent > a {
+			padding-right: 0;
+			padding-left: 10px;
+			&:after {
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+}
+
+// topmenu-drop-ms
+
+.topmenu-drop-ms {
+	.dj-megamenu-override {
+		li.dj-up {
+			a.dj-up_a {
+				.arrow {
+					margin-left: 0;
+					margin-right: (@JMtopmenuItemWidth * 2);
+				}
+			}
+		}
+	}
+}
+
+// item-border-ms
+.dj-megamenu-override {
+	li.dj-up {
+		a.dj-up_a.item-border-ms {
+			.arrow {
+				margin-left: 0;
+				margin-right: (@JMtopmenuItemWidth * 2);
+			}
+		}
+	}
+}
+
+.dj-mobile-nav .dj-mobileitem a .fa {
+	margin-right: 0;
+	margin-left: 5px;
+}

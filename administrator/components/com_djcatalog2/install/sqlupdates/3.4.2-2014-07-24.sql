@@ -1,0 +1,1 @@
+ALTER TABLE `#__djc2_items_extra_fields` ADD `filter_type` VARCHAR( 255 ) NULL AFTER `type`;

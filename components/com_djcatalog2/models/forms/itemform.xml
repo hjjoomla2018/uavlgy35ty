@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset addfieldpath="/administrator/components/com_djcatalog2/models/fields">
+		<field name="name" type="text" class="inputbox input"
+				size="40" label="COM_DJCATALOG2_FORM_NAME"
+				description="COM_DJCATALOG2_FORM_NAME_DESC" required="true" />
+		
+		<field name="alias" type="hidden" />
+		
+		<field name="group_id" type="djfieldgroup"
+			label="COM_DJCATALOG2_FORM_FIELDGROUP"
+			description="COM_DJCATALOG2_FORM_FIELDGROUP_DESC"
+			default=""
+			allowswitching="true"
+			class="inputbox input"
+			multiple="true"
+		/>
+			
+		<field name="cat_id" type="djcategory" class="inputbox input"
+			label="COM_DJCATALOG2_FORM_CATEGORY"
+			description="COM_DJCATALOG2_FORM_CATEGORY_DESC"
+			required="true" default="" multiple="false" default_name="COM_DJCATALOG2_SELECT_CATEGORY" default_disable="false" parent="false" validate="djccategory" />
+		
+		<field name="categories" type="djcategory" class="inputbox"
+			label="COM_DJCATALOG2_FORM_ADDITIONAL_CATEGORIES"
+			description="COM_DJCATALOG2_FORM_ADDITIONAL_CATEGORIES_DESC"
+			required="false" size="10" default="" default_name="COM_DJCATALOG2_SELECT_CATEGORIES" multiple="true" parent="false" default_disable="true" validate="djccategory" />
+			
+		<field name="producer_id" type="djproducer" class="inputbox input"
+			label="COM_DJCATALOG2_FORM_PRODUCER"
+			description="COM_DJCATALOG2_FORM_PRODUCER_DESC" />
+			
+		<field name="labels" type="djclabel" multiple="true" label="COM_DJCATALOG2_LABELS" description="COM_DJCATALOG2_LABELS_FIELD_DESC"  />
+		
+		<field
+			name="published"
+			type="list"
+			label="COM_DJCATALOG2_FORM_PUBLISHED"
+			description="COM_DJCATALOG2_FORM_PUBLISHED_DESC"
+			class="inputbox input"
+			size="1"
+			validate="options"
+			default="0">
+			<option
+				value="1">JYES</option>
+			<option
+				value="0">JNO</option>
+		</field>
+		
+		<field name="sku" type="text" class="inputbox input"
+			size="40" label="COM_DJCATALOG2_FORM_SKU"
+			description="COM_DJCATALOG2_FORM_SKU_DESC" 
+		/>
+		
+		<field name="price" type="text" class="inputbox input validate-price"
+			size="40" label="COM_DJCATALOG2_FORM_PRICE"
+			description="COM_DJCATALOG2_FORM_PRICE_DESC"  
+		/>
+		<field name="special_price" type="text" class="inputbox input validate-price"
+			size="40" label="COM_DJCATALOG2_FORM_SPECIAL_PRICE"
+			description="COM_DJCATALOG2_FORM_SPECIAL_PRICE_DESC"  
+		/>
+		
+		<field name="featured" type="list" label="COM_DJCATALOG2_FEATURED"
+			description="COM_DJCATALOG2_FEATURED" class="inputbox input" size="1"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="available" type="list" label="COM_DJCATALOG2_AVAILABLE"
+			description="COM_DJCATALOG2_AVAILABLE_DESC" class="inputbox input" size="1"
+			default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="description" type="editor" class="inputbox input"
+			label="COM_DJCATALOG2_FORM_DESCRIPTION" description="COM_DJCATALOG2_FORM_DESCRIPTION_DESC"
+			filter="JComponentHelper::filterText"
+			buttons="false" />
+		
+		<field name="intro_desc" type="editor" class="inputbox input"
+			label="COM_DJCATALOG2_FORM_INTRO_DESCRIPTION" description="COM_DJCATALOG2_FORM_INTRO_DESCRIPTION_DESC"
+			filter="JComponentHelper::filterText"
+			buttons="false" />
+		
+		<field name="metatitle" type="text" class="inputbox input"
+				size="40" label="COM_DJCATALOG2_FORM_META_TITLE"
+				description="COM_DJCATALOG2_FORM_META_TITLE_DESC" />
+				
+		<field name="metakey" type="textarea"
+			label="COM_DJCATALOG2_FORM_META_KEY" description="COM_DJCATALOG2_FORM_META_KEY_DESC"
+			class="inputbox" rows="3" cols="30" />
+
+		<field name="metadesc" type="textarea"
+			label="COM_DJCATALOG2_FORM_META_DESCRIPTION" description="COM_DJCATALOG2_FORM_META_DESCRIPTION_DESC"
+			class="inputbox" rows="3" cols="30" />
+		
+		<field name="id" type="hidden" />
+		<field name="created" type="hidden" />
+		<field name="created_by" type="hidden" />
+		
+		<field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL" description="JFIELD_ACCESS_DESC" size="1" />
+	</fieldset>
+	<fields name="location" label="COM_DJCATALOG2_FIELDSET_LOCATION">
+	    <field name="address" type="text" default="" label="COM_DJCATALOG2_LOCATION_ADDRESS" description="" class="inputbox input" />
+	    <field name="postcode" type="text" default="" label="COM_DJCATALOG2_LOCATION_POSTCODE" description="" class="inputbox input" />
+	    <field name="city" type="text" default="" label="COM_DJCATALOG2_LOCATION_CITY" description="" class="inputbox input" />
+		
+		<!-- <field name="country"
+			    type="sql"
+			    default=""
+			    query="SELECT '' as id, '-' as country_name UNION (SELECT id, country_name FROM #__djc2_countries ORDER BY is_default DESC, country_name ASC)"
+			    label="COM_DJCATALOG2_LOCATION_COUNTRY"
+			    key_field="id" value_field="country_name" class="inputbox input" />-->
+		
+		<!-- <field name="state"
+			    type="sql"
+			    default=""
+			    query="SELECT 0 as id, '-' as state UNION (SELECT s.id, CONCAT('[', c.country_name, '] ', s.name) FROM #__djc2_countries_states AS s INNER JOIN #__djc2_countries as c ON c.id = s.country_id ORDER BY c.is_default DESC, c.country_name ASC, s.name ASC)"
+			    label="COM_DJCATALOG2_LOCATION_STATE"
+			    key_field="id" value_field="state" class="inputbox input" /> -->
+			    
+		<field name="country"
+			    type="djccountry"
+			    default=""
+			    label="COM_DJCATALOG2_LOCATION_COUNTRY"
+			    class="input"
+			    />
+			    
+		<field name="state"
+			    type="djccountrystate"
+			    default=""
+			    label="COM_DJCATALOG2_LOCATION_STATE" country_field="jform_location_country"
+			    class="input"
+			    />
+		
+	    <field name="phone" type="text" default="" label="COM_DJCATALOG2_LOCATION_PHONE" description="" class="inputbox input"/>
+		<field name="mobile" type="text" default="" label="COM_DJCATALOG2_LOCATION_MOBILE" description="" class="inputbox input"/>
+		<field name="fax" type="text" default="" label="COM_DJCATALOG2_LOCATION_FAX" description="" class="inputbox input"/>
+		<field name="website" type="url" default="" label="COM_DJCATALOG2_LOCATION_WEBSITE" description="" filter="url" class="inputbox input"/>
+		<field name="email" type="email" default="" label="COM_DJCATALOG2_LOCATION_EMAIL" description="" class="inputbox input" />
+	</fields>
+</form>

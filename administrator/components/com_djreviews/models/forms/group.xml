@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL"
+			readonly="true" class="readonly" />
+
+		<field name="name" type="text" class="inputbox" size="40"
+			label="COM_DJREVIEWS_NAME" required="true" />
+			
+		<field name="description" type="editor" class="inputbox"
+			label="COM_DJREVIEWS_DESCRIPTION" description="COM_DJREVIEWS_GROUP_DESCRIPTION_DESC"
+			filter="JComponentHelper::filterText" buttons="false" />
+
+		<field name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
+			description="JGLOBAL_FIELD_CREATED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="created_by" type="user" label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			description="JGLOBAL_FIELD_CREATED_BY_Desc" />
+
+	</fieldset>
+
+	<fields name="params">
+		<fieldset name="group_params" label="COM_DJREVIEWS_PARAMETERS">
+			<field name="revlist_limit" type="text" default="" label="COM_DJREVIEWS_CONFIG_LIST_LIMIT" description="COM_DJREVIEWS_CONFIG_LIST_LIMIT_DESC" />
+			<field name="revlist_limit_preview" type="text" default="" label="COM_DJREVIEWS_CONFIG_LIST_LIMIT_PREVIEW" description="COM_DJREVIEWS_CONFIG_LIST_LIMIT_PREVIEW_DESC" />
+			<field name="reviews" type="radio" default=""
+				label="COM_DJREVIEWS_PARAM_REVIEWS" description="COM_DJREVIEWS_PARAM_REVIEWS_DESC"
+				class="btn-group">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="rating" type="radio" default=""
+				label="COM_DJREVIEWS_PARAM_RATING" description="COM_DJREVIEWS_PARAM_RATING_DESC"
+				class="btn-group">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="title" type="radio" default=""
+				label="COM_DJREVIEWS_PARAM_TITLE" description="COM_DJREVIEWS_PARAM_TITLE_DESC"
+				class="btn-group">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+				<option value="2">COM_DJREVIEWS_REQUIRED</option>
+			</field>
+			<field name="message" type="radio" default=""
+				label="COM_DJREVIEWS_PARAM_MESSAGE" description="COM_DJREVIEWS_PARAM_MESSAGE_DESC"
+				class="btn-group">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+				<option value="2">COM_DJREVIEWS_REQUIRED</option>
+			</field>
+			<field name="multiple_rating" type="radio" default=""
+				label="COM_DJREVIEWS_PARAM_MULTIRATING" description="COM_DJREVIEWS_PARAM_MULTIRATING_DESC"
+				class="btn-group">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="followup" type="radio" default=""
+				label="COM_DJREVIEWS_PARAM_FOLLOWUP" description="COM_DJREVIEWS_PARAM_FOLLOWUP_DESC"
+				class="btn-group">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			
+			<field name="theme" type="djreviewstheme" default="" label="COM_DJREVIEWS_CONFIG_THEME" description="COM_DJREVIEWS_CONFIG_THEME_DESC" />
+			
+			<field name="public_avatar" type="imagelist" default="" label="COM_DJREVIEWS_PARAM_PUBLIC_AVATAR" directory="/media/djreviews/avatars" />
+	    	<field name="registered_avatar" type="imagelist" default="" label="COM_DJREVIEWS_PARAM_REGISTERED_AVATAR" directory="/media/djreviews/avatars" />
+			
+			<field name="form_layout" type="list" default="" label="COM_DJREVIEWS_PARAM_FORM_LAYOUT">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+		    	<option value="default">default</option>
+		    	<option value="plain">plain</option>
+		    </field>
+		    
+		    <field name="review_btn" type="list" default="" label="COM_DJREVIEWS_PARAM_REVIEW_BTN">
+		    	<option value="">JGLOBAL_USE_GLOBAL</option>
+		    	<option value="0">JNO</option>
+		    	<option value="1">JYES</option>
+		    	<option value="2">COM_DJREVIEWS_OPT_LOGGEDIN</option>
+		    </field>
+		    
+			<field name="schema_wrapper" type="list" default=""
+				label="COM_DJREVIEWS_PARAM_SCHEMA_WRAPPER" description="COM_DJREVIEWS_PARAM_SCHEMA_WRAPPER_DESC">
+				<option value="">JNONE</option>
+				<option value="CreativeWork">CreativeWork</option>
+				<option value="Article">- Article</option>
+				<option value="Blog">- Blog</option>
+				<option value="Book">- Book</option>
+				<option value="Clip">- Clip</option>
+				<option value="Code">- Code</option>
+				<option value="Comment">- Comment</option>
+				<option value="CreativeWorkSeason">- CreativeWorkSeason</option>
+				<option value="CreativeWorkSeries">- CreativeWorkSeries</option>
+				<option value="DataCatalog">- DataCatalog</option>
+				<option value="Dataset">- Dataset</option>
+				<option value="Diet">- Diet</option>
+				<option value="EmailMessage">- EmailMessage</option>
+				<option value="Episode">- Episode</option>
+				<option value="ExercisePlan">- ExercisePlan</option>
+				<option value="Game">- Game</option>
+				<option value="Map">- Map</option>
+				<option value="MediaObject">- MediaObject</option>
+				<option value="Movie">- Movie</option>
+				<option value="MusicComposition">- MusicComposition</option>
+				<option value="MusicPlaylist">- MusicPlaylist</option>
+				<option value="MusicRecording">- MusicRecording</option>
+				<option value="Painting">- Painting</option>
+				<option value="Photograph">- Photograph</option>
+				<option value="PublicationIssue">- PublicationIssue</option>
+				<option value="PublicationVolume">- PublicationVolume</option>
+				<option value="Question">- Question</option>
+				<option value="Recipe">- Recipe</option>
+				<option value="Review">- Review</option>
+				<option value="Sculpture">- Sculpture</option>
+				<option value="Season">- Season</option>
+				<option value="Series">- Series</option>
+				<option value="SoftwareApplication">- SoftwareApplication</option>
+				<option value="SoftwareSourceCode">- SoftwareSourceCode</option>
+				<option value="TVSeason">- TVSeason</option>
+				<option value="TVSeries">- TVSeries</option>
+				<option value="VisualArtwork">- VisualArtwork</option>
+				<option value="WebPage">- WebPage</option>
+				<option value="WebPageElement">- WebPageElement</option>
+				<option value="WebSite">- WebSite</option>
+				<option value="Product">Product</option>
+				<option value="IndividualProduct">- IndividualProduct</option>
+				<option value="ProductModel">- ProductModel</option>
+				<option value="SomeProducts">- SomeProducts</option>
+				<option value="Vehicle">- Vehicle</option>
+				<option value="Brand">Brand</option>
+				<option value="Person">- Person</option>
+				<option value="Offer">Offer</option>
+				<option value="AggregateOffer">AggregateOffer</option>
+				<option value="Organization">Organization</option>
+				<option value="Airline">- Airline</option>
+				<option value="Corporation">- Corporation</option>
+				<option value="EducationalOrganization">- EducationalOrganization</option>
+				<option value="GovernmentOrganization">- GovernmentOrganization</option>
+				<option value="LocalBusiness">- LocalBusiness</option>
+				<option value="NGO">- NGO</option>
+				<option value="PerformingGroup">- PerformingGroup</option>
+				<option value="SportsOrganization">- SportsOrganization</option>
+				<option value="Place">Place</option>
+				<option value="AdministrativeArea">- AdministrativeArea</option>
+				<option value="CivicStructure">- CivicStructure</option>
+				<option value="Landform">- Landform</option>
+				<option value="LandmarksOrHistoricalBuildings">- LandmarksOrHistoricalBuildings</option>
+				<option value="LocalBusiness">- LocalBusiness</option>
+				<option value="Residence">- Residence</option>
+				<option value="TouristAttraction">- TouristAttraction</option>
+				<option value="Event">Event</option>
+				<option value="BusinessEvent">- BusinessEvent</option>
+				<option value="ChildrensEvent">- ChildrensEvent</option>
+				<option value="ComedyEvent">- ComedyEvent</option>
+				<option value="DanceEvent">- DanceEvent</option>
+				<option value="DeliveryEvent">- DeliveryEvent</option>
+				<option value="EducationEvent">- EducationEvent</option>
+				<option value="ExhibitionEvent">- ExhibitionEvent</option>
+				<option value="Festival">- Festival</option>
+				<option value="FoodEvent">- FoodEvent</option>
+				<option value="LiteraryEvent">- LiteraryEvent</option>
+				<option value="MusicEvent">- MusicEvent</option>
+				<option value="PublicationEvent">- PublicationEvent</option>
+				<option value="SaleEvent">- SaleEvent</option>
+				<option value="ScreeningEvent">- ScreeningEvent</option>
+				<option value="SocialEvent">- SocialEvent</option>
+				<option value="SportsEvent">- SportsEvent</option>
+				<option value="TheaterEvent">- TheaterEvent</option>
+				<option value="UserInteraction">- UserInteraction</option>
+				<option value="VisualArtsEvent">- VisualArtsEvent</option>
+				<option value="Service">Service</option>
+				<option value="BroadcastService">- BroadcastService</option>
+				<option value="CableOrSatelliteService">- CableOrSatelliteService</option>
+				<option value="GovernmentService">- GovernmentService</option>
+				<option value="Taxi">- Taxi</option>
+				<option value="TaxiService">- TaxiService</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

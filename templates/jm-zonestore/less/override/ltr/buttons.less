@@ -1,0 +1,291 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	line-height: @JMbuttonLineHeight;
+	text-decoration: none;
+	.border-radius(@baseBorderRadius);
+
+	//JM added
+	border: none;
+	background: @JMbuttonBackground;
+	.box-sizing(border-box);
+	font-family: inherit;
+	font-size: @JMbuttonFontSize;
+	font-weight: @JMbuttonFontWeight;
+	padding: @JMbuttonPadding;
+	height: auto;
+	color: @JMbuttonFontColor;
+	text-transform: uppercase;
+
+	// Hover/focus/active state
+	&:hover,
+	&:focus,
+	&:active {
+		//JM .transition(none);
+		text-decoration: none;
+		.transition(all 0.2s ease-in);
+		background: @JMbuttonBackgroundHover;
+	}
+
+	// Focus state for keyboard and accessibility
+	&:focus {
+		.tab-focus();
+	}
+
+	// Active state
+	&.active,
+	&:active {
+		outline: 0;
+	}
+
+	// Disabled state
+	&.disabled,
+	&[disabled] {
+		cursor: default;
+		.opacity(65);
+	}
+}
+
+a.button,
+input.button,
+button.button,
+input[type="submit"],
+button[type="submit"],
+input[type="reset"],
+button[type="reset"] {
+	.btn();
+}
+
+// dark gray
+
+.btn-dark {
+	background: @JMbuttonDarkBackground;
+
+	// Hover/focus/active state
+	&:hover,
+	&:focus,
+	&:active {
+		background: darken(@JMbuttonDarkBackground,10%);
+	}
+}
+
+// light gray
+
+.btn-light {
+	background: @JMbuttonLightBackground;
+
+	// Hover/focus/active state
+	&:hover,
+	&:focus,
+	&:active {
+		background: @JMbuttonLightBackgroundHover;
+	}
+}
+
+// very light gray
+
+.btn-vlight {
+	background: @JMbuttonVeryLightBackground;
+	color: @JMbuttonVeryLightFontColor;
+	// Hover/focus/active state
+	&:hover,
+	&:focus,
+	&:active {
+		background: @JMbuttonVeryLightBackgroundHover;
+	}
+}
+
+.btn-orange {
+	background: @JMbuttonOrangeBackground;
+	color: @JMbuttonOrangeFontColor;
+	// Hover/focus/active state
+	&:hover,
+	&:focus,
+	&:active {
+		background: @JMbuttonOrangeBackgroundHover;
+	}
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large,
+.button.btn-large {
+	padding: @JMbuttonLargePadding;
+}
+
+// Small
+.btn-small,
+.button.btn-small {
+	padding: @JMbuttonSmallPadding;
+}
+
+.btn-small [class^="icon-"],
+.btn-small [class*=" icon-"],
+.button.btn-small [class^="icon-"],
+.button.btn-small [class*=" icon-"] {
+	margin-top: 0; //JM edited
+}
+
+.btn-mini [class^="icon-"],
+.btn-mini [class*=" icon-"],
+.button.btn-mini [class^="icon-"],
+.button.btn-mini [class*=" icon-"] {
+	margin-top: 0; //JM edited
+}
+
+// Mini
+.btn-mini,
+.button.btn-mini {
+	padding: @JMbuttonMiniPadding;
+}
+
+// Block button
+// -------------------------
+
+.btn-block,
+.button.btn-block {
+	display: block;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	.box-sizing(border-box);
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block,
+.btn-block + .button.btn-block {
+	margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active,
+.button.btn-primary.active,
+.button.btn-warning.active,
+.button.btn-danger.active,
+.button.btn-success.active,
+.button.btn-info.active,
+.button.btn-inverse.active {
+	color: rgba(255, 255, 255, .75);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn-primary,
+.button.btn-primary {
+	//JM background: @JMbuttonBackground;
+}
+
+// Warning appears are orange
+.btn-warning,
+.button.btn-warning {
+	.buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+}
+
+// Danger and error appear as red
+.btn-danger,
+.button.btn-danger {
+	.buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+}
+
+// Success appears as green
+.btn-success,
+.button.btn-success {
+	.buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+}
+
+// Info appears as a neutral blue
+.btn-info,
+.button.btn-info {
+	.buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+}
+
+// Inverse appears as dark gray
+.btn-inverse,
+.button.btn-inverse {
+	.buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+}
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn,
+button.btn.button,
+input[type="submit"].btn.button {
+
+	// Firefox 3.6 only I believe
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+}
+
+// Link buttons
+// --------------------------------------------------
+
+// Make a button look and behave like a link
+.btn-link,
+.btn-link:active,
+.btn-link[disabled],
+.button.btn-link,
+.button.btn-link:active,
+.button.btn-link[disabled] {
+	background-color: transparent;
+	background-image: none;
+	.box-shadow(none);
+}
+
+.btn-link,
+.button.btn-link {
+	border-color: transparent;
+	cursor: pointer;
+	color: @linkColor;
+	.border-radius(0);
+}
+
+.btn-link:hover,
+.btn-link:focus,
+.button.btn-link:hover,
+.button.btn-link:focus {
+	color: @linkColorHover;
+	text-decoration: underline;
+	background-color: transparent;
+}
+
+.btn-link[disabled]:hover,
+.btn-link[disabled]:focus,
+.button.btn-link[disabled]:hover,
+.button.btn-link[disabled]:focus {
+	color: @grayDark;
+	text-decoration: none;
+}

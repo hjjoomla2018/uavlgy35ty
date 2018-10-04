@@ -1,0 +1,621 @@
+//--------------------------------------------------------------
+// Copyright (C) joomla-monster.com
+// License: http://www.joomla-monster.com/license.html Joomla-Monster Proprietary Use License
+// Website: http://www.joomla-monster.com
+// Support: info@joomla-monster.com
+//---------------------------------------------------------------
+
+// VARIABLES import
+//---------------------------------------------------------------
+
+@import "template_variables.less";
+@import "bootstrap_variables.less";
+
+// MIXINS import
+//---------------------------------------------------------------
+
+@import "../../../plugins/system/ef4_jmframework/includes/assets/template/bootstrap/less-ext/mixins-ext.less";
+//JM extended mixins
+@import "template_mixins.less";
+
+// TEMPLATE RTL
+//---------------------------------------------------------------
+
+// layout.less
+// --------------------------
+
+#jm-wcag {
+	border-bottom: 1px solid @JMlogonavBorder;
+	.box-sizing(border-box);
+}
+
+#jm-wcag .jm-wcag-settings {
+	ul li {
+		[class^="icon-"], [class*=" icon-"] {
+			margin: 0 0 0 5px;
+		}
+		.icon-plus-sign { //text plus size
+			margin: 0 5px 0 0;
+		}
+	}
+}
+
+#jm-logo-search {
+	.jm-module-raw {
+		float: left;
+	}
+}
+
+#jm-mobile-button {
+	text-align: left;
+}
+
+@media (max-width: 767px) {
+	#jm-mobile-button {
+		right: auto;
+		left: @JMbaseSpace/2;
+	}
+}
+
+#jm-top-menu {
+	.jm-module-raw {
+		float: right;
+		margin-right: 0;
+		margin-left: 30px;
+	}
+	#jm-tools {
+		float: left;
+		.jm-module-raw {
+			float: right;
+			margin-right: 30px;
+			margin-left: 0;
+			padding-right: 0;
+			padding-left: 30px;
+			&:after {
+				left: auto;
+				right: 100%;
+			}
+			&:last-child {
+				padding-right: 30px;
+				&:before {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+#jm-top-menu .mod-languages {
+	.chzn-container-single .chzn-single,
+	.chzn-container-multi .chzn-choices {
+		padding: 0 0 0 39px;
+		&:before {
+			left: auto;
+			right: 0;
+		}
+		&:after {
+			right: auto;
+			left: 0;
+		}
+	}
+	.chzn-container-single .chzn-single div {
+		left: 0;
+		right: auto;
+	}
+	.chzn-container.chzn-with-drop .chzn-drop {
+		left: auto;
+		right: -30px;
+	}
+}
+
+@media (min-width: 979px) {
+	// fixed column view (specified in the template parameters)
+	.fixedcolumn_width #jm-left:nth-child(2):last-child,
+	.fixedcolumn_width #jm-right:nth-child(2):last-child {
+		margin-left: 0 !important;
+		margin-right: -100% !important;
+	}
+
+	.fixedcolumn_width #jm-content:nth-last-child(2) {
+		margin-left: 0;
+		margin-right: @JMfixedColumnWidth;
+	}
+}
+
+#jm-font-switcher {
+	text-align: left;
+}
+
+// joomla.less
+// --------------------------
+
+// BOOTSTRAP
+//---------------------------------------------------------------
+
+//chosen
+#jm-allpage .chzn-container .chzn-drop,
+#jm-allpage .chzn-container-single.chzn-container-single-nosearch .chzn-search {
+	left: auto;
+	right: -9999px;
+}
+
+#jm-allpage .chzn-container.chzn-with-drop .chzn-drop {
+	left: auto;
+	right: 0;
+}
+
+//chzn
+#jm-allpage {
+	.chzn-container-single .chzn-single {
+		padding: 0 @JMinputPadding 0 ((@JMinputPadding*2) + 8);
+	}
+	.chzn-container-multi .chzn-choices li {
+		float: right;
+	}
+	.chzn-container-single .chzn-single div {
+		right: auto;
+		left: 20px;
+	}
+	.chzn-container-single .chzn-search input[type="text"] {
+		padding: 4px 5px 4px 20px;
+		background-position: -30px -20px;
+	}
+	.chzn-container-multi .chzn-choices li.search-choice {
+		padding: 3px 5px 3px 20px;
+		margin: 3px 0 3px 5px;
+	}
+	.chzn-container-multi .chzn-choices li.search-choice .search-choice-close {
+		right: auto;
+		left: 3px;
+	}
+}
+
+// JOOMLA COMPONENT
+//---------------------------------------------------------------
+
+//all articles
+dl.article-info {
+	dd {
+		margin: 0 0 0 5px;
+	}
+}
+
+//rating and voting
+.content_vote label {
+	margin: 0 0 0 5px;
+}
+
+//article categories
+.categories-list .collapse {
+	padding: 0 @JMbaseSpace 0 0;
+}
+
+.items-row .item,
+.items-leading div[class*="leading-"]{
+	.pull-left.item-image {
+		margin-left: (@JMverticalSpace * 1.5);
+		margin-right: -(@JMverticalSpace * 1.5);
+	}
+	.pull-right.item-image {
+		margin-right: (@JMverticalSpace * 1.5);
+		margin-left: -(@JMverticalSpace * 1.5);
+	}
+}
+
+.items-leading div[class*="leading-"] {
+	.pull-left.item-image {
+		margin-left: (@JMverticalSpace * 1.5);
+		margin-right: -((@JMverticalSpace * 1.5) + 2);
+	}
+	.pull-right.item-image {
+		margin-right: (@JMverticalSpace * 1.5);
+		margin-left: -((@JMverticalSpace * 1.5) + 2);
+	}
+}
+
+.pull-left.item-image,
+figure.pull-left {
+	margin-right: 0;
+	margin-left: (@JMverticalSpace * 1.5);
+}
+
+.pull-right.item-image,
+figure.pull-right {
+	margin-left: 0;
+	margin-right: (@JMverticalSpace * 1.5);
+}
+
+//weblinks single category
+.weblink-count {
+	dt,
+	dd {
+		float: right;
+	}
+}
+
+//tag-category
+.tag-category {
+	.form-inline label {
+		margin-right: 0;
+		margin-left: 10px;
+	}
+}
+
+//search component
+.phrases-box,
+fieldset.only {
+	label {
+		margin-right: 0;
+		margin-left: 10px;
+	}
+}
+
+//article index
+.article-index {
+	margin-left: 0;
+	margin-right: @JMbaseSpace;
+}
+
+// JOOMLA MODULES
+//---------------------------------------------------------------
+
+//article categories
+.categories-module li {
+	.mod-articles-category-category a {
+		display: inline-block;
+	}
+}
+
+//article category
+.category-module li {
+	.mod-articles-category-category a {
+		display: inline-block;
+	}
+}
+
+//search module
+.form-search {
+	label.finder {
+		padding: 0 0 0 10px;
+	}
+}
+
+//popular tags
+.tagspopular.tagscloud {
+	.tag {
+		margin-right: 0;
+		margin-left: 8px;
+	}
+}
+
+// menus.less
+// --------------------------
+
+.nav.menu {
+	ul {
+		ul {
+			padding-left: 0;
+			padding-right: 15px;
+		}
+	}
+	ul > li > a,
+	ul > li > span.separator {
+		padding-left: 0;
+		padding-right: 15px;
+		&:before {
+			left: auto;
+			right: 0;
+		}
+	}
+	li a img {
+		margin: 0 0 0 10px;
+	}
+}
+
+.icons-ms {
+	&.nav.menu {
+		li {
+			float: right;
+		}
+		li a,
+		li span.separator {
+			padding: 7px 0 7px 14px;
+		}
+	}
+}
+
+.tagspopular ul,
+.tagssimilar ul,
+ul.tags {
+	li {
+		margin: 0 0 0 25px;
+	}
+}
+
+// modules.less
+// --------------------------
+
+.span50 {
+	float: right !important;
+}
+
+//jm additional features
+
+#jm-allpage .jm-module.features1-ms,
+#jm-allpage .jm-module.features2-ms {
+
+	.jmm-add-features.default.right .jmm-item-in {
+		&:before {
+			right: 0;
+			-webkit-clip-path: polygon(37% 0, 100% 0, 100% 100%, 40% 100%, 0 31%);
+			clip-path: polygon(37% 0, 100% 0, 100% 100%, 40% 100%, 0 31%);
+		}
+	}
+	.jmm-add-features.default.left .jmm-item-in {
+		&:before {
+			left: 0;
+			-webkit-clip-path: polygon(0% 0%, 63% 0, 100% 31%, 60% 100%, 0% 100%);
+			clip-path: polygon(0% 0%, 63% 0, 100% 31%, 60% 100%, 0% 100%);
+		}
+	}
+	.jmm-add-features.default.right .jmm-icon {
+		float: left;
+	}
+	.jmm-add-features.default.right .jmm-description {
+		float: right;
+		padding: 80px 50px 80px 0;
+	}
+	.jmm-add-features.default.left .jmm-icon {
+		float: right;
+	}
+	.jmm-add-features.default.left .jmm-description {
+		float: left;
+		text-align: left;
+		padding: 80px 0 80px 50px;
+	}
+}
+
+// help-ms
+
+#jm-allpage .jm-module.help-ms {
+	.jmm-add-features.default.left .jmm-icon {
+		padding-right: 0;
+		padding-left: 20px;
+		float: right;
+	}
+}
+
+// promo-ms
+
+#jm-allpage .jm-module.promo-ms {
+	.jmm-add-features.default .jmm-title {
+		padding-left: 0;
+		padding-right: 148px;
+		&:before {
+			left: auto;
+			right: 0;
+		}
+		&:after {
+			left: auto;
+			right: 112px;
+		}
+		~ * {
+			padding-left: 0;
+			padding-right: 148px;
+		}
+
+	}
+}
+
+@media (max-width: 1200px) {
+	#jm-allpage .jm-module.promo-ms {
+		.jmm-add-features.default .jmm-title {
+			padding-left: 0;
+			padding-right: 118px;
+			&:after {
+				left: auto;
+				right: 82px;
+			}
+			~ * {
+				padding-left: 0;
+				padding-right: 118px;
+			}
+
+		}
+	}
+}
+
+@media (max-width: 980px) {
+	#jm-allpage .jm-module.promo-ms {
+		.jmm-add-features.default .jmm-description {
+			padding: 30px;
+			min-height: auto;
+		}
+	}
+}
+
+// jm simple tabs
+
+#jm-allpage {
+	.jmm-simple-tabs {
+		.tabs-left {
+			> .nav-tabs {
+				> li {
+					&.active {
+						> a {
+							&:before {
+								left: auto;
+								right: -1px;
+							}
+						}
+					}
+				}
+			}
+			.tab-content {
+				&:before {
+					margin-right: -30px;
+				}
+			}
+		}
+		.tabs-right {
+			> .nav-tabs {
+				text-align: left;
+				> li {
+					&.active {
+						> a {
+							&:after {
+								right: auto;
+								left: -1px;
+							}
+						}
+					}
+				}
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					height: 100%;
+					width: 1px;
+					background: @JMtabBorder;
+					margin-left: -30px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	#jm-allpage .jm-module.tabs-ms {
+		.jmm-simple-tabs {
+			.tab-content {
+				background-image: url('../images/tabs-background_rtl.png');
+				background-position: bottom left;
+			}
+		}
+	}
+}
+
+// contact-ps
+#jm-allpage .contact-ps {
+	#jform_contact_email_copy-lbl {
+		margin-left: 0;
+		margin-right: 25px;
+	}
+}
+
+// DJ-Reviews
+
+//stars
+#jm-allpage {
+	.djreviews { //component
+		.djrv_rating {
+			.djrv_stars_sprite {
+				background: url('../images/stars.png') repeat-x 100% 0;
+			}
+			.djrv_stars_sprite_rating {
+				background: url('../images/stars.png') repeat-x 100% -24px;
+				float: right;
+			}
+			&.small,
+			&.xsmall {
+				.djrv_stars_sprite {
+					background: url('../images/stars.png') repeat-x 100% 0;
+				}
+				.djrv_stars_sprite_rating {
+					background: url('../images/stars.png') repeat-x 100% -22px;
+				}
+			}
+			.djrv_avg {
+				padding-left: 0 !important;
+				padding-right: 5px !important;
+			}
+		}
+	}
+	.djrv_review_form {
+		.djrv_rating_fields .djrv_field_rating {
+			background: url('../images/stars.png') repeat-x 100% 0;
+		}
+		.djrv_rating_fields .djrv_field_rating input:checked+label,
+		.djrv_rating_fields .djrv_field_rating:hover input:checked:hover+label {
+			background: url('../images/stars.png') repeat-x 100% -24px;
+		}
+		.djrv_rating_fields .djrv_field_rating:hover input:hover+label {
+			background: url('../images/stars.png') repeat-x 100% -48px;
+		}
+	}
+	.mod_djreviews { //modules
+		.djrv_rating {
+			.djrv_stars_sprite {
+				background: url('../images/stars.png') repeat-x 100% 0;
+			}
+			.djrv_stars_sprite_rating {
+				background: url('../images/stars.png') repeat-x 100% -24px;
+				float: right;
+			}
+		}
+	}
+}
+
+// editor.less
+// --------------------------
+
+.jm-block {
+	padding: 0 60px 0 0;
+	span {
+		left: auto;
+		right: 0;
+	}
+}
+
+//colored blocks
+p.blue {
+	border-left: none;
+	border-right: 3px solid #BCE8F1;
+	padding: 0 10px 0 0;
+}
+
+p.green {
+	border-left: none;
+	border-right: 3px solid #D6E9C6;
+	padding: 0 10px 0 0;
+}
+
+p.red {
+	border-left: none;
+	border-right: 3px solid #EED3D7;
+	padding: 0 10px 0 0;
+}
+
+//icon blocks
+p,
+span {
+	&.jmbadge,
+	&.jmcalendar,
+	&.jmchat,
+	&.jmcheck,
+	&.jmcloud,
+	&.jmdirection,
+	&.jmdivide,
+	&.jmerror,
+	&.jmfire,
+	&.jmflag,
+	&.jmheart,
+	&.jmhome,
+	&.jminfo,
+	&.jmlist,
+	&.jmmail,
+	&.jmpeople,
+	&.jmstar,
+	&.jmstat {
+		padding-left: 0;
+		padding-right: 60px;
+		background-position: right top;
+	}
+}
+
+// EXTENSIONS import
+//---------------------------------------------------------------
+
+//import extended DJ-Mediatools styles
+@import "djmediatools_rtl.less";

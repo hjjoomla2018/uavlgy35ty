@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" 
+				readonly="true" class="readonly" />
+		
+		<field name="name" type="text" class="input"
+				size="40" label="COM_DJCATALOG2_NAME"
+				description="COM_DJCATALOG2_NAME" required="true" />
+		
+		<field name="csv_name" type="text" class="input"
+				size="40" label="COM_DJCATALOG2_IMPORT_CFG_CSV_NAME"
+				description="COM_DJCATALOG2_IMPORT_CFG_CSV_NAME_DESC" required="true" />
+				
+		<field name="target_name" type="text" class="input"
+				size="40" label="COM_DJCATALOG2_IMPORT_CFG_TARGET_NAME"
+				description="COM_DJCATALOG2_IMPORT_CFG_TARGET_NAME_DESC" required="true" />
+		
+		<field
+			name="is_db"
+			type="list"
+			label="COM_DJCATALOG2_IMPORT_CFG_IS_DB"
+			description="COM_DJCATALOG2_IMPORT_CFG_IS_DB_DESC"
+			size="1"
+			default="0">
+			<option
+				value="1">JYES</option>
+			<option
+				value="0">JNO</option>
+		</field>
+		
+		<field name="db_name" showon="is_db:1" type="text" default="" label="COM_DJCATALOG2_IMPORT_CFG_DB_TABLE" description="COM_DJCATALOG2_IMPORT_CFG_DB_TABLE_DESC" />
+		
+		<field name="db_lookup_column" showon="is_db:1" type="text" default="" label="COM_DJCATALOG2_IMPORT_CFG_DB_LOOKUP_COL" description="COM_DJCATALOG2_IMPORT_CFG_DB_LOOKUP_COL_DESC" />
+		
+		<field name="db_value_column" showon="is_db:1" type="text" default="" label="COM_DJCATALOG2_IMPORT_CFG_DB_VALUE_COL" description="COM_DJCATALOG2_IMPORT_CFG_DB_VALUE_COL_DESC" />
+		
+		<field name="db_operator" showon="is_db:1" type="list" default="0" label="COM_DJCATALOG2_IMPORT_CFG_DB_OPERATOR">
+			<option value="0">=</option>
+			<option value="1">LIKE ... </option>
+			<option value="2">LIKE %...</option>
+			<option value="3">LIKE %...%</option>
+		</field>
+		
+		<field name="db_where_clause" showon="is_db:1" type="textarea" default="" label="COM_DJCATALOG2_IMPORT_CFG_DB_WHERE" description="COM_DJCATALOG2_IMPORT_CFG_DB_WHERE_DESC" />
+		
+		<field name="merging" type="list" default="R" label="COM_DJCATALOG2_IMPORT_CFG_MERGING" description="COM_DJCATALOG2_IMPORT_CFG_MERGING_DESC">
+			<option value="R">COM_DJCATALOG2_IMPORT_CFG_MERGING_R</option>
+			<option value="B">COM_DJCATALOG2_IMPORT_CFG_MERGING_B</option>
+			<option value="A">COM_DJCATALOG2_IMPORT_CFG_MERGING_A</option>
+		</field>
+		
+		<field name="html_wrapper" type="list" default="" label="COM_DJCATALOG2_IMPORT_CFG_HTML_WRAPPER" description="COM_DJCATALOG2_IMPORT_CFG_HTML_WRAPPER_DESC">
+			<option value="">JNONE</option>
+			<option value="p">&lt;p&gt;</option>
+			<option value="div">&lt;div&gt;</option>
+			<option value="h1">&lt;h1&gt;</option>
+			<option value="h2">&lt;h2&gt;</option>
+			<option value="h3">&lt;h3&gt;</option>
+			<option value="h4">&lt;h4&gt;</option>
+			<option value="h5">&lt;h5&gt;</option>
+			<option value="h6">&lt;h6&gt;</option>
+			<option value="span">&lt;span&gt;</option>
+			<option value="strong">&lt;strong&gt;</option>
+			<option value="blockquote">&lt;blockquote&gt;</option>
+		</field>
+		
+		<field
+			name="published"
+			type="list"
+			label="COM_DJCATALOG2_PUBLISHED"
+			description="COM_DJCATALOG2_PUBLISHED"
+			size="1"
+			default="1">
+			<option
+				value="1">JPUBLISHED</option>
+			<option
+				value="0">JUNPUBLISHED</option>
+		</field>
+		
+	</fieldset>
+</form>

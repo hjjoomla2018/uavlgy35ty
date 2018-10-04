@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" 
+				readonly="true" class="readonly" />
+		
+		<field name="name" type="text" class="inputbox"
+				size="40" label="COM_DJCATALOG2_NAME"
+				description="COM_DJCATALOG2_NAME" required="true" />
+		
+		<field name="alias" type="text" class="inputbox"
+			size="40" label="COM_DJCATALOG2_ALIAS"
+			description="COM_DJCATALOG2_ALIAS" />
+		
+		<field name="type" type="djfieldtype" label="COM_DJCATALOG2_FIELD_TYPE" default="" required="true" source_type="cart" />
+		
+		<field
+			name="published"
+			type="list"
+			label="COM_DJCATALOG2_PUBLISHED"
+			description="COM_DJCATALOG2_PUBLISHED"
+			class="inputbox"
+			size="1"
+			default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+		
+		<!-- <field
+			name="required"
+			type="list"
+			label="COM_DJCATALOG2_REQUIRED"
+			description="COM_DJCATALOG2_REQUIRED"
+			class="inputbox"
+			size="1"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field> -->
+		
+	</fieldset>
+</form>

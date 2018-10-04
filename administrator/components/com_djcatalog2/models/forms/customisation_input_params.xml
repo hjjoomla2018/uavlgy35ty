@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<field name="label" required="true" type="text" default="" label="COM_DJCATALOG2_CUSTOMISATION_FIELD_LABEL" description="COM_DJCATALOG2_CUSTOMISATION_FIELD_LABEL_DESC" />
+	<field name="type" type="list" default="text" label="COM_DJCATALOG2_CUSTOMISATION_FIELD_TYPE" description="COM_DJCATALOG2_CUSTOMISATION_FIELD_TYPE_DESC">
+		<option value="text">COM_DJCATALOG2_CUSTOMISATION_FIELD_TEXT</option>
+		<option value="file">COM_DJCATALOG2_CUSTOMISATION_FIELD_FILE</option>
+	</field>
+	<field name="allowed_types" type="text" showon="type:file" default="jpg,png" label="COM_DJCATALOG2_CONFIG_ALLOWED_ATTACHMENT_TYPES" />
+	<field name="max_size" type="text" showon="type:file" default="2048" label="COM_DJCATALOG2_FED_MAX_FILE_SIZE" />
+</form>

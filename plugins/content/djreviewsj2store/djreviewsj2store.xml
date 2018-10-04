@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_djreviewsj2store</name>
+	<creationDate>February 2016</creationDate>
+	<author>DJ-Extensions.com LTD</author>
+	<copyright>Copyright (C) 2010-2012 DJ-Extensions.com LTD, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>1.3</version>
+	<description>PLG_CONTENT_DJREVIEWSJ2STORE_DESCRIPTION</description>
+	<files>
+		<filename plugin="djreviewsj2store">djreviewsj2store.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+	</files>
+	<config>
+	    <fields name="params" addfieldpath="administrator/components/com_djreviews/models/fields">
+	        <fieldset name="basic">
+	            <field name="rating_group" type="djreviewsratinggroup" default="" required="true" label="PLG_CONTENT_DJREVIEWSJ2STORE_RATING_GROUP" description="PLG_CONTENT_DJREVIEWSJ2STORE_RATING_GROUP_DESC" />
+		    	<field name="enable_listing" type="radio" default="1" label="PLG_CONTENT_DJREVIEWSJ2STORE_ENABLE_LISTING" description="PLG_CONTENT_DJREVIEWSJ2STORE_ENABLE_LISTING_DESC" class="btn-group">
+			        <option value="1">JYES</option>
+			        <option value="0">JNO</option>
+			    </field>
+		    	<field name="exclude_categories" type="category" extension="com_content" default="" label="PLG_CONTENT_DJREVIEWSJ2STORE_EXCLUDED_CATEGORIES" description="PLG_CONTENT_DJREVIEWSJ2STORE_EXCLUDED_CATEGORIES_DESC" multiple="true"/>
+		    	<field name="exclude_articles" type="textarea" default="" label="PLG_CONTENT_DJREVIEWSJ2STORE_EXCLUDED_ARTICLES" description="PLG_CONTENT_DJREVIEWSJ2STORE_EXCLUDED_ARTICLES_DESC" rows="5" />
+		    </fieldset>
+	    </fields>
+	</config>
+</extension>

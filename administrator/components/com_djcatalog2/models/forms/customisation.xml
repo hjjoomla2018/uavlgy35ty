@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" 
+				readonly="true" class="readonly" />
+		
+		<field name="name" type="text" class="input" label="COM_DJCATALOG2_NAME" description="COM_DJCATALOG2_NAME" required="true" />
+		
+		<field name="price" type="text" class="input validate-price" label="COM_DJCATALOG2_PRICE" description="COM_DJCATALOG2_PRICE"  />
+		
+		<field name="tax_rule_id" type="sql" class="inputbox" label="COM_DJCATALOG2_TAX_RATE" default="0"
+		    query="SELECT id, concat(name, ' [', ROUND(value,2), ']') as name FROM #__djc2_vat_rules ORDER BY value desc" key_field="id" value_field="name" />
+		
+		<field name="price_modifier" type="list" default="s" label="COM_DJCATALOG2_CUSTOM_PRICE_MODIFIER" description="COM_DJCATALOG2_CUSTOM_PRICE_MODIFIER_DESC">
+			<option value="s">COM_DJCATALOG2_CUSTOM_MODIFIER_S</option>
+			<option value="m">COM_DJCATALOG2_CUSTOM_MODIFIER_M</option>
+		</field>
+		
+		<field name="min_quantity" type="text" class="input validate-integer" label="COM_DJCATALOG2_MIN_QTY"
+			description="COM_DJCATALOG2_MIN_QTY_DESC"  
+		/>
+		
+		<field name="max_quantity" type="text" class="input validate-integer" label="COM_DJCATALOG2_MAX_QTY"
+			description="COM_DJCATALOG2_MAX_QTY_DESC"  
+		/>
+				
+		<field name="type" type="list" default="c" label="COM_DJCATALOG2_CUSTOMISATION_TYPE" description="COM_DJCATALOG2_CUSTOMISATION_TYPE_DESC">
+			<option value="a">COM_DJCATALOG2_CUSTOMISATION_TYPE_A</option>		
+			<option value="c">COM_DJCATALOG2_CUSTOMISATION_TYPE_C</option>
+			<option value="i">COM_DJCATALOG2_CUSTOMISATION_TYPE_I</option>
+		</field>
+				
+		<field name="input_params" type="subform"
+			formsource="/administrator/components/com_djcatalog2/models/forms/customisation_input_params.xml" multiple="true" 
+			label="COM_DJCATALOG2_CUSTOMISATION_INPUT_PARAMS" buttons="add,remove"/>
+			
+	</fieldset>
+</form>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>MOD_JM_ADDITIONAL_FEATURES</name>
+	<creationDate>14/11/2017</creationDate>
+	<author>Joomla-Monster.com</author>
+	<copyright>Copyright (C) 2017 Joomla-Monster.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>artur.kaczmarek@joomla-monster.com</authorEmail>
+	<authorUrl>https://joomla-monster.com</authorUrl>
+	<version>1.07</version>
+	<description>MOD_JM_ADDITIONAL_FEATURES_DESC</description>
+	<files>
+			<filename module="mod_jm_additional_features">mod_jm_additional_features.php</filename>
+			<filename>index.html</filename>
+			<folder>assets</folder>
+			<folder>tmpl</folder>
+			<folder>language</folder>
+			<folder>fields</folder>
+	</files>
+
+	<updateservers>
+			<server type="extension" priority="1" name="MOD_JM_ADDITIONAL_FEATURES">https://joomla-monster.com/updates/mod_jm_additional_features.xml</server>
+		</updateservers>
+
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_jm_additional_features/fields">
+
+			<fieldset name="basic">
+
+				<field name="items" type="jmelements" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_ITEMS" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_ITEMS_DESC" element_name="MOD_JM_ADDITIONAL_FEATURES_FIELD_ITEM" element_fields="title,url,image_icon,alt,icon,color,text,item_readmore" element_field="title" filter="raw" />
+
+					<field name="title" type="text" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_TITLE" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_TITLE_DESC" />
+					<field name="url" type="url" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_LINK" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_LINK_DESC" />
+					<field name="image_icon" type="media" directory="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_IMAGE" />
+					<field name="alt" type="text" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_IMAGE_ALT" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_IMAGE_ALT_DESC" />
+
+					<field name="icon" type="text" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_DESC" />
+
+					<field name="color" type="color" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_COLOR" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_COLOR_DESC" />
+					<field name="text" type="textarea" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_TEXT" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_TEXT_DESC" />
+
+					<field name="item_readmore" type="radio" class="btn-group" default="0" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_READMORE" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_READMORE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+					<field type="spacer" />
+
+					<field name="show_readmore" type="radio" class="btn-group" default="0" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_BTN" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_BTN_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="readmore_name" type="text" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_BTN_NAME" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_BTN_NAME_DESC" showon="show_readmore:1" />
+					<field name="readmore_url" type="url" default="" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_BTN_URL" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_BTN_URL_DESC" showon="show_readmore:1" />
+
+					<field name="icon_link" type="radio" class="btn-group" default="1" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_LINK" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_LINK_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="icon_side" type="list" default="left" required="true" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_SIDE" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_SIDE_DESC">
+						<option value="left">MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_SIDE1</option>
+						<option value="right">MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_SIDE2</option>
+						<option value="above">MOD_JM_ADDITIONAL_FEATURES_FIELD_ICON_SIDE3</option>
+					</field>
+
+					<field name="columns" type="list" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_COLUMNS_LABEL" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_COLUMNS_DESC" default="1">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</field>
+
+					<field name="theme" type="list" default="1" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_THEME" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_THEME_DESC">
+						<option value="1">MOD_JM_ADDITIONAL_FEATURES_FIELD_THEME_DEFAULT</option>
+						<option value="2">MOD_JM_ADDITIONAL_FEATURES_FIELD_THEME_OVERRIDE</option>
+					</field>
+
+					<field type="note" name="theme_note" class="alert alert-info" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_THEME_NOTE" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_THEME_NOTE_DESC" showon="theme:2" />
+
+					<field name="load_fontawesome" type="radio" class="btn-group" default="0" label="MOD_JM_ADDITIONAL_FEATURES_FIELD_AWESOME" description="MOD_JM_ADDITIONAL_FEATURES_FIELD_AWESOME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

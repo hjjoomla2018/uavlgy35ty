@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="hidden" default="0" />
+		
+		<field name="rating_group_id" type="hidden" required="true" />
+		<field name="object_id" type="hidden" required="true" />
+		<field name="object_type" type="hidden" required="true" />
+		
+		<field name="title" type="text" default="" class="inputbox" label="COM_DJREVIEWS_TITLE" />
+		<field name="message" type="textarea" default="" class="input input-xlarge" rows="10" cols="60" label="COM_DJREVIEWS_MESSAGE" />
+		
+		<field name="user_name" type="text" default="" class="inputbox" label="COM_DJREVIEWS_AUTHOR" required="true"/>
+		<field name="user_login" type="text" default="" class="inputbox" label="COM_DJREVIEWS_AUTHOR_LOGIN" required="true"/>
+		<field name="email" type="text" default="" class="inputbox" label="COM_DJREVIEWS_EMAIL" required="true" validate="email" filter="string" />
+		
+		<field name="published" type="hidden" default="0" />
+		<field name="ip" type="hidden" default="" />
+		<field name="avg_rate" type="hidden" default="" />
+		<field name="object_type" type="hidden" default="" />
+		
+		<field name="created" type="hidden"  />
+		
+		<field name="created_by" type="hidden" default="0"/>
+		
+		<field name="rating" type="hidden" />
+	</fieldset>
+</form>

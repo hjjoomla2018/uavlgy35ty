@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5" method="upgrade">
+	<name>DJ-Catalog2 Package</name>
+	<packagename>dj-catalog2</packagename>
+	<creationDate>August 2011</creationDate>
+	<author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2010-2012 DJ-Extensions.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>3.7.2</version>
+	<url>http://dj-extensions.com</url>
+	<packager></packager>
+	<packagerurl></packagerurl>
+	<description>DJ-Catalog2 All-in-one Package</description>
+	<scriptfile>pkg_dj-catalog2.script.php</scriptfile>
+	<updateservers>
+		<server type="extension" priority="1" name="DJ-Catalog2">https://dj-extensions.com/api/getUpdateInfo?extension=djcatalog2.xml</server>
+	</updateservers>
+	<files>
+		<file type="component" client="admin" id="com_djcatalog2">com_djcatalog2.zip</file>
+		<file type="module" client="site" id="mod_djc2categories">mod_djc2categories.zip</file>
+		<file type="module" client="site" id="mod_djc2frontpage">mod_djc2frontpage.zip</file>
+		<file type="module" client="site" id="mod_djc2items">mod_djc2items.zip</file>
+		<file type="module" client="site" id="mod_djc2relateditems">mod_djc2relateditems.zip</file>
+		<file type="module" client="site" id="mod_djc2filters">mod_djc2filters.zip</file>
+		<file type="module" client="site" id="mod_djc2producers">mod_djc2producers.zip</file>
+		<file type="module" client="site" id="mod_djc2search">mod_djc2search.zip</file>
+		<file type="module" client="site" id="mod_djc2cart">mod_djc2cart.zip</file>
+		<file type="module" client="site" id="mod_djc2map">mod_djc2map.zip</file>
+		<file type="plugin" client="site" id="pagebreak" group="djcatalog2">plg_djcatalog2_pagebreak.zip</file>
+		<file type="plugin" client="site" id="customfield" group="djcatalog2">plg_djcatalog2_customfield.zip</file>
+		<file type="plugin" client="site" id="djcatalog2" group="content">plg_content_djcatalog2.zip</file>
+		<file type="plugin" client="site" id="jlexreview" group="djcatalog2">plg_djcatalog2_jlexreview.zip</file>
+		<file type="plugin" client="site" id="djcatalog2" group="user">plg_user_djcatalog2.zip</file>
+		<file type="plugin" client="site" id="djcatalog2" group="search">plg_search_djcatalog2.zip</file>
+		<file type="plugin" client="site" id="com_djcatalog2" group="xmap">plg_xmap_djcatalog2.zip</file>
+		<file type="plugin" client="site" id="djcatalog2" group="quickicon">plg_quickicon_djcatalog2.zip</file>
+		<file type="plugin" client="site" id="djcatalog2" group="finder">plg_finder_djcatalog2.zip</file>
+		<file type="plugin" client="site" id="standard" group="djcatalog2delivery">plg_djcatalog2delivery_standard.zip</file>
+		<file type="plugin" client="site" id="standard" group="djcatalog2payment">plg_djcatalog2payment_standard.zip</file>
+		<file type="plugin" client="site" id="paypal" group="djcatalog2payment">plg_djcatalog2payment_paypal.zip</file>
+		<!--  <file type="plugin" client="site" id="payu" group="djcatalog2payment">plg_djcatalog2payment_payu.zip</file>-->
+	</files>
+</extension>

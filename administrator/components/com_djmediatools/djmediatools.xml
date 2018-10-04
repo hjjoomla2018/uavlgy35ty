@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.5" method="upgrade" client="admin">
+
+    <name>com_djmediatools</name>
+    <creationDate>August 2017</creationDate>
+    <author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2017 DJ-Extensions.com, All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+    <version>2.11.0</version>
+	<description>DJ-MediaTools component</description>
+	
+	<install>
+		<sql>
+            <file charset="utf8" driver="mysql">sql/install.sql</file>
+        </sql>
+    </install>
+    
+	<update>
+    	<schemas>
+    		<schemapath type="mysql">sql/updates</schemapath>
+		</schemas>
+    </update>
+    
+	<uninstall>
+		<sql>
+            <file charset="utf8" driver="mysql">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+	
+	<scriptfile>script.djmediatools.php</scriptfile>
+	
+    <administration>
+    	
+    	<menu img="components/com_djmediatools/assets/icon-16-djmediatools.png">COM_DJMEDIATOOLS</menu>
+		<submenu>
+			<menu link="option=com_djmediatools&amp;view=items" alt="DJ-MediaTools/Slides" img="components/com_djmediatools/assets/icon-16-menu-slides.png">COM_DJMEDIATOOLS_SLIDES</menu>
+			<menu link="option=com_djmediatools&amp;view=categories" alt="DJ-MediaTools/Categories" img="class:category">COM_DJMEDIATOOLS_CATEGORIES</menu>
+		</submenu>
+		
+    	<files folder="administrator">
+        	<filename>djmediatools.php</filename>
+            <filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
+			<folder>assets</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>lib</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        
+    </administration>
+    
+	<config>
+		<fields>
+			<fieldset>
+				<field name="show_cat_titles" default="2" />
+				<field name="cwidth" default="200" />
+				<field name="cheight" default="150" />
+				<field name="cresizing" default="crop" />
+				<field name="cquality" default="80" />
+				<field name="show_cat_title" default="1" />
+				<field name="show_cat_desc" default="after" />
+				<field name="show_subcategories" default="after" />
+				<field name="show_album_title" default="1" />
+				<field name="show_album_desc" default="1" />
+				<field name="show_album_zoom" default="1" />
+				<field name="window_size" default="fluid" />
+				<field name="window_width" default="900" />
+				<field name="window_height" default="500" />
+				<field name="layout" default="_:slideshow" />
+				<field name="slider_type" default="left" />
+				<field name="desc_effect" default="fade" />
+				<field name="sort_by" default="1" />
+				<field name="link_image" default="1" />
+				<field name="lightbox" default="magnific" />
+				<field name="image_width" default="700" />
+				<field name="image_height" default="450" />
+				<field name="resizing" default="crop" />
+				<field name="quality" default="90" />
+				<field name="thumb_width" default="" />
+				<field name="thumb_height" default="" />
+				<field name="visible_images" default="3" />
+				<field name="space_between_images" default="1" />
+				<field name="max_images" default="50" />
+				<field name="show_thumbs" default="1" />
+				<field name="tab_indicator" default="2" />
+				<field name="tab_width" default="200" />
+				<field name="tab_height" default="50" />
+				<field name="tab_position" default="right" />
+				<field name="show_title" default="1" />
+				<field name="show_desc" default="1" />
+				<field name="show_readmore" default="0" />
+				<field name="readmore_text" default="" />
+				<field name="link_title" default="1" />
+				<field name="link_desc" default="0" />
+				<field name="limit_desc" default="200" />
+				<field name="autoplay" default="1" />
+				<field name="pause_autoplay" default="1" />
+				<field name="show_buttons" default="2" />
+				<field name="show_arrows" default="2" />
+				<field name="show_custom_nav" default="1" />
+				<field name="effect" default="Expo" />
+				<field name="effect_type" default="0" />
+				<field name="duration" default="" />
+				<field name="delay" default="" />
+				<field name="preload" default="" />
+				<field name="desc_position" default="over" />
+				<field name="desc_width" default="" />
+				<field name="desc_bottom" default="0" />
+				<field name="desc_horizontal" default="0" />
+				<field name="left_arrow" default="" />
+				<field name="right_arrow" default="" />
+				<field name="play_button" default="" />
+				<field name="pause_button" default="" />
+				<field name="arrows_top" default="50" />
+				<field name="arrows_horizontal" default="10" />
+				<field name="custom_nav_pos" default="below" />
+				<field name="custom_nav_align" default="center" />
+				<field name="loader_position" default="tl" />
+				<field name="wcag" default="1" />
+				<field name="upload_max_size" default="10240" />
+				<field name="upload_chunk_size" default="1024" />
+				<field name="upload_width" default="1600" />
+				<field name="upload_height" default="1200" />
+				<field name="upload_quality" default="90" />
+			</fieldset>
+		</fields>
+	</config>
+	
+	<files folder="site">
+		<filename>djmediatools.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>language</folder>
+		<folder>layouts</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+	
+	<media destination="djmediatools" folder="media">
+    	<folder>cache</folder>
+    	<folder>css</folder>
+    	<folder>upload</folder>
+    	<folder>djextensions</folder>
+    	<filename>index.html</filename>
+    </media>
+    
+</extension>

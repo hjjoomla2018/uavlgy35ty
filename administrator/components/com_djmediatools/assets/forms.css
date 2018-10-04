@@ -1,0 +1,67 @@
+#albumItemsWrap {
+	margin: 0 0 10px 0;
+}
+#albumItems .albumItem {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px 10px 0;
+	overflow: hidden;
+	width: 200px;
+	border: 1px solid #ddd;
+	padding: 1px;
+	cursor: move;
+}
+#albumItems .albumItem .video-icon {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: url(video.png) center center no-repeat;
+    left: 0;
+    top: 0;
+    margin: 8px;
+    position: absolute;
+    opacity: 0.8;
+} 
+#albumItems .albumItem img {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+#albumItems .editTitle,
+#albumItems .editDesc {
+	width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+#albumItems .editTitle {
+	height: calc(1.5em + 10px);
+}
+#albumItems .editDesc {
+	height: calc(3*1.5em + 10px);
+    resize: none;
+    border-top: 1px solid #ddd;
+}
+#albumItems .albumItem .delBtn {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: url(delete.png) no-repeat;
+	cursor: pointer;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease-out;
+	transition: opacity 0.2s ease-out;
+	background-color: rgba(0,0,0,0.2);
+}
+#albumItems .albumItem:hover .delBtn {
+	opacity: 0.5;
+}
+#albumItems .albumItem .delBtn:hover,
+#albumItems .albumItem .delBtn:focus {
+	opacity: 1;
+}

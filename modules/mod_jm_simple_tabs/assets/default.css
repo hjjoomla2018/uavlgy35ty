@@ -1,0 +1,142 @@
+.jmm-simple-tabs.default .nav-tabs .jmm-icon {
+	margin-right: 5px;
+}
+
+html[dir='rtl'] .jmm-simple-tabs.default .nav-tabs .jmm-icon {
+	margin-right: 0;
+	margin-left: 5px;
+}
+
+.jmm-simple-tabs.default .nav-tabs .image-2src .jmm-icon.image-hover {
+	display: none;
+}
+
+.jmm-simple-tabs.default .nav-tabs .active .image-2src .jmm-icon.image {
+	display: none;
+}
+
+.jmm-simple-tabs.default .nav-tabs .active .image-2src .jmm-icon.image-hover {
+	display: inline;
+}
+
+.jmm-simple-tabs.default .nav-tabs .jmm-icon img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+.jmm-simple-tabs.default .nav-tabs .jmm-subtitle {
+	display: block;
+	font-size: 80%;
+}
+
+.jmm-simple-tabs.default .tabs-below {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.jmm-simple-tabs.default .tabs-below .tab-content {
+	-webkit-box-ordinal-group: 2;
+	-ms-flex-order: 1;
+	order: 1;
+}
+
+.jmm-simple-tabs.default .tabs-below .nav-tabs {
+	-webkit-box-ordinal-group: 3;
+	-ms-flex-order: 2;
+	order: 2;
+}
+
+.jmm-simple-tabs.default .video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.jmm-simple-tabs.default .video-container iframe,
+.jmm-simple-tabs.default .video-container object,
+.jmm-simple-tabs.default .video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* responsive */
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li {
+	display: none;
+}
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.active,
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.prev,
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.next {
+	float: left;
+	display: block;
+	text-align: center;
+}
+
+html[dir='rtl'] .jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.active,
+html[dir='rtl'] .jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.prev,
+html[dir='rtl'] .jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.next {
+	float: right;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.active:first-child {
+	margin-left: 20%;
+}
+
+html[dir='rtl'] .jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.active:first-child {
+	margin-left: 0;
+	margin-right: 20%;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.active {
+	width: 60%;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.active > a {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.active .jmm-subtitle {
+	display: none;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.prev,
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.next {
+	width: 20%;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.prev > a > span,
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.next > a > span {
+	display: none;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.prev > a,
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.next > a {
+	position: relative;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.prev > a:before,
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.next > a:before {
+	position: relative;
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.prev > a:before {
+	content: "\00ab";
+}
+
+.jmm-simple-tabs.default .nav-tabs.nav-tabs-responsive > li.next > a:before {
+	content: "\00bb";
+}
+
+

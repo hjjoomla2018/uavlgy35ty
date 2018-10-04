@@ -1,0 +1,938 @@
+//--------------------------------------------------------------
+// Copyright (C) joomla-monster.com
+// License: http://www.joomla-monster.com/license.html Joomla-Monster Proprietary Use License
+// Website: http://www.joomla-monster.com
+// Support: info@joomla-monster.com
+//---------------------------------------------------------------
+
+// BOOTSTRAP STYLES
+//---------------------------------------------------------------
+
+// media.less
+// --------------------------
+
+.media-list > li {
+	background: none;
+	padding: 0;
+}
+
+// sprites.less
+// --------------------------
+
+//button icons
+.btn [class^="icon-"],
+.btn [class*=" icon-"] {
+	height: @baseLineHeight;
+	line-height: @baseLineHeight;
+	vertical-align: top;
+	padding: 0 2px;
+}
+
+// thumbnails.less
+// -------------------------- 
+
+.thumbnails > li {
+	background: none;
+	padding: 0;
+}
+
+// chosen script
+// -------------------------- 
+
+//chzn
+#jm-allpage {
+	.chzn-container {
+		font-size: @JMinputFontSize;
+	}
+	.chzn-container-single .chzn-single,
+	.chzn-container-multi .chzn-choices {
+		height: @JMinputHeight;
+		line-height: @JMinputHeight;
+		.border-radius(@inputBorderRadius);
+		vertical-align: middle;
+		.box-sizing (border-box);
+		font-family: inherit;
+		font-size: @JMinputFontSize;
+		font-weight: @JMbaseFontWeight;
+		padding: 0 ((@JMinputPadding*2) + 8) 0 @JMinputPadding;
+		vertical-align: middle;
+		border: 1px solid @JMinputBorder;
+		color: @JMinputFontColor;
+		background: @JMinputBackground;
+		.box-shadow(none);
+	}
+	.chzn-container-active.chzn-with-drop .chzn-single {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.chzn-container-multi .chzn-choices {
+		height: auto;
+		width: 100%;
+		padding: 11px 5px;
+		.search-field {
+			line-height: normal;
+			&:first-child input[type="text"] {
+				padding: 0 (@JMinputPadding - 5);
+			}
+		}
+	}
+	.chzn-container-multi .chzn-choices li.search-field input[type="text"] {
+		padding: 0;
+		height: 24px;
+		outline: 0;
+		border: 0 !important;
+		background: transparent !important;
+		box-shadow: none;
+		color: @JMinputFontColor;
+		font-family: inherit;
+	}
+	.chzn-container-single .chzn-single span {
+		margin: 0;
+	}
+	.chzn-container-single .chzn-single div {
+		left: auto;
+		right: 20px;
+		width: 8px;
+	}
+	.chzn-container-single .chzn-single div b {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: none;
+		margin-top: 0;
+		display: inline-block;
+		vertical-align: middle;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: 14px;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		line-height: @JMinputHeight;
+		&:before {
+			content: "\f107";
+		}
+	}
+	.chzn-container .chzn-drop {
+		background: @JMinputBackground;
+		box-shadow: inset 0 0 0 1px @JMinputBorder;
+		.border-radius(0);
+		border: 0;
+		margin: -1px 0 0;
+	}
+	.chzn-container .chzn-results {
+		color: @JMinputFontColor;
+	}
+	.chzn-container .chzn-results li {
+		display: block;
+		&.highlighted {
+			background: none;
+			color: @JMstyle;
+		}
+	}
+	.chzn-container .chzn-results li.no-results {
+		background: @JMinputBorder;
+		color: @JMinputFontColor;
+	}
+	.chzn-container-single .chzn-search input[type="text"] {
+		border: 1px solid @JMinputBorder;
+		background-color: @JMinputBackground;
+		font-family: inherit;
+	}
+	.chzn-container-multi .chzn-choices li.search-choice {
+		border: 1px solid @JMinputBorder;
+		background: @JMinputBackground;
+		font-family: inherit;
+		.border-radius(@inputBorderRadius);
+		color: @JMinputFontColor;
+		.box-shadow(none);
+	}
+}
+
+// JOOMLA COMPONENT
+//---------------------------------------------------------------
+
+//page headings
+h1.componentheading, //extension headings support
+.tag-category > h1, //tag category
+.page-header > h1, //global
+.content-category > h1, //category-list
+.categories-list > h1, //categories-list
+.blog-featured > h1, //featured contacts
+.contact-category > h1, //contact category
+.contact > h1, //single contact
+.newsfeed-category > h1, //newsfeed category
+h1.page-title, //search form
+.finder > h1, //smart search
+.weblink-category > h1, //weblink category
+.edit > h1, //submit weblink 
+.blog > h2 //blog category
+{
+	font-size: @JMcomponentHeadingFontSize;
+	font-family: @JMcomponentHeadingFontFamily;
+	font-weight: @JMcomponentHeadingFontWeight;
+	line-height: round(@JMcomponentHeadingFontSize * 1.15);
+	margin: 0 0 @JMverticalSpace;
+}
+
+//single article
+.item-page .page-header > h2 {
+	font-size: @JMarticleTitleFontSize;
+	font-family: @JMarticleTitleFontFamily;
+	font-weight: @JMarticleTitleFontWeight;
+	color: @JMarticleTitleFontColor;
+	line-height: round(@JMarticleTitleFontSize * 1.15);
+	margin: 0 0 40px;
+	a {
+		color: inherit;
+		&:hover {
+			text-decoration: none;
+			color: @JMarticleTitleFontColorHover;
+		}
+	}
+}
+
+//component headings (eg. blog)
+h2.item-title, //featured
+.page-header > h2, //global
+.content-category > h2, //category-list category
+.cat-children > h3, //category children
+.contact-category > h2, //contact category
+.weblink-category > h2, //weblink category
+.newsfeed > h2, //single newsfeed
+.newsfeed-category > h2, //newsfeed category 
+.weblink-category > h2, //weblink category
+.contact > h3 //contact headings
+{
+	font-size: @JMblogTitleFontSize;
+	font-family: @JMblogTitleFontFamily;
+	font-weight: @JMblogTitleFontWeight;
+	line-height: round(@JMblogTitleFontSize * 1.15);
+	margin: 0 0 25px;
+	a {
+		color: inherit;
+		&:hover {
+			text-decoration: none;
+			color: @JMblogTitleFontColorHover;
+		}
+	}
+}
+
+//accordion etc. headings
+h3.page-header {
+	font-size: 1em;
+	line-height: @JMbaseLineHeight;
+	display: inline-block;
+	width: 100%;
+	border-bottom: 1px solid @JMborder;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	> .btn-mini {
+		padding: 3px 6px;
+		[class^="icon-"],
+		[class*=" icon-"] {
+			margin-top: 0;
+		}
+	}
+	> .badge {
+		margin: 0 5px;
+		vertical-align: middle;
+	}
+}
+
+//article dropdown
+.icons .btn.dropdown-toggle {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+//hides severals labels in Joomla
+.element-invisible {
+	display: none !important;
+}
+
+//article details  
+dl.article-info {
+	margin: 0 0 40px;
+	color: @JMarticleInfoFontColor;
+	dd {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 5px 0 0;
+		line-height: 1.1;
+		&:last-child {
+			margin: 0;
+		}
+		[class^="icon-"], [class*=" icon-"] {
+			display: none;
+		}
+	}
+	~ dl.article-info {
+		margin: 0;
+	}
+}
+
+.article-info-term {
+	display: none;
+}
+
+//rating and voting
+.content_rating {
+	margin-bottom: 10px;
+	img {
+		margin: 0;
+	}
+}
+
+.content_vote {
+	label {
+		margin-right: 5px;
+	}
+}
+
+//categories 
+.categories-list {
+	.collapse {
+		padding: 0 0 0 @JMbaseSpace;
+	}
+}
+
+//archived articles
+#archive-items .createdby {
+	margin: 0 0 15px;
+}
+
+//category blog
+//article separator
+.items-leading div[class*="leading-"],
+.items-row .item {
+	.cf();
+}
+
+.items-row .item,
+.items-leading div[class*="leading-"]{
+	background: @JMblogBackground;
+	border: 1px solid @JMborder;
+	color: @JMblogFontColor;
+	padding: (@JMverticalSpace * 1.5);
+	position: relative;
+	.page-header {
+		a {
+			color: @JMblogTitleFontColor;
+			&:hover {
+				text-decoration: none;
+				color: @JMblogTitleFontColorHover;
+			}
+		}
+	}
+	.pull-left.item-image {
+		margin-top: -((@JMverticalSpace * 1.5) + 1);
+		margin-left: -((@JMverticalSpace * 1.5) + 1);
+		margin-bottom: -((@JMverticalSpace * 1.5) + 1);
+	}
+	.pull-right.item-image {
+		margin-top: -((@JMverticalSpace * 1.5) + 1);
+		margin-right: -((@JMverticalSpace * 1.5) + 1);
+		margin-bottom: -((@JMverticalSpace * 1.5) + 1);
+	}
+	.pull-none.item-image img {
+		margin-top: -((@JMverticalSpace * 1.5) + 1);
+		margin-left: -((@JMverticalSpace * 1.5) + 1);
+		margin-right: -((@JMverticalSpace * 1.5) + 1);
+	}
+	.article-info {
+		color: @JMblogArticleInfo;
+	}
+	p.readmore {
+		margin-top: 25px;
+		height: round(@JMreadmoreFontSize * @JMbaseLineHeight);
+		.btn {
+			position: absolute;
+			bottom: (@JMverticalSpace * 1.5);
+		}
+	}
+	.jm-article-wrapper {
+		overflow: hidden;
+	}
+}
+
+.items-leading div[class*="leading-"] {
+	border: 2px solid @JMblogLeadingBorder;
+	.pull-left.item-image {
+		margin-top: -((@JMverticalSpace * 1.5) + 2);
+		margin-left: -((@JMverticalSpace * 1.5) + 2);
+		margin-bottom: -((@JMverticalSpace * 1.5) + 2);
+	}
+	.pull-right.item-image {
+		margin-top: -((@JMverticalSpace * 1.5) + 2);
+		margin-right: -((@JMverticalSpace * 1.5) + 2);
+		margin-bottom: -((@JMverticalSpace * 1.5) + 2);
+	}
+	.pull-none.item-image img {
+		margin-top: -((@JMverticalSpace * 1.5) + 2);
+		margin-left: -((@JMverticalSpace * 1.5) + 2);
+		margin-right: -((@JMverticalSpace * 1.5) + 2);
+	}
+}
+
+.items-row:not(.cols-1) .item {
+	.pull-left.item-image,
+	.pull-right.item-image,
+	.pull-none.item-image {
+		text-align: center;
+		float: none;
+		margin-left: -((@JMverticalSpace * 1.5) + 1);
+		margin-right: -((@JMverticalSpace * 1.5) + 1);
+		margin-bottom: (@JMverticalSpace * 1.5);
+		width: calc(100% ~"+" (@JMverticalSpace * 3) + 2);
+		max-width: none;
+	}
+}
+
+.items-leading div[class*="leading-"],
+.items-row {
+	margin-bottom: (@JMverticalSpace * 1.5);
+}
+
+.items-leading .leading:last-child,
+.items-row:last-child {
+	margin-bottom: 0;
+}
+
+.items-more,
+.content-links {
+	margin: 0 0 (@JMverticalSpace * 1.5);
+}
+
+//single article
+
+.item-page.article-ms {
+	padding-left: 130px;
+	padding-right: 130px;
+	font-size: round(@JMbaseFontSize * 1.38);
+	line-height: round((@JMbaseFontSize * 1.38) * 1.66);
+	.article-info {
+		font-size: round(@JMbaseFontSize * 1.23);
+	}
+	.item-image {
+		max-width: none;
+		margin-left: -130px;
+		margin-right: -130px;
+	}
+}
+
+//article image
+.item-image {
+	margin-bottom: (@JMverticalSpace * 1.5);
+	max-width: 100%;
+}
+
+figure.pull-left,
+figure.pull-right,
+figure.pull-center {
+	max-width: 100%;
+	margin: 0 0 (@JMverticalSpace * 1.5);
+}
+
+.pull-none.item-image {
+	text-align: center;
+}
+
+.pull-left.item-image,
+figure.pull-left {
+	margin-right: (@JMverticalSpace * 1.5);
+}
+
+.pull-right.item-image,
+figure.pull-right {
+	margin-left: (@JMverticalSpace * 1.5);
+}
+
+.pull-center {
+	text-align: center;
+}
+
+.category-desc {
+	margin: 0 0 @JMverticalSpace;
+}
+
+//image caption
+div.img_caption {
+	margin: 0 auto;
+}
+
+p.img_caption {
+	text-align: center;
+	background: @grayLighter;
+	padding: 5px;
+	margin: 0;
+}
+
+//readmore
+.readmore {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	padding: 0;
+	font-size: @JMreadmoreFontSize;
+	font-weight: @JMreadmoreFontWeight;
+	line-height: @JMbaseLineHeight;
+	.transition(all 0.2s ease-in);
+	color: @JMreadmoreFontColor;
+	background: @JMreadmoreBackground;
+	border: 0;
+	text-transform: uppercase;
+	&:hover,
+	&:focus {
+		color: @JMreadmoreFontColorHover;
+		text-decoration: underline;
+		background: none;
+	}
+}
+
+//blog readmore
+p.readmore {
+	display: block;
+	margin: 0;
+	&:hover {
+		text-decoration: none;
+	}
+	.btn {
+		.readmore();
+	}
+}
+
+.mod-articles-category-readmore a {
+	.readmore();
+}
+
+//hide readmore icon
+p.readmore a.btn .icon-chevron-right {
+	display: none;
+}
+
+//archived articles
+.archive .filters {
+	margin-bottom: @JMverticalSpace;
+}
+
+//featured contact 
+fieldset.filters {
+	margin: 0 0 20px;
+}
+
+//contact categories
+.categories-list ul li {
+	h4 {
+		font-size: 1em;
+		line-height: @JMbaseLineHeight;
+		font-weight: bold;
+	}
+	small.category-desc {
+		font-size: 1em;
+		line-height: @JMbaseLineHeight;
+	}
+}
+
+//contact single category
+ul.list-striped > li {
+	background: none;
+	border-bottom: 1px solid @JMborder;
+	padding: 10px;
+}
+
+//weblinks single category
+.weblink-count {
+	display: inline-block;
+	width: 100%;
+	dt,
+	dd {
+		float: left;
+	}
+}
+
+//single news feed
+.newsfeed > ol > li > h3 {
+	font-size: 1em;
+}
+
+.newsfeed-count {
+	dd, dt {
+		display: inline-block;
+	}
+}
+
+//registration fields star
+strong.red,
+span.star {
+	color: #ff0000;
+}
+
+//user profile
+.profile {
+	ul.btn-toolbar li {
+		background: none;
+		padding: 0;
+	}
+	.btn-toolbar + fieldset {
+		clear: both;
+	}
+}
+
+//single contact
+.contact {
+	.contact-form {
+		input[type="text"],
+		input[type="email"],
+		textarea {
+			width: 100%;
+			max-width: 400px;
+		}
+	}
+	dl.contact-address {
+		margin: @JMverticalSpace 0;
+	}
+	.thumbnail {
+		border: none;
+		.box-shadow(none);
+	}
+}
+
+//search component
+.phrases-box,
+fieldset.only {
+	padding: 0 0 20px;
+	label {
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+
+.btn {
+	.icon-search.icon-white {
+		color: inherit;
+	}
+}
+
+fieldset.phrases {
+	padding-bottom: 20px;
+}
+
+//tagged items
+.tag-category .category {
+	li + li {
+		margin: @JMverticalSpace 0 0;
+	}
+	> li > h3 {
+		font-size: 1em;
+		margin: 0 0 20px;
+	}
+}
+
+//tag-category
+.tag-category {
+	.form-inline label {
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+	> h2 {
+		margin-bottom: @JMverticalSpace;
+	}
+	form > ul > li > h3 {
+		margin-bottom: @JMverticalSpace;
+	}
+	form > ul > li {
+		padding: 0;
+		background: none !important;
+	}
+	.tag-body {
+		margin: @JMverticalSpace 0;
+		display: block;
+	}
+	.thumbnails > li,
+	.category > li {
+		background: none;
+		padding: 0;
+	}
+	.thumbnails > li h3 {
+		font-size: 1em;
+	}
+}
+
+//joomla tooltip
+body .tip-wrap {
+	.tip {
+		max-width: 300px;
+		padding: 3px 8px;
+		color: @tooltipColor;
+		text-align: center;
+		text-decoration: none;
+		background: none;
+		background-color: @tooltipBackground;
+		.border-radius (@baseBorderRadius);
+		font-weight: normal;
+		z-index: 9999;
+		.opacity(100);
+		.box-shadow(none);
+		border: none;
+	}
+	.tip-top {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-color: transparent;
+		border-style: solid;
+		top: -@tooltipArrowWidth;
+		left: 50%;
+		margin-left: -@tooltipArrowWidth;
+		border-width: 0 @tooltipArrowWidth @tooltipArrowWidth;
+		border-bottom-color: @tooltipArrowColor;
+		.opacity(80);
+	}
+	.tip-title {
+		font-weight: bold;
+		color: @tooltipColor;
+
+	}
+	.tip-text {
+		font-weight: normal;
+		color: @tooltipColor;
+	}
+}
+
+//joomla edit button
+.jmodedit {
+	z-index: 9999;
+	line-height: 1 !important;
+	padding: 0 !important;
+	background: none !important;
+	border: none !important;
+	color: @JMstyle !important;
+	&:hover {
+		color: jmdarken(@JMstyle, 10%) !important;
+	}
+}
+
+//article index
+.article-index {
+	margin-left: @JMbaseSpace;
+	+ .pagenavcounter {
+		margin-bottom: 10px;
+	}
+	.nav {
+		min-width: 150px;
+	}
+}
+
+//calendar
+.calendar table {
+	border-collapse: separate;
+}
+
+//template options
+.jm-alert {
+	display: block;
+}
+
+#templates-form .form-horizontal .control-label {
+	float: none;
+	width: auto;
+	text-align: inherit;
+}
+
+#templates-form .form-horizontal .controls {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+//color picker
+#jm-allpage .minicolors-theme-bootstrap .minicolors-input {
+	line-height: 1.5;
+	height: auto;
+	width: auto;
+}
+
+// JOOMLA MODULES
+//---------------------------------------------------------------
+
+//newsflash module
+.newsflash {
+	.newsflash-title {
+		font-weight: normal;
+		font-size: 1em;
+		margin: 10px 0 5px;
+		clear: both;
+		&:first-child {
+			margin: 0 0 5px;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.newsflash-horiz {
+	li + li {
+		margin: 10px 0 0;
+	}
+}
+
+//archive / latest news
+.archive-module > li,
+.latestnews > li {
+	a {
+		color: @JMbaseFontColor;
+	}
+}
+
+//article categories
+.categories-module {
+	li {
+		h1, h2, h3, h4, h5, h6 {
+			font-size: round(@JMbaseFontSize * 1.23);
+			font-family: @JMmoduleTitleFontFamily;
+			font-weight: @JMmoduleTitleFontWeight;
+			text-transform: uppercase;
+			line-height: 1.1;
+			a {
+				color: @JMbaseFontColor;
+			}
+		}
+	}
+	li + li {
+		margin: @JMverticalSpace 0 0;
+	}
+}
+
+//article category
+.category-module {
+	margin: 0;
+	li {
+		p {
+			line-height: @JMbaseLineHeight;
+			margin: 0 0 5px;
+		}
+	}
+	li > a {
+		display: block;
+		font-weight: normal;
+	}
+	span {
+		display: inline-block;
+		margin: 10px 0 0;
+	}
+}
+
+//login module
+#form-login-username,
+#form-login-password {
+	label.element-invisible {
+		display: none;
+	}
+}
+
+#login-form ul li .icon-arrow-right {
+	display: none;
+}
+
+//smart search
+#mod-finder-searchform {
+	margin: 0;
+	a {
+		display: block;
+		margin-top: 5px;
+	}
+}
+
+//search module
+.form-search {
+	label.finder {
+		padding: 0 10px 0 0;
+	}
+}
+
+//feed
+.feed h2 ~ ul.newsfeed {
+	margin-top: 10px;
+}
+
+//weblinks
+.weblinks li {
+	margin-top: 5px;
+	&:first-child {
+		margin: 0;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+//search
+.form-search {
+	.btn {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.search .button[type='image'] {
+	padding: 0;
+}
+
+//languages module
+.mod-languages ul {
+	list-style: none;
+	li {
+		background: none;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+}
+
+// SYSTEM MESSAGE
+//---------------------------------------------------------------
+
+#jm-system-message .alert {
+	margin: @JMverticalSpace 0;
+	a {
+		text-decoration: none;
+	}
+}
+
+// ERROR PAGE
+//---------------------------------------------------------------
+
+//error page
+.jm-error-page {
+	text-align: center;
+	> h1 {
+		font-size: 80px;
+		font-weight: @JMbaseFontWeight;
+		line-height: 1;
+	}
+	> h2 {
+		font-size: 40px;
+		font-weight: @JMbaseFontWeight;
+		line-height: 1;
+		margin: 0 0 (@JMverticalSpace * 2);
+	}
+	> p {
+		margin: 0 0 (@JMverticalSpace * 2);
+	}
+	input.inputbox {
+		max-width: 260px;
+	}
+	.moduletable {
+		margin: 0 0 (@JMverticalSpace * 2);
+	}
+}
+
+//tooltip fix
+
+label.hasTooltip,
+label.hasPopover {
+	display: inline-block !important;
+}

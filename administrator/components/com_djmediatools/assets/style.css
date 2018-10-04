@@ -1,0 +1,379 @@
+div.cpanel div.icon a, div#cpanel div.icon a {
+    -moz-transition-duration: 0.2s;
+    -moz-transition-property: all;
+}
+.cpanel-left .cpanel{
+	padding: 15px;
+}
+
+/*
+ * Licence Manager
+ */
+.djlic_box{
+	width: 300px;
+	margin: 20px 30px 20px 0 ;
+	padding-top:180px;
+	background: #f4f4f4 url(images/lic_icon.png) center 15px no-repeat;
+}
+.cpanel .djlic_box .djlic_title{
+	text-align: center;
+	font-size: 24px;
+	color:#444444;
+	margin-bottom:7px;
+}
+.cpanel .djlic_box .djlic_separator{
+	height:1px;
+	margin:15px 0;
+	background: url(images/lic_line.gif) center no-repeat;
+	width:100%;
+	float:left;
+}
+.cpanel .djlic_box .djlic_line{
+	font-size: 12px;
+	text-transform: uppercase;
+	color:#7e7e7e;	
+	line-height: 26px;
+	text-align: right;
+}
+.cpanel .djlic_box .djlic_line.djll4{
+	text-align: center;
+}
+.cpanel .djlic_box .djlic_line.djll4 a{
+	color:#387ba5;
+	font-size: 15px;
+	text-decoration: none;
+	font-weight: bold;
+}
+.cpanel .djlic_box .djlic_line.djll4.update a{
+	color:#ed1c24;
+}
+.cpanel .djlic_box .djlic_line span{
+	display: inline;
+	color:#444444;
+	font-weight: bold;
+	width:45%;
+	text-align: left;
+	margin-left:5%;
+	display: inline-block;
+	float:right;
+}
+.cpanel .djlic_box .djlic_line.djll1 span{
+	font-size: 15px;
+}
+.cpanel .djlic_box .djlic_line.djll2 span{
+	font-size: 14px;
+}
+.cpanel .djlic_box .djlic_line.djll3 span{
+	font-size: 15px;
+}
+
+.cpanel .djlic_box .djlic_icon {
+	position: absolute;
+	width:22px;
+	height:22px;
+	margin-left: -11px;
+	top:-10px;
+	left:50%;
+}
+
+.cpanel .djlic_box .djlic_invalid {
+	margin-top:20px;
+	background: #fdebe7;
+	border: 1px solid #f09f8d;
+	border-radius: 0px;
+	padding: 25px 10px 10px 10px;
+	color:#e8370f;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+
+.cpanel .djlic_box .djlic_invalid .djlic_iline1{
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+.cpanel .djlic_box .djlic_invalid .djlic_iline2{
+	font-size: 14px;
+	color:#ed1c24;
+	margin: 6px 10px;
+	display:block;	
+	font-weight: normal;
+}
+.cpanel .djlic_box .djlic_invalid .djlic_iline3{
+	font-size: 9px;
+	text-transform: uppercase;
+	display:block;
+}
+.cpanel .djlic_box .djlic_invalid .djlic_icon{
+	background: url(images/lic_icon_invalid.gif) top left no-repeat;
+}
+
+.cpanel .djlic_box .djlic_valid {
+	margin-top: 20px;
+	background: #c8efbb;
+	border: 1px solid #93c183;
+	padding: 25px 10px 10px 10px;
+	color:#73b172;
+	text-align: center;
+	display: block;
+	position: relative;
+	font-size: 14px;
+	text-transform: uppercase;
+	line-height: 1.8;
+}
+.cpanel .djlic_box .djlic_valid .djlic_icon{
+	background: url(images/lic_icon_valid.gif) top left no-repeat;
+}
+
+.cpanel .djlic_box .djlic_expired {
+	margin-top:20px;
+	padding:20px;
+}
+.cpanel .djlic_box .djlic_expired_in{
+	background: #fff7db;
+	border: 1px solid #FF9F0D;
+	border-radius: 0px;
+	padding: 25px 10px 10px 10px;
+	color:#FF9F0D;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+.cpanel .djlic_box .djlic_expired .djlic_icon{
+	background: url(images/lic_icon_expired.gif) top left no-repeat;
+}
+.cpanel .djlic_box .djlic_expired a:not(.btn){
+	display:block;
+	color:#FF9F0D;
+}
+
+.cpanel .djlic_box .djlic_expired .djlic_iline1{
+	font-weight: normal;
+	display: block;
+	text-transform: uppercase;
+}
+
+.cpanel .djlic_box .djlic_expired .djlic_iline2 {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 6px 10px;
+}
+.cpanel .djlic_box .djlic_expired .djlic_iline4{
+	margin: 0px 0 10px;
+	display: block; 
+	font-size: 15px;
+}
+.cpanel .djlic_box .djlic_expired .djlic_iline3{
+	margin: 15px 0 5px;
+	display: block; 
+	text-transform: uppercase;
+}
+.cpanel .djlic_box .djlic_expired .djlic_iline5 {
+    font-size: 9px;
+    text-transform: uppercase;
+    line-height: 11px;
+}
+.cpanel .djlic_box .djlic_expired .djlic_iline6{
+	margin-bottom:10px;
+	display: block;
+}
+
+
+a.item-thumb {
+	display: block;
+	position: relative;
+	text-align: center;
+}
+.video-icon {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: url(video.png) center center no-repeat;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    position: absolute;
+    top: 50%;
+    opacity: 0.8;
+}
+.albumItem .video-icon {
+	top: 0;
+	left: 0;
+	margin: 8px;
+} 
+a.item-thumb:hover .video-icon {
+	opacity: 1;
+} 
+
+div.plgParams {
+	background: #f5f5f5;
+	border: 1px solid #ccc;
+	padding: 15px 20px 1px 20px;
+	margin: 10px 0;
+	clear:both;
+}
+div.plgParams.msg {
+	border:0;
+	padding:0;
+	background: none;
+}
+div#plgParams_component {
+	padding: 5px 0;
+	background: 0;
+	border: 0;
+}
+img.ajax-loader {
+	margin: 5px;
+}
+.djvideo_preview {
+	margin: 10px 0 0;
+}
+.djvideo_preview img {
+	margin: 0 0 0 10px;
+	vertical-align: top;
+}
+
+span.djinlineinfo {
+	display: inline-block;
+	color: #aaa;
+	font-weight: bold;
+	margin: 0 10px;
+	padding: 3px;
+	vertical-align: top;
+}
+
+#albumItemsWrap {
+	margin: 0 0 10px 0;
+}
+#albumItems .albumItem {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px 10px 0;
+	overflow: hidden;
+	width: 200px;
+	border: 1px solid #ddd;
+	padding: 1px;
+	cursor: move;
+}
+#albumItems .albumItem img {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+#albumItems .editTitle,
+#albumItems .editDesc {
+	width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+#albumItems .editTitle {
+	height: calc(1.5em + 10px);
+}
+#albumItems .editDesc {
+	height: calc(3*1.5em + 10px);
+    resize: none;
+    border-top: 1px solid #ddd;
+}
+#albumItems .albumItem .delBtn {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: url(delete.png) no-repeat;
+	cursor: pointer;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease-out;
+	transition: opacity 0.2s ease-out;
+	background-color: rgba(0,0,0,0.2);
+}
+#albumItems .albumItem:hover .delBtn {
+	opacity: 0.5;
+}
+#albumItems .albumItem .delBtn:hover,
+#albumItems .albumItem .delBtn:focus {
+	opacity: 1;
+}
+
+.chzn-container {
+	min-width: 220px;
+}
+
+.djfolderlist ul {
+	margin: 10px 0;
+	padding: 10px;
+	border: 1px solid #ebebeb;
+	background: #f7f7f7;
+}
+.djfolderlist ul li {
+	list-style: none outside;
+	display: inline-block;
+}
+.djfolderlist ul li a {
+	display: inline-block;
+	width: 200px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+.djfolderlist ul li a:hover {
+	background: #e3e3e3;
+	text-decoration: none;
+}
+
+.plupload .ui-icon-confirm, .ui-icon-alert {
+	margin: 0 !important;
+}
+
+a.button {
+    background-color: #F5F5F5;
+    border-color: #BBBBBB #BBBBBB #A2A2A2;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 2px;
+    padding: 2px 8px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+}
+a.button:hover {
+	background-color: #E6E6E6;
+    color: #333333;
+    text-decoration: none;
+}
+
+.lic_manager button .djspin {
+	margin-right: 10px;
+}
+
+.djspin {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

@@ -1,0 +1,161 @@
+.jmm-add-features.default .jmm-items {
+	margin: -15px;
+}
+
+.jmm-add-features.default .jmm-item {
+	float: left;
+	padding: 15px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html[dir='rtl'] .jmm-add-features.default .jmm-item {
+	float: right;
+}
+
+.jmm-add-features.default .jmm-icon {
+	font-size: 30px;
+	color: inherit;
+	text-align: center;
+}
+
+.jmm-add-features.default.left .jmm-item-in,
+.jmm-add-features.default.right .jmm-item-in {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.jmm-add-features.default.above .jmm-icon {
+	padding: 0 0 20px;
+}
+
+.jmm-add-features.default.left .jmm-icon {
+	padding-right: 30px;
+}
+
+html[dir='rtl'] .jmm-add-features.default.left .jmm-icon {
+	padding-right: 0;
+	padding-left: 30px;
+}
+
+.jmm-add-features.default.right .jmm-icon {
+	padding-left: 30px;
+}
+
+html[dir='rtl'] .jmm-add-features.default.right .jmm-icon {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+.jmm-add-features.default .jmm-icon a {
+	color: inherit;
+}
+
+.jmm-add-features.default.jmm-icon img {
+	max-width: 100%;
+	height: auto;
+}
+
+.jmm-add-features.default .jmm-title {
+	font-weight: bold;
+	line-height: 1.1;
+}
+
+.jmm-add-features.default .jmm-title a {
+	font-weight: normal;
+}
+
+.jmm-add-features.default .jmm-title + .jmm-text {
+	margin-top: 15px
+}
+
+.jmm-add-features.default .jmm-button {
+	margin-top: 45px
+}
+
+@media (max-width: 767px) {
+	.jmm-add-features.default.left .jmm-item-in,
+	.jmm-add-features.default.right .jmm-item-in {
+		display: block;
+	}
+	.jmm-add-features.default.left .jmm-icon,
+	.jmm-add-features.default.right .jmm-icon {
+		padding: 0 0 20px;
+	}
+}
+
+.jmm-add-features.default .sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+.jmm-add-features.default .jmm-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.jmm-add-features.default .rows-1 > div > .jmm-item {
+	width: 100%;
+}
+
+.jmm-add-features.default .rows-2 > div > .jmm-item {
+	width: 50%;
+}
+
+.jmm-add-features.default .rows-3 > div > .jmm-item {
+	width: 33.33%;
+}
+
+.jmm-add-features.default .rows-4 > div > .jmm-item {
+	width: 25%;
+}
+
+.jmm-add-features.default .rows-5 > div > .jmm-item {
+	width: 20%;
+}
+
+.jmm-add-features.default .rows-6 > div > .jmm-item {
+	width: 16.66%;
+}
+
+.jmm-add-features.default .rows-7 > div > .jmm-item {
+	width: 14.28%;
+}
+
+.jmm-add-features.default .rows-8 > div > .jmm-item {
+	width: 12.5%;
+}
+
+.jmm-add-features.default .rows-9 > div > .jmm-item {
+	width: 11.11%;
+}
+
+.jmm-add-features.default .rows-10 > div > .jmm-item {
+	width: 10%;
+}
+
+.jmm-add-features.default .rows-11 > div > .jmm-item {
+	width: 9.09%;
+}
+
+.jmm-add-features.default .rows-12 > div > .jmm-item {
+	width: 8.33%;
+}
+
+@media (max-width: 767px) {
+	.jmm-add-features.default [class*='rows-'] > div > .jmm-item {
+		width: 100%;
+	}
+}
+

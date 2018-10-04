@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" 
+				readonly="true" class="readonly" />
+		
+		<field name="name" type="text" class="inputbox"
+				size="40" label="COM_DJCATALOG2_NAME"
+				description="COM_DJCATALOG2_NAME" required="true" />
+		
+		<field name="plugin" type="plugins" class="inputbox" required="true"
+			size="40" label="COM_DJCATALOG2_PLUGIN"
+			description="COM_DJCATALOG2_PLUGIN" folder="djcatalog2delivery"/>
+		
+		<field name="price" type="text" class="inputbox validate-price"
+			size="40" label="COM_DJCATALOG2_PRICE"
+			description="COM_DJCATALOG2_PRICE"  
+		/>
+		
+		<!-- <field name="tax_rate_id" type="sql" class="inputbox" label="COM_DJCATALOG2_TAX_RATE" default="0"
+		    query="SELECT id, concat(name, ' [', ROUND(value,2), ']') as name FROM #__djc2_tax_rates ORDER BY value desc" key_field="id" value_field="name" required="true" />-->
+		
+		<field name="tax_rule_id" type="sql" class="inputbox" label="COM_DJCATALOG2_TAX_RATE" default="0"
+		    query="SELECT id, concat(name, ' [', ROUND(value,2), ']') as name FROM #__djc2_vat_rules ORDER BY value desc" key_field="id" value_field="name" />
+		
+		<field name="free_amount" type="text" class="inputbox validate-price"
+			size="40" label="COM_DJCATALOG2_DELIVERY_FREE_AMOUNT"
+			description="COM_DJCATALOG2_DELIVERY_FREE_AMOUNT"  
+		/>
+		
+		<field
+			name="published"
+			type="list"
+			label="COM_DJCATALOG2_PUBLISHED"
+			description="COM_DJCATALOG2_PUBLISHED"
+			class="inputbox"
+			size="1"
+			default="1">
+			<option
+				value="1">JPUBLISHED</option>
+			<option
+				value="0">JUNPUBLISHED</option>
+		</field>
+		
+		<field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL" description="JFIELD_ACCESS_DESC" size="1" />
+		
+		<field name="countries" type="djccountry" multiple="true" default="" label="COM_DJCATALOG2_AVAILABLE_FOR_COUNTRIES" description="COM_DJCATALOG2_AVAILABLE_FOR_COUNTRIES_DESC" />
+		<field name="postcodes" type="text" default="" label="COM_DJCATALOG2_POST_CODES_RANGE" hint="COM_DJCATALOG2_POST_CODES_RANGE_PH" description="COM_DJCATALOG2_POST_CODES_RANGE_DESC" />
+		
+		<field
+			name="shipping_details"
+			type="list"
+			label="COM_DJCATALOG2_SHIPPING_DETAILS"
+			description="COM_DJCATALOG2_SHIPPING_DETAILS_DESC"
+			class="inputbox" default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="description" type="editor" class="inputbox"
+			label="COM_DJCATALOG2_DESCRIPTION" description="COM_DJCATALOG2_DESCRIPTION"
+			filter="JComponentHelper::filterText"
+			buttons="false" />
+	</fieldset>
+	<fields name="params"></fields>
+</form>

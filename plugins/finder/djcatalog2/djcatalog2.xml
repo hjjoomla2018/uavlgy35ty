@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="finder" method="upgrade">
+	<name>plg_finder_djcatalog2</name>
+	<author>DJ-Extensions.com</author>
+	<creationDate>January 2016</creationDate>
+	<copyright>Copyright (C) 2010-2016 DJ-Extensions.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>1.2</version>
+	<description>PLG_FINDER_DJCATALOG2_DESCRIPTION</description>
+	<files>
+		<filename plugin="djcatalog2">djcatalog2.php</filename>
+		<filename>index.html</filename>
+		<!-- <folder>language</folder> -->
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_finder_djcatalog2.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_finder_djcatalog2.sys.ini</language>
+	</languages>
+</extension>

@@ -1,0 +1,667 @@
+//--------------------------------------------------------------
+// Copyright (C) joomla-monster.com
+// License: http://www.joomla-monster.com/license.html Joomla-Monster Proprietary Use License
+// Website: http://www.joomla-monster.com
+// Support: info@joomla-monster.com
+//---------------------------------------------------------------
+
+//import DJ-Catalog LTR Theme
+
+@import "djcatalog.less";
+
+//---------------------------------------------------------------
+// DJCATALOG2 RTL
+//---------------------------------------------------------------
+
+html[dir='RTL'] {
+	//RTL target
+
+	// stock
+
+	.djc_in_stock {
+		&:before {
+			margin-right: 0;
+			margin-left: 5px;
+		}
+	}
+
+	.djc_out_stock {
+		&:before {
+			margin-right: 0;
+			margin-left: 5px;
+		}
+	}
+
+	#djcatalog .djc_category_info,
+	#djcatalog .djc_producer_info,
+	#djcatalog .djc_sku,
+	#djcatalog .djc_author,
+	#djcatalog .djc_date,
+	#djcatalog .djc_hits,
+	#djcatalog .djc_location,
+	div.mod_djc_items .djc_category_info,
+	div.mod_djc_items .djc_producer_info,
+	div.mod_djc_items .djc_price,
+	div.mod_djc_items .djc_contact {
+		span, a {
+			display: inline-block;
+		}
+	}
+
+	#djcatalog .djc_price .djc_price_unit,
+	#djcatalog .djc_price .djc_price_value {
+		display: inline-block;
+	}
+
+	.djc_comments .fb-comments iframe {
+		position: relative !important;
+	}
+
+	.addthis_toolbox {
+		float: right;
+		direction: ltr;
+	}
+
+	.djc_category_counter {
+		display: inline-block;
+	}
+
+	//ORIGINAL THEME
+	//---------------------------------------------------------------
+
+	// Common elements
+	// --------------------------
+
+	//rss
+
+	#djcatalog > a.djc_rss_link {
+		text-align: left;
+	}
+
+	// add to cart
+
+	#djcatalog {
+		.djc_addtocart {
+			.djc_qty_dec {
+				margin-right: 0;
+				margin-left: -1px;
+			}
+			.djc_qty_inc {
+				border-radius: @baseBorderRadius 0 0 @baseBorderRadius;
+			}
+			.djc_addtocart_btn,
+			.djc_addtoquote_btn {
+				float: right;
+			}
+		}
+	}
+
+	// Subcategories
+	// --------------------------
+
+	#djcatalog {
+		.djc_subcategory {
+			float: right;
+		}
+	}
+
+	// Categories
+	// --------------------------
+
+	#djcatalog {
+		.djc_category .djc_thumbnail {
+			float: right;
+		}
+	}
+
+	// Filters
+	// --------------------------
+
+	#djcatalog .djc_filters {
+		form > .djc_filter_ul {
+			float: right;
+		}
+		.djc_filter_list,
+		.djc_price_filter,
+		.djc_filter_radius {
+			.djc_filter_input {
+				float: right;
+				padding-right: 0;
+				padding-left: 5px;
+				+ .djc_filter_input {
+					padding-left: 0;
+					padding-right: 5px;
+				}
+			}
+		}
+		.djc_filter_buttons {
+			.djc_filter_button {
+				float: right;
+				.btn {
+					margin-right: 0;
+					margin-left: 16px;
+				}
+			}
+		}
+	}
+
+	//order
+
+	#djcatalog .djc_order_wrapper {
+		.djc_order {
+			float: right;
+		}
+	}
+
+	#djcatalog .djc_order {
+		.djc_order_buttons {
+			li {
+				float: right;
+				margin-right: 0;
+				margin-left: 20px;
+				img {
+					margin: 0 5px 0 0;
+				}
+			}
+		}
+	}
+
+	#djcatalog .djc_items_toolbar {
+		float: left;
+		.djc_compare_btn {
+			float: right;
+		}
+		.djc_layout_switch {
+			float: right;
+			margin-left: 0;
+			margin-right: 10px;
+		}
+		.djc_layout_buttons {
+			li {
+				float: right;
+				+ li {
+					margin-left: 0;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+
+	// Blog view
+	// --------------------------
+
+	// second image on hover
+
+	#djcatalog .djc_items,
+	#djcatalog .djc_related_items {
+		.djc_item {
+			float: right;
+			.djrv_rating_avg {
+				margin-left: 0;
+				margin-right: -2px;
+			}
+			.djc_item_info {
+				.djc_producer_items_link {
+					margin: 0 4px 0 0;
+					padding: 0 8px 0 0;
+					&:before {
+						left: auto;
+						right: 0;
+					}
+				}
+				.djc_price_stock {
+					right: auto;
+					left: 0;
+					text-align: left;
+					.djc_price_old {
+						margin-left: 8px;
+						margin-right: 0;
+					}
+				}
+			}
+			.djc_readon {
+				.btn:not(:last-child) {
+					margin-right: 0;
+					margin-left: 5px;
+					float: right;
+					+ .btn {
+						float: right;
+						margin-left: 0;
+						margin-right: 5px;
+					}
+				}
+			}
+			//attributes
+			div.djc_attributes {
+				table {
+					.djc_attribute {
+						td {
+							+ td {
+								border-left: 0;
+								border-right: 1px solid @JMtableBorder;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// featured image
+
+	#djcatalog .djc_items,
+	#djcatalog .djc_related_items {
+		img.djc_featured_image {
+			right: auto;
+			left: 0;
+		}
+	}
+
+	// Table
+	// --------------------------
+
+	#djcatalog.djc_list table.category,
+	#djcatalog.djc_mylist table.category {
+		.djc_image_wrapper {
+			img.djc_featured_image {
+				right: auto;
+				left: 0;
+			}
+		}
+
+		.djrv_rating_avg {
+			margin-left: 0;
+			margin-right: -2px;
+		}
+		.djc_price {
+			text-align: left;
+		}
+		//attributes
+		div.djc_attributes {
+			table {
+				.djc_attribute {
+					td {
+						+ td {
+							border-left: 0;
+							border-right: 1px solid @JMtableBorder;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Producers and Producer
+	// --------------------------
+
+	#djcatalog.djc_producer {
+		.djc_images .djc_thumbnail {
+			float: right;
+		}
+		.btn {
+			padding: 0 11px 0 0;
+			&:before {
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+
+	// Single Product
+	// --------------------------
+
+	#djcatalog.djc_item {
+		.djc_toolbar,
+		.djc_producer_info {
+			.btn {
+				padding: 0 11px 0 0;
+				margin: 0 10px 0 0;
+				&:before {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+
+	//featured
+	#djcatalog.djc_item {
+		.djc_images_wrap {
+			float: right;
+		}
+		.djc_featured_wrap {
+			.djc_featured_image {
+				left: 75px;
+				right: auto;
+			}
+		}
+		.djc_title .djc_featured_image {
+			margin-right: 0;
+			margin-left: 5px;
+		}
+	}
+
+	//thumbnails
+	#djcatalog.djc_item .djc_images {
+		padding-right: 0;
+		padding-left: 55px;
+	}
+
+	#djcatalog.djc_item .djc_thumbnails {
+		.djc_thumbnail {
+			margin: 0 0 10px 10px !important;
+		}
+	}
+
+	#djcatalog.djc_item {
+		.djc_top_wrap.addtocart {
+			.djc_top_wrap_in {
+				padding-right: 0;
+				padding-left: 255px;
+			}
+			.djc_addtocart {
+				right: auto;
+				left: 0;
+			}
+		}
+		.djc_addtocart {
+			.djc_qty_inc {
+				border-radius: @baseBorderRadius 0 0 @baseBorderRadius;
+			}
+			.djc_addtocart_btn,
+			.djc_addtoquote_btn {
+				float: right;
+			}
+		}
+	}
+
+	//navi
+	#djcatalog .djc_product_top_nav a.djc_prev_btn,
+	#djcatalog .djc_product_bottom_nav a.djc_prev_btn {
+		float: right;
+	}
+
+	#djcatalog .djc_product_top_nav a.djc_next_btn,
+	#djcatalog .djc_product_bottom_nav a.djc_next_btn {
+		float: left;
+	}
+	//related
+	#djcatalog.djc_item  .djc_related_items {
+		.djc_item {
+			float: right;
+		}
+	}
+	//custom field colors
+	#djcatalog .djc_cart_variants .djc_cartvariant_colors {
+		label.radio {
+			float: right;
+			.djc_cartvariant_color {
+				margin: 4px 0 4px 8px;
+			}
+		}
+	}
+
+	// User Products
+	// --------------------------
+
+	#djcatalog.djc_mylist {
+		.djc_filter_search {
+			li {
+				float: right;
+				&:nth-child(2) {
+					margin-right: 0;
+					margin-left: 10px;
+				}
+				&:nth-child(3) {
+					.btn {
+						margin-right: 0;
+						margin-left: 16px;
+					}
+				}
+			}
+		}
+	}
+
+	// Compare view
+	// --------------------------
+
+	#djcatalog.djc_compareview {
+		.djc_compare_items {
+			.djrv_rating_avg {
+				margin-left: 0;
+				margin-right: -2px;
+			}
+			.djc_producer_items_link {
+				margin: 0 4px 0 0;
+				padding: 0 8px 0 0;
+				&:before {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+
+	// Question view
+	// --------------------------
+
+	#djcatalog.djc_question {
+		h2 {
+			.btn {
+				float: left;
+			}
+		}
+	}
+
+	// Order view
+	// --------------------------
+
+	#djcatalog.djc_order {
+		h2 {
+			.btn {
+				float: left;
+			}
+		}
+	}
+
+	// Checkout Cart / Query
+	// --------------------------
+
+	#djcatalog.djc_checkout,
+	#djcatalog.djc_cart {
+		.djc_checkout_notes {
+			.control-group {
+				.control-label {
+					text-align: right;
+				}
+				.controls {
+					.btn + .btn {
+						float: left;
+					}
+				}
+			}
+		}
+		table {
+			td {
+				.djc_image {
+					float: right;
+					margin: 0 0 10px 10px;
+				}
+			}
+			tfoot td {
+				&.djc_ft_total_label {
+					text-align: left;
+				}
+			}
+		}
+		.djc_td_update_qty {
+			a.btn.btn-danger {
+				&:before,
+				&:after {
+					left: auto;
+					right: 16px;
+				}
+			}
+			.djc_qty_dec {
+				margin-right: 0;
+				margin-left: -1px;
+			}
+			.djc_qty_inc {
+				border-radius: @baseBorderRadius 0 0 @baseBorderRadius;
+			}
+		}
+		//cart actions
+		.djc_cart_actions {
+			form {
+				float: right;
+				&:first-child {
+					margin-right: 0;
+					margin-left: 5px;
+				}
+				+ form {
+					float: left;
+				}
+			}
+		}
+		.djc_td_cart_attribute {
+			.control-label,
+			.controls {
+				text-align: right;
+			}
+		}
+		#djc_order_submit {
+			.btn + .btn {
+				float: left;
+			}
+		}
+	}
+
+	//checkout process
+	.djc_checkout_progress {
+		.djc_checkout-step {
+			float: right;
+			&.djc_checkout-step-1 {
+				&:before {
+					right: auto;
+					left: 0;
+				}
+			}
+			&.djc_checkout-step-2:not(:last-child) {
+				&:before {
+					left: auto;
+					right: 0;
+				}
+				&:after {
+					right: auto;
+					left: 0;
+				}
+			}
+			&.djc_checkout-step:last-child {
+				&:before {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+
+	// front module
+	#jm-allpage .djf_mod {
+		padding-right: 0;
+		padding-left: @JMbaseSpace*2;
+		.djf_gal {
+			float: right;
+		}
+		.djf_gal .djc_col {
+			float: right;
+		}
+		.djf_img {
+			float: right;
+		}
+		.djf_left {
+			margin: 0 0 0 @JMbaseSpace;
+		}
+		.djf_pag {
+			left: 0;
+			right: auto;
+		}
+	}
+
+	// Items module
+	.mod_djc_items {
+		.mod_djc_item {
+			.djc_label {
+				margin-right: 0;
+				margin-left: 5px;
+			}
+			.djc_price {
+				span.djc_price_old {
+					margin-right: 0;
+					margin-left: 8px;
+				}
+			}
+		}
+	}
+
+	.image-left-ms .mod_djc_items {
+		.djc_item {
+			.djc_image {
+				float: right;
+				margin-right: 0;
+				margin-left: @JMbaseSpace;
+			}
+		}
+	}
+
+	// Filters module
+	.mod_djc2filters {
+		.field_reset_button {
+			float: left;
+		}
+	}
+
+	//filters in filters section
+
+	#djcatalog #djc_additional_filters .mod_djc2filters {
+		.mod_djc2filters_group {
+			float: right;
+		}
+	}
+
+	.search-ms {
+		.djc_mod_search {
+			position: relative;
+			label {
+				display: none;
+			}
+			input#mod_djcatsearch {
+				padding-right: 20px;
+				padding-left: 50px;
+			}
+			button {
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+
+	//cart module
+	.mod_djc2cart {
+		a {
+			background: url('../images/@{JMimgDir}/cart.png') no-repeat right center;
+			padding-left: 0;
+			padding-right: 27px;
+		}
+	}
+
+	#jm-allpage #djcatalog .djc_stock_info {
+		.btn {
+			&:before {
+				margin-right: 0;
+				margin-left: 5px;
+			}
+		}
+	}
+
+	//RTL target
+}

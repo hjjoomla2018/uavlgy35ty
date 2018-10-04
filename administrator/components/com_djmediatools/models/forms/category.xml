@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id"
+			type="text"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			description="JGLOBAL_FIELD_ID_DESC"
+			size="10"
+			default="0"
+			readonly="true"
+			class="readonly"
+		/>
+		
+		<field name="parent_id"
+			type="djalbum"
+			label="COM_DJMEDIATOOLS_PARENT_CATEGORY"
+			description="COM_DJMEDIATOOLS_PARENT_CATEGORY"
+			class="inputbox"
+			default="0"
+			required="true"
+			disable_self="true"
+		/>
+		
+		<field name="source" type="djmediasource" default="component" label="COM_DJMEDIATOOLS_SOURCE_TYPE" description="COM_DJMEDIATOOLS_SOURCE_TYPE_DESC">
+			<option value="component">COM_DJMEDIATOOLS_CUSTOM_SLIDES</option>
+		</field>
+		
+		<field name="manage_info" type="djspacer" class="djinfo" label="COM_DJMEDIATOOLS_MANAGE_ALBUM_INFO" />
+		<field name="folder" type="djfolder" root="images/djmediatools" label="COM_DJMEDIATOOLS_UPLOAD_FOLDER" />
+		<field name="video" type="djvideo" label="COM_DJMEDIATOOLS_VIDEO_LINK" description="COM_DJMEDIATOOLS_VIDEO_LINK_DESC" callback="window.injectAlbumVideo" size="50"	/>
+		
+		<field name="title"
+			type="text"
+			label="JGLOBAL_TITLE"
+			description="JGLOBAL_TITLE"
+			class="inputbox"
+			size="30"
+			required="true"
+		 />
+		 
+		 <field name="alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC"
+			class="inputbox"
+			size="30"
+		/>
+		
+		<field name="image"
+			type="media"
+			hide_none="1"
+			label="COM_DJMEDIATOOLS_CATEGORY_IMAGE"
+			description="COM_DJMEDIATOOLS_CATEGORY_IMAGE"
+			required="false"
+		/>
+		
+		<field name="description" type="editor"
+			label="COM_DJMEDIATOOLS_ALBUM_DESCRIPTION"
+			description="COM_DJMEDIATOOLS_ALBUM_DESCRIPTION_DESC"
+			class="inputbox"
+			filter="JComponentHelper::filterText"
+			buttons="false"
+			height="250"
+		/>
+		
+		<field id="published"
+			name="published"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">
+				JPUBLISHED</option>
+			<option value="0">
+				JUNPUBLISHED</option>			
+		</field>
+		
+		<field id="visible"
+			name="visible"
+			type="radio"
+			label="COM_DJMEDIATOOLS_ALBUM_VISIBLE"
+			description="COM_DJMEDIATOOLS_ALBUM_VISIBLE_DESC"
+			class="btn-group"
+			default="1"
+		>
+			<option value="1">JYes</option>
+			<option value="0">JNO</option>			
+		</field>
+		
+		<field name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		/>
+			
+	</fieldset>
+	
+		<fields name="params">
+			
+			<fieldset name="basic" label="COM_DJMEDIATOOLS_CATEGORY_OPTIONS">
+				
+				<field type="djspacer" class="djinfo" label="COM_DJMEDIATOOLS_INHERIT_DESC" />
+				
+				<field name="layout" type="djmodulelayout" label="COM_DJMEDIATOOLS_LAYOUT" description="COM_DJMEDIATOOLS_LAYOUT_DESC" module="mod_djmediatools" default="" useglobal="true" />
+				
+				<field name="slider_type" type="list" default="" label="COM_DJMEDIATOOLS_SLIDER_TYPE" description="COM_DJMEDIATOOLS_SLIDER_TYPE_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="fade">COM_DJMEDIATOOLS_FADE</option>
+					<option value="ifade">COM_DJMEDIATOOLS_INFILTRATION_FADE</option>
+					<option value="left">COM_DJMEDIATOOLS_SLIDE_LEFT</option>					
+					<option value="right">COM_DJMEDIATOOLS_SLIDE_RIGHT</option>
+					<option value="up">COM_DJMEDIATOOLS_SLIDE_UP</option>
+					<option value="down">COM_DJMEDIATOOLS_SLIDE_DOWN</option>
+				</field>
+				<field name="desc_effect" type="list" default="" label="COM_DJMEDIATOOLS_DESCRIPTION_EFFECT" description="COM_DJMEDIATOOLS_DESCRIPTION_EFFECT_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="none">COM_DJMEDIATOOLS_NONE</option>
+					<option value="fade">COM_DJMEDIATOOLS_FADE</option>
+					<option value="left">COM_DJMEDIATOOLS_SLIDE_LEFT</option>					
+					<option value="right">COM_DJMEDIATOOLS_SLIDE_RIGHT</option>
+					<option value="up">COM_DJMEDIATOOLS_SLIDE_UP</option>
+					<option value="down">COM_DJMEDIATOOLS_SLIDE_DOWN</option>
+				</field>
+				<field name="sort_by" type="list" default="" label="COM_DJMEDIATOOLS_SORT_BY" description="COM_DJMEDIATOOLS_SORT_BY_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="1">COM_DJMEDIATOOLS_FILE_NAME_ORDERING</option>
+					<option value="0">COM_DJMEDIATOOLS_RANDOMISE</option>
+				</field>
+				<field name="link_image" type="list" default="" label="COM_DJMEDIATOOLS_LINK_IMAGE" description="COM_DJMEDIATOOLS_LINK_IMAGE_DESC" class="djoptionswitcher">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">COM_DJMEDIATOOLS_DON_T_LINK</option>
+					<option value="1">COM_DJMEDIATOOLS_HYPERLINK</option>
+					<option value="2;lightbox">COM_DJMEDIATOOLS_OPEN_IMAGE_IN_MODAL</option>
+					<option value="3">COM_DJMEDIATOOLS_OPEN_ITEM_IN_MODAL</option>
+				</field>
+				<field name="lightbox" type="list" default="" label="COM_DJMEDIATOOLS_LIGHTBOX_TYPE">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="magnific">Magnific Popoup (jQuery)</option>
+					<option value="picbox">PicBox (Mootools)</option>
+					<option value="slimbox">Slimbox (Mootools)</option>
+				</field>
+				<field name="watermark" type="list" default="" label="COM_DJMEDIATOOLS_USE_WATERMARK" description="COM_DJMEDIATOOLS_USE_WATERMARK_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+			    	<option value="0">JNO</option>
+			    	<option value="1">JYES</option>
+			    </field>
+				
+				<field type="djspacer" class="djtitle" label="COM_DJMEDIATOOLS_SLIDER_DIMENSIONS" description="COM_DJMEDIATOOLS_SLIDER_DIMENSIONS_DESC" />
+				
+				<field name="image_width" type="text" default="" size="10" label="COM_DJMEDIATOOLS_IMAGE_WIDTH" description="COM_DJMEDIATOOLS_IMAGE_WIDTH_DESC" />
+				<field name="image_height" type="text" default="" size="10" label="COM_DJMEDIATOOLS_IMAGE_HEIGHT" description="COM_DJMEDIATOOLS_IMAGE_HEIGHT_DESC" />
+				<field name="resizing" type="list" default="" label="COM_DJMEDIATOOLS_IMAGE_RESIZING" description="COM_DJMEDIATOOLS_IMAGE_RESIZING_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="crop">COM_DJMEDIATOOLS_CROP</option>
+					<option value="toWidth">COM_DJMEDIATOOLS_FIT_TO_WIDTH</option>
+					<option value="toHeight">COM_DJMEDIATOOLS_FIT_TO_HEIGHT</option>
+					<option value="no">COM_DJMEDIATOOLS_DON_T_RESIZE</option>
+				</field>
+				<field name="quality" type="text" default="" size="10" label="COM_DJMEDIATOOLS_IMAGE_QUALITY" />
+				
+				<field name="thumb_width" type="text" default="" size="10" label="COM_DJMEDIATOOLS_THUMB_WIDTH" description="COM_DJMEDIATOOLS_THUMB_WIDTH_DESC" />
+				<field name="thumb_height" type="text" default="" size="10" label="COM_DJMEDIATOOLS_THUMB_HEIGHT" description="COM_DJMEDIATOOLS_THUMB_HEIGHT_DESC" />
+				
+				<field name="visible_images" type="text" default="" size="10" label="COM_DJMEDIATOOLS_VISIBLE_IMAGES" description="COM_DJMEDIATOOLS_VISIBLE_IMAGES_DESC" />
+				<field name="space_between_images" type="text" default="" size="10" label="COM_DJMEDIATOOLS_SPACE_BETWEEN_IMAGES" description="COM_DJMEDIATOOLS_SPACE_BETWEEN_IMAGES_DESC" />
+				<field name="max_images" type="text" default="" size="10" label="COM_DJMEDIATOOLS_MAX_IMAGES" description="COM_DJMEDIATOOLS_MAX_IMAGES_DESC" />
+				
+				<field type="djspacer" class="djtitle" label="COM_DJMEDIATOOLS_TABBER_LAYOUT_OPTIONS" description="COM_DJMEDIATOOLS_TABBER_LAYOUT_OPTIONS_DESC" />
+				
+				<field name="show_thumbs" type="list" default="" label="COM_DJMEDIATOOLS_SHOW_THUMBNAILS" description="COM_DJMEDIATOOLS_SHOW_THUMBNAILS_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="tab_indicator" type="list" default="" label="COM_DJMEDIATOOLS_TAB_INDICATOR" description="COM_DJMEDIATOOLS_TAB_INDICATOR_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JHIDE</option>
+					<option value="1">COM_DJMEDIATOOLS_STICKY_POINTER</option>
+					<option value="2">COM_DJMEDIATOOLS_MOVING_POINTER</option>
+				</field>
+				<field name="tab_width" type="text" default="" size="10" label="COM_DJMEDIATOOLS_TAB_WIDTH" description="COM_DJMEDIATOOLS_TAB_WIDTH_DESC" />
+				<field name="tab_height" type="text" default="" size="10" label="COM_DJMEDIATOOLS_TAB_HEIGHT" description="COM_DJMEDIATOOLS_TAB_HEIGHT_DESC" />
+				<field name="tab_position" type="list" default="" label="COM_DJMEDIATOOLS_TAB_POSITION" description="COM_DJMEDIATOOLS_TAB_POSITION_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="right">COM_DJMEDIATOOLS_TABS_ON_RIGHT</option>
+					<option value="left">COM_DJMEDIATOOLS_TABS_ON_LEFT</option>
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="elements" label="COM_DJMEDIATOOLS_SLIDES_ELEMENTS_OPTIONS_FIELDSET_LABEL">
+				
+				<field type="djspacer" class="djtitle" label="COM_DJMEDIATOOLS_ITEM_ELEMENTS_OPTIONS" />
+				<field name="show_title" type="list" default="" label="COM_DJMEDIATOOLS_SHOW_TITLE" description="COM_DJMEDIATOOLS_SHOW_TITLE_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_desc" type="list" default="" label="COM_DJMEDIATOOLS_SHOW_DESCRIPTION" description="COM_DJMEDIATOOLS_SHOW_DESCRIPTION_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+					<option value="2">COM_DJMEDIATOOLS_ON_MOUSE_OVER</option>
+				</field>
+				<field name="show_readmore" type="list" default="" label="COM_DJMEDIATOOLS_SHOW_READMORE" description="COM_DJMEDIATOOLS_SHOW_READMORE_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="readmore_text" type="text" default="" size="50" label="COM_DJMEDIATOOLS_READMORE_TEXT" description="COM_DJMEDIATOOLS_READMORE_TEXT_DESC" />
+				<field name="link_title" type="list" default="" label="COM_DJMEDIATOOLS_LINK_TITLE" description="COM_DJMEDIATOOLS_LINK_TITLE_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="link_desc" type="list" default="" label="COM_DJMEDIATOOLS_LINK_DESCRIPTION" description="COM_DJMEDIATOOLS_LINK_DESCRIPTION_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="limit_desc" type="text" default="" size="10" label="COM_DJMEDIATOOLS_DESCRIPTION_LIMIT" description="COM_DJMEDIATOOLS_DESCRIPTION_LIMIT_DESC" />
+				
+				<field type="djspacer" class="djtitle" label="COM_DJMEDIATOOLS_ALBUM_ELEMENTS_OPTIONS" />
+				<field name="autoplay" type="list" default="" label="COM_DJMEDIATOOLS_AUTOPLAY" description="COM_DJMEDIATOOLS_AUTOPLAY_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="pause_autoplay" type="list" default="" label="COM_DJMEDIATOOLS_PAUSE_AUTOPLAY" description="COM_DJMEDIATOOLS_PAUSE_AUTOPLAY_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_buttons" type="list" default="" label="COM_DJMEDIATOOLS_SHOW_PLAY_PAUSE" description="COM_DJMEDIATOOLS_SHOW_PLAY_PAUSE_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+					<option value="2">COM_DJMEDIATOOLS_ON_MOUSE_OVER</option>
+				</field>
+				<field name="show_arrows" type="list" default="" label="COM_DJMEDIATOOLS_SHOW_NEXT_PREV" description="COM_DJMEDIATOOLS_SHOW_NEXT_PREV_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+					<option value="2">COM_DJMEDIATOOLS_ON_MOUSE_OVER</option>
+				</field>
+				<field name="show_custom_nav" type="list" default="" label="COM_DJMEDIATOOLS_SHOW_CUSTOM_NAVIGATION" description="COM_DJMEDIATOOLS_SHOW_CUSTOM_NAVIGATION_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+					<option value="2">COM_DJMEDIATOOLS_ON_MOUSE_OVER</option>					
+				</field>
+				
+			</fieldset>
+				
+			<fieldset name="customise" label="COM_DJMEDIATOOLS_CUSTOMISE_FIELDSET_LABEL">
+			
+				<field type="djspacer" class="djtitle" label="COM_DJMEDIATOOLS_CUSTOMISE_EFFECTS_FIELDSET_LABEL" />
+				<field name="kenburns" type="radio" class="btn-group" default="" label="COM_DJMEDIATOOLS_KEN_BURNS_EFFECT" description="COM_DJMEDIATOOLS_KEN_BURNS_EFFECT_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">JDISABLED</option>
+					<option value="1">JENABLED</option>
+				</field>
+				<field name="effect" type="list" default="" label="COM_DJMEDIATOOLS_SLIDE_EFFECT" description="COM_DJMEDIATOOLS_SLIDE_EFFECT_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="Linear">COM_DJMEDIATOOLS_LINEAR</option>
+					<option value="Quad">COM_DJMEDIATOOLS_QUAD</option>
+					<option value="Cubic">COM_DJMEDIATOOLS_CUBIC</option>
+					<option value="Quart">COM_DJMEDIATOOLS_QUART</option>
+					<option value="Quint">COM_DJMEDIATOOLS_QUINT</option>
+					<option value="Expo">COM_DJMEDIATOOLS_EXPO</option>
+					<option value="Circ">COM_DJMEDIATOOLS_CIRC</option>
+					<option value="Sine">COM_DJMEDIATOOLS_SINE</option>
+					<option value="Back">COM_DJMEDIATOOLS_BACK</option>
+					<option value="Bounce">COM_DJMEDIATOOLS_BOUNCE</option>
+					<option value="Elastic">COM_DJMEDIATOOLS_ELASTIC</option>
+				</field>
+				<field name="effect_type" type="list" default="" label="COM_DJMEDIATOOLS_SLIDE_EFFECT_TYPE" description="COM_DJMEDIATOOLS_SLIDE_EFFECT_TYPE_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="0">COM_DJMEDIATOOLS_AUTO</option>
+					<option value="easeIn">COM_DJMEDIATOOLS_EASEIN</option>
+					<option value="easeOut">COM_DJMEDIATOOLS_EASEOUT</option>
+					<option value="easeInOut">COM_DJMEDIATOOLS_EASEINOUT</option>
+				</field>
+				<field name="duration" type="text" default="" size="10" label="COM_DJMEDIATOOLS_SLIDE_DURATION" description="COM_DJMEDIATOOLS_SLIDE_DURATION_DESC" />
+				<field name="delay" type="text" default="" size="10" label="COM_DJMEDIATOOLS_NEXT_SLIDE_DELAY" description="COM_DJMEDIATOOLS_NEXT_SLIDE_DELAY_DESC" />
+				<field name="lag" type="text" default="" size="10" label="COM_DJMEDIATOOLS_LAG" description="COM_DJMEDIATOOLS_LAG_DESC" />
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				<field name="preload" type="text" default="" size="10" label="COM_DJMEDIATOOLS_PRELOAD_DELAY_TIME" description="COM_DJMEDIATOOLS_PRELOAD_DELAY_TIME_DESC" />
+				
+				<field type="djspacer" class="djtitle" label="COM_DJMEDIATOOLS_CUSTOMISE_DESC_FIELDSET_LABEL" />			
+				<field name="desc_position" type="list" default="" label="COM_DJMEDIATOOLS_DESCRIPTION_POSITION" description="COM_DJMEDIATOOLS_DESCRIPTION_POSITION_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="over">COM_DJMEDIATOOLS_DESCRIPTION_OVER_IMAGE</option>
+					<option value="above">COM_DJMEDIATOOLS_DESCRIPTION_ABOVE</option>
+					<option value="below">COM_DJMEDIATOOLS_DESCRIPTION_BELOW</option>
+					<option value="left">COM_DJMEDIATOOLS_DESCRIPTION_ON_LEFT</option>
+					<option value="right">COM_DJMEDIATOOLS_DESCRIPTION_ON_RIGHT</option>
+					<option value="tip">COM_DJMEDIATOOLS_DESCRIPTION_IN_TOOLTIP</option>
+				</field>
+				<field name="desc_width" type="text" default="" size="10" label="COM_DJMEDIATOOLS_DESCRIPTION_WIDTH" description="COM_DJMEDIATOOLS_DESCRIPTION_WIDTH_DESC" />
+				<field name="desc_bottom" type="text" default="" size="10" label="COM_DJMEDIATOOLS_DESCRIPTION_VERTICAL_POSITION" description="COM_DJMEDIATOOLS_DESCRIPTION_VERTICAL_POSITION_DESC" />
+				<field name="desc_horizontal" type="text" default="" size="10" label="COM_DJMEDIATOOLS_DESCRIPTION_HORIZONTAL_POSITION" description="COM_DJMEDIATOOLS_DESCRIPTION_HORIZONTAL_POSITION_DESC" />
+			
+				<field type="djspacer" class="djtitle" label="COM_DJMEDIATOOLS_CUSTOMISE_NAVIGATION_FIELDSET_LABEL" />
+				<field name="left_arrow" type="media" default="" label="COM_DJMEDIATOOLS_PREV_BUTTON" description="COM_DJMEDIATOOLS_PREV_BUTTON_DESC" />
+				<field name="right_arrow" type="media" default="" label="COM_DJMEDIATOOLS_NEXT_BUTTON" description="COM_DJMEDIATOOLS_NEXT_BUTTON_DESC" />
+				<field name="play_button" type="media" default="" label="COM_DJMEDIATOOLS_PLAY_BUTTON" description="COM_DJMEDIATOOLS_PLAY_BUTTON_DESC" />
+				<field name="pause_button" type="media" default="" label="COM_DJMEDIATOOLS_PAUSE_BUTTON" description="COM_DJMEDIATOOLS_PAUSE_BUTTON_DESC" />
+				<field name="arrows_top" type="text" default="" size="10" label="COM_DJMEDIATOOLS_NAV_BAR_VERTICAL_POSITION" description="COM_DJMEDIATOOLS_NAV_BAR_VERTICAL_POSITION_DESC" />
+				<field name="arrows_horizontal" type="text" default="" size="10" label="COM_DJMEDIATOOLS_NAV_BAR_HORIZONTAL_POSITION" description="COM_DJMEDIATOOLS_NAV_BAR_HORIZONTAL_POSITION_DESC" />
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				
+				<field name="custom_nav_pos" type="list" default="" label="COM_DJMEDIATOOLS_CUSTOM_NAVIGATION_POSITION" description="COM_DJMEDIATOOLS_CUSTOM_NAVIGATION_POSITION_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="above">COM_DJMEDIATOOLS_ABOVE</option>
+					<option value="topin">COM_DJMEDIATOOLS_TOP_IN</option>
+					<option value="bottomin">COM_DJMEDIATOOLS_BOTTOM_IN</option>
+					<option value="below">COM_DJMEDIATOOLS_BELOW</option>
+				</field>
+				<field name="custom_nav_align" type="list" default="" label="COM_DJMEDIATOOLS_CUSTOM_NAVIGATION_ALIGNMENT" description="COM_DJMEDIATOOLS_CUSTOM_NAVIGATION_ALIGNMENT_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="left">COM_DJMEDIATOOLS_LEFT</option>
+					<option value="center">COM_DJMEDIATOOLS_CENTER</option>
+					<option value="right">COM_DJMEDIATOOLS_RIGHT</option>
+				</field>
+				<field name="loader_position" type="list" default="" label="COM_DJMEDIATOOLS_LOADER_ICON_POSITION" description="COM_DJMEDIATOOLS_LOADER_ICON_POSITION_DESC">
+					<option value="">COM_DJMEDIATOOLS_INHERIT</option>
+					<option value="tl">COM_DJMEDIATOOLS_TOP_LEFT_CORNER</option>
+					<option value="tr">COM_DJMEDIATOOLS_TOP_RIGHT_CORNER</option>
+					<option value="bl">COM_DJMEDIATOOLS_BOTTOM_LEFT_CORNER</option>
+					<option value="br">COM_DJMEDIATOOLS_BOTTOM_RIGHT_CORNER</option>
+				</field>
+			</fieldset>
+			
+		</fields>
+</form>

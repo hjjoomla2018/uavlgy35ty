@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" 
+				readonly="true" class="readonly" />
+		
+		<field name="name" type="text" class="inputbox"
+				size="40" label="COM_DJCATALOG2_NAME"
+				description="COM_DJCATALOG2_NAME" required="true" />
+		
+		<field name="label" type="text" class="inputbox"
+				size="40" label="COM_DJCATALOG2_LABEL_TEXT"
+				description="COM_DJCATALOG2_LABEL_TEXT_DESC" />
+				
+		<field name="image" type="media" class="inputbox"
+			label="COM_DJCATALOG2_LABEL_ICON" description="COM_DJCATALOG2_LABEL_ICON_DESC" directory="" preview="tooltip" />
+				
+		<field name="description" type="editor" class="inputbox"
+			label="COM_DJCATALOG2_DESCRIPTION" description="COM_DJCATALOG2_DESCRIPTION"
+			filter="JComponentHelper::filterText"
+			buttons="true" />
+			
+		<field name="type" type="hidden" default="label" />
+	</fieldset>
+	<fields name="params">
+		<fieldset name="basic" addfieldpath="/administrator/components/com_content/models/fields">
+			<field name="type" type="list" onchange="jQuery('#jform_type').val(jQuery(this).val());"
+				label="COM_DJCATALOG2_LABEL_TYPE_LBL" description="COM_DJCATALOG2_LABEL_TYPE_LBL_DESC">
+				<option value="label">COM_DJCATALOG2_LABEL_TYPE_LABEL</option>
+				<!-- <option value="tag">COM_DJCATALOG2_LABEL_TYPE_FILTERABLE_TAG</option> -->
+				<option value="link">COM_DJCATALOG2_LABEL_TYPE_LINK</option>
+			</field>
+			
+			<field name="link_type" showon="type:link" type="list" label="COM_DJCATALOG2_LABEL_TYPE_LINKTYPE_LBL">
+				<option value="ext">COM_DJCATALOG2_LABEL_TYPE_LINKTYPE_EXTERNAL</option>
+				<option value="menu">COM_DJCATALOG2_LABEL_TYPE_LINKTYPE_MENU</option>
+				<option value="article">COM_DJCATALOG2_LABEL_TYPE_LINKTYPE_ARTICLE</option>
+			</field>
+			<field name="link_url" showon="type:link[AND]link_type:ext" type="url" label="COM_DJCATALOG2_LABEL_TYPE_LINK_URL" />
+			<field name="link_menu" showon="type:link[AND]link_type:menu" type="menuitem" label="COM_DJCATALOG2_LABEL_TYPE_LINK_MENU" />
+			<field name="link_article" showon="type:link[AND]link_type:article" type="modal_article" label="COM_DJCATALOG2_LABEL_TYPE_LINK_ARTICLE" />
+		</fieldset>
+	</fields>
+</form>

@@ -1,0 +1,57 @@
+.djcupload_file_list {
+	overflow: auto;
+}
+
+.djcupload_file_list .djcupload_file {
+	float: left;
+	width: 33%;
+	min-width: 150px;
+	height: 120px;
+	position: relative;
+	box-sizing: border-box;
+	padding: 4px;
+}
+
+.djcupload_file_list .djcupload_file .djcupload_in {
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	background: url("./file-icon-bg.png") center center/cover no-repeat;
+	position: relative;
+}
+
+.djcupload_file_list .djcupload_file .djcupload_in.sortable {
+	cursor: move;
+}
+
+.djcupload_file_list .djcupload_file .djcupload_in input {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	background: rgba(0, 0, 0, 0.8);
+	border: 2px solid rgba(255, 255, 255, 0.8);
+	border-radius: 0;
+	border-width: 2px 0 2px 0;
+	color: #fff;
+	line-height: 24px;
+	height: 32px;
+	padding: 4px 10px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.djcupload_file_list .djcupload_file .djcupload_in .djcupload_file_name
+	{
+	color: #fff;
+	background: rgba(0, 0, 0, 0.8);
+	display: inline-block;
+	padding: 4px 10px;
+	margin-top: 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	box-sizing: border-box;
+	text-overflow: ellipsis;
+	width: 100%;
+}

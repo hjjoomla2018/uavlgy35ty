@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.6.0"
+	client="site"
+	method="upgrade">
+	<name>mod_djc2filters</name>
+	<creationDate>September 2012</creationDate>
+	<author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2010-2012 DJ-Extensions.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>3.14</version>
+	<description>MOD_DJC2FILTERS_DESC</description>
+	<files>
+		<filename module="mod_djc2filters">mod_djc2filters.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_djcatalog2/models/fields">
+				<field name="moduleclass_sfx" type="text" default=""
+					label="Module Class Suffix" />
+				<field name="visibility" type="list" default="" label="MOD_DJC2FILTERS_MODULE_VISIBILITY" description="MOD_DJC2FILTERS_MODULE_VISIBILITY_DESC">
+					<option value="">MOD_DJC2FILTERS_MODULE_VISIBILITY_EVERYWHERE</option>
+					<option value="1">MOD_DJC2FILTERS_MODULE_VISIBILITY_ITEMS_VIEW</option>
+					<option value="2">MOD_DJC2FILTERS_MODULE_VISIBILITY_ITEMS_N_ITEM_VIEW</option>
+				</field>
+				<field name="group_title" type="list" default="1" label="MOD_DJC2FILTERS_GROUP_TITLE">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="group_accordion" type="list" default="1" label="MOD_DJC2FILTERS_GROUP_ACCORDION" description="MOD_DJC2FILTERS_GROUP_ACCORDION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field name="module_layout" type="list" default="groupped" label="MOD_DJC2FILTERS_FILTER_LAYOUT" description="MOD_DJC2FILTERS_FILTER_LAYOUT_DESC">
+					<option value="groupped">MOD_DJC2FILTERS_GROUPPED_LAYOUT</option>
+					<option value="simple">MOD_DJC2FILTERS_SIMPLE_LAYOUT</option>
+				</field>
+				
+				<field name="fieldgroups" type="sql" query="SELECT 0 as id, 'MOD_DJC2FILTERS_COMMON_GROUP' as name, 0 as position UNION ALL SELECT id, name, 1 as position FROM #__djc2_items_extra_fields_groups ORDER BY position ASC, name ASC" 
+					key_field="id" value_field="name" multiple="true" label="MOD_DJC2FILTERS_FIELD_GROUPS" size="10" 
+					description="MOD_DJC2FILTERS_FIELD_GROUPS_DESC" translate="true" />
+				
+				<field name="fields" type="sql" query="SELECT f.id, CASE f.group_id WHEN 0 THEN f.name ELSE CONCAT(f.name, ' [', g.name, ']') END as value FROM #__djc2_items_extra_fields AS f LEFT JOIN #__djc2_items_extra_fields_groups as g ON g.id = f.group_id WHERE f.filterable=1 ORDER BY g.name ASC, f.ordering ASC, f.name ASC" 
+					key_field="id" value_field="value" multiple="true" label="MOD_DJC2FILTERS_FIELDS" size="10" 
+					description="MOD_DJC2FILTERS_FIELDS_DESC" />
+				
+				<field name="catsw" type="radio" default="0"
+					label="MOD_DJC2FILTERS_CATEGORIES" class="btn-group">
+					<option value="0">MOD_DJC2FILTERS_ALL</option>
+					<option value="1">MOD_DJC2FILTERS_SELECTED</option>
+					<option value="2">MOD_DJC2FILTERS_ALL_NO_ROOT</option>
+				</field>
+				<field name="categories" type="djcategory" default=""
+					label="MOD_DJC2FILTERS_SELECT_CATEGORIES" description="MOD_DJC2FILTERS_SELECT_CATEGORIES_DESC" multiple="true" size="10" default_name="MOD_DJC2FILTERS_ROOT_CATEGORY" />
+				<field name="show_counter" type="list" default="0" label="MOD_DJC2FILTERS_COUNTER" description="MOD_DJC2FILTERS_COUNTER_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="module_float" default="" type="list" label="MOD_DJC2FILTERS_CONFIG_FLOAT" description="MOD_DJC2FILTERS_CONFIG_FLOAT_DESC">
+					<option value="">JNONE</option>
+					<option value="left">MOD_DJC2FILTERS_LEFT</option>
+					<option value="right">MOD_DJC2FILTERS_RIGHT</option>
+				</field>
+				<field name="module_width" default="" type="text" label="MOD_DJC2FILTERS_CONFIG_MOD_WIDTH" description="MOD_DJC2FILTERS_CONFIG_MOD_WIDTH_DESC" />
+				<field name="module_height" default="" type="text" label="MOD_DJC2FILTERS_CONFIG_MOD_HEIGHT" description="MOD_DJC2FILTERS_CONFIG_MOD_HEIGHT_DESC" />
+				<field name="module_text_align" default="" type="list" label="MOD_DJC2FILTERS_CONFIG_MOD_TEXT_ALIGN">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="left">MOD_DJC2FILTERS_LEFT</option>
+					<option value="right">MOD_DJC2FILTERS_RIGHT</option>
+					<option value="center">MOD_DJC2FILTERS_CENTER</option>
+					<option value="justify">MOD_DJC2FILTERS_JUSTIFY</option>
+				</field>
+				<field name="autosubmit" type="list" default="0" label="MOD_DJC2FILTERS_AUTOSUBMIT" description="MOD_DJC2FILTERS_AUTOSUBMIT_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="cache"
+					type="list"
+					default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

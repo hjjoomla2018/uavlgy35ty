@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>MOD_JM_SIMPLE_TABS</name>
+	<creationDate>15/05/2017</creationDate>
+	<author>Joomla-Monster.com</author>
+	<copyright>Copyright (C) 2017 Joomla-Monster.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>artur.kaczmarek@joomla-monster.com</authorEmail>
+	<authorUrl>https://joomla-monster.com</authorUrl>
+	<version>1.05</version>
+	<description>MOD_JM_SIMPLE_TABS_DESC</description>
+	<files>
+		<filename module="mod_jm_simple_tabs">mod_jm_simple_tabs.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>fields</folder>
+	</files>
+
+	<updateservers>
+		<server type="extension" priority="1" name="MOD_JM_SIMPLE_TABS">https://joomla-monster.com/updates/mod_jm_simple_tabs.xml</server>
+	</updateservers>
+
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_jm_simple_tabs/fields">
+
+			<fieldset name="basic">
+
+				<field name="items" type="jmelements" label="MOD_JM_SIMPLE_TABS_FIELD_ITEMS" description="MOD_JM_SIMPLE_TABS_FIELD_ITEMS_DESC" element_name="MOD_JM_SIMPLE_TABS_FIELD_ITEM" element_fields="title,subtitle,content,image_icon,image_icon_active,icon" element_field="title" filter="raw" />
+
+					<field name="title" type="text" default="" label="MOD_JM_SIMPLE_TABS_FIELD_TITLE" description="MOD_JM_SIMPLE_TABS_FIELD_TITLE_DESC" />
+					<field name="subtitle" type="textarea" default="" label="MOD_JM_SIMPLE_TABS_FIELD_SUBTITLE" description="MOD_JM_SIMPLE_TABS_FIELD_SUBTITLE_DESC" />
+					<field name="content" type="textarea" default="" label="MOD_JM_SIMPLE_TABS_FIELD_CONTENT" description="MOD_JM_SIMPLE_TABS_FIELD_CONTENT_DESC" />
+
+					<field name="image_icon" type="media" directory="" label="MOD_JM_SIMPLE_TABS_FIELD_ICON_IMAGE" />
+					<field name="image_icon_active" type="media" directory="" label="MOD_JM_SIMPLE_TABS_FIELD_ICON_IMAGE_ACTIVE" />
+					<field name="icon" type="text" default="" label="MOD_JM_SIMPLE_TABS_FIELD_ICON" description="MOD_JM_SIMPLE_TABS_FIELD_ICON_DESC" />
+
+					<field type="spacer" />
+
+					<field name="video_responsive" type="radio" class="btn-group" default="0" label="MOD_JM_SIMPLE_TABS_FIELD_VIDEO" description="MOD_JM_SIMPLE_TABS_FIELD_VIDEO_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+					<field name="responsive_view" type="radio" class="btn-group" default="0" label="MOD_JM_SIMPLE_TABS_FIELD_RESPONSIVE" description="MOD_JM_SIMPLE_TABS_FIELD_RESPONSIVE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+					<field name="responsive_breakpoint" type="number" default="767" label="MOD_JM_SIMPLE_TABS_FIELD_RESPONSIVE_BREAKPOINT" description="MOD_JM_SIMPLE_TABS_FIELD_RESPONSIVE_BREAKPOINT_DESC"  min="0" max="1920" showon="responsive_view:1" />
+
+					<field name="align" type="list" default="1" label="MOD_JM_SIMPLE_TABS_FIELD_ALIGN" description="MOD_JM_SIMPLE_TABS_FIELD_ALIGN_DESC">
+						<option value="1">MOD_JM_SIMPLE_TABS_FIELD_ALIGN_ABOVE</option>
+						<option value="2">MOD_JM_SIMPLE_TABS_FIELD_ALIGN_LEFT</option>
+						<option value="3">MOD_JM_SIMPLE_TABS_FIELD_ALIGN_RIGHT</option>
+						<option value="4">MOD_JM_SIMPLE_TABS_FIELD_ALIGN_BELOW</option>
+					</field>
+
+					<field name="theme" type="list" default="1" label="MOD_JM_SIMPLE_TABS_FIELD_THEME" description="MOD_JM_SIMPLE_TABS_FIELD_THEME_DESC">
+						<option value="1">MOD_JM_SIMPLE_TABS_FIELD_THEME_DEFAULT</option>
+						<option value="2">MOD_JM_SIMPLE_TABS_FIELD_THEME_OVERRIDE</option>
+					</field>
+
+					<field type="note" name="theme_note" class="alert alert-info" label="MOD_JM_SIMPLE_TABS_FIELD_THEME_NOTE" description="MOD_JM_SIMPLE_TABS_FIELD_THEME_NOTE_DESC" showon="theme:2" />
+
+					<field name="load_fontawesome" type="radio" class="btn-group" default="0" label="MOD_JM_SIMPLE_TABS_FIELD_AWESOME" description="MOD_JM_SIMPLE_TABS_FIELD_AWESOME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

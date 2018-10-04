@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.body-overlayed {
+	overflow: hidden !important;
+}
+#sbox-overlay.djmtmodal-overlay {
+	width: 100% !important;
+}
+#sbox-window.djmtmodal-window {
+	
+}
+
+@media (max-width: 767px) {
+	.djmtmodal-window #sbox-btn-close {
+		top: -5px;
+		right: -5px;
+	}
+}

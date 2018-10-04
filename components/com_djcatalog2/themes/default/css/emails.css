@@ -1,0 +1,85 @@
+/**
+ This stylesheet is intended to be used only for styling e-mail templates 
+ and it is being parsed by 3rd party library: 
+ https://github.com/MyIntervals/emogrifier
+ 
+ Please be aware of the limitations regarding both HTML and CSS that can be used:
+ https://github.com/MyIntervals/emogrifier#caveats
+**/
+
+body {
+	background: #ffffff;
+	font-size: 12pt;
+	color: #555;
+	font-family: arial, sans-serif;
+}
+
+div.djc_mail_wrap {
+	width: 800px;
+	margin: 0 auto;
+}
+
+p {
+	margin: 15px 0;
+}
+
+a {
+	color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #333;
+}
+
+div.djc_header, h1.djc_heading {
+	text-align: center;
+	background: #dadada;
+	padding: 20px;
+}
+div.djc_company_logo {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+table.djc_details_table {
+	border: none;
+}
+
+table.djc_details_table td {
+	padding: 4px 10px;
+	background: #eaeaea;
+	border: 1px solid #fff;
+	border-width: 0 0 1px 0;
+}
+
+table.djc_items_table {
+	border: none;
+}
+
+table.djc_items_table thead th {
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+}
+
+table.djc_items_table tfoot td {
+  background: #333;
+  color: #fff;
+  padding: 4px 10px;
+  font-weight: bold;
+}
+
+table.djc_items_table tbody td {
+	padding: 8px 10px;
+	border: none;
+	background: #f1f1f1;
+	border-bottom: 2px solid #fff;
+	font-size: 10pt;
+}
+
+table.djc_items_table tbody td.djc_row_separator,
+table.djc_details_table td.djc_row_separator {
+	background: #ccc !important;
+	border: none !important;
+	padding: 2px !important;
+}

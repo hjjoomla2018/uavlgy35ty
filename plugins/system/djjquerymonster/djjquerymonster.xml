@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" version="1.6.0" group="system" method="upgrade">
+	<name>plg_system_djjquerymonster</name>
+	<creationDate>July 2017</creationDate>
+	<author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2017 DJ-Extensions.com, All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>1.3.4</version>
+	<description>PLG_SYSTEM_DJJQUERYMONSTER_DESCRIPTION</description>
+	<files>
+		<filename plugin="djjquerymonster">djjquerymonster.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>language</folder>
+		<folder>fields</folder>
+	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="DJ-jQueryMonster Plugin">http://dj-extensions.com/updates/djjquerymonster.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/djjquerymonster/fields">
+			<fieldset name="basic" label="PLG_DJJQUERYMONSTER_BASIC_SETTINGS"> 
+							
+				<field name="jquery" type="radio" default="0" class="btn-group"
+	            	label="PLG_DJJQUERYMONSTER_JQUERY">
+	                <option value="1">JYES</option>
+	                <option value="0">JNO</option>	                
+	            </field>	            
+				<field name="version" type="jqueryversion" default="1.8" 
+	            	label="PLG_DJJQUERYMONSTER_VERSION">
+	            	<option value="1.12.0">PLG_DJJQUERYMONSTER_V112</option>
+	            	<option value="1.11.3">PLG_DJJQUERYMONSTER_V111</option>
+	            	<option value="1.10.2">PLG_DJJQUERYMONSTER_V110</option>
+	            	<option value="1.9.1">PLG_DJJQUERYMONSTER_V19</option>
+           			<option value="1.8">PLG_DJJQUERYMONSTER_V18</option>
+	                <option value="1.7">PLG_DJJQUERYMONSTER_V17</option>
+	                <option value="1.6">PLG_DJJQUERYMONSTER_V16</option>
+	                <option value="1.5">PLG_DJJQUERYMONSTER_V15</option>
+	                <option value="1.4">PLG_DJJQUERYMONSTER_V14</option>
+	                <option value="1.3">PLG_DJJQUERYMONSTER_V13</option>
+	                <option value="2.2.0">PLG_DJJQUERYMONSTER_V22</option>
+	                <option value="2.1.4">PLG_DJJQUERYMONSTER_V21</option>
+	            	<option value="2.0.3">PLG_DJJQUERYMONSTER_V20</option>
+	            	<option value="customver">PLG_DJJQUERYMONSTER_CUSTOMVER</option>
+	                <option value="custom">PLG_DJJQUERYMONSTER_CUSTOMPATH</option>
+	            </field>	            
+	            <field name="customver" type="djtext" default="" size="5" showon="version:customver"
+					label="PLG_DJJQUERYMONSTER_CUSTOM_VERSION" example="PLG_DJJQUERYMONSTER_CUSTOM_VERSION_EXAMPLE" />					
+				<field name="custompath" type="djtext" default="" size="60"  showon="version:custom"
+					label="PLG_DJJQUERYMONSTER_CUSTOM_PATH" 
+					description="PLG_DJJQUERYMONSTER_CUSTOM_PATH_DESC" example="PLG_DJJQUERYMONSTER_CUSTOM_PATH_EXAMPLE" />
+				
+				<field name="spacer1" type="spacer" hr="true"/>
+				<field name="jqueryui" type="radio" default="0" class="btn-group"
+	            	label="PLG_DJJQUERYMONSTER_JQUERYUI">
+	                <option value="1">JYES</option>
+	                <option value="0">JNO</option>
+	            </field>					
+	            <field name="uiversion" type="Jqueryuiversion" default="1.9.2" 
+	            	label="PLG_DJJQUERYMONSTER_VERSION">
+	            	<option value="1.11.4">PLG_DJJQUERYMONSTER_VUI111</option>
+	            	<option value="1.10.4">PLG_DJJQUERYMONSTER_VUI110</option>
+	            	<option value="1.9.2">PLG_DJJQUERYMONSTER_VUI19</option>
+	                <option value="1.8">PLG_DJJQUERYMONSTER_VUI18</option>
+	                <option value="1.7">PLG_DJJQUERYMONSTER_VUI17</option>
+	                <option value="customver">PLG_DJJQUERYMONSTER_CUSTOMVER</option>
+	                <option value="custom">PLG_DJJQUERYMONSTER_CUSTOMPATH</option>
+	            </field>	            
+	            <field name="customuiver" type="djtext" default="" size="5" showon="uiversion:customver"
+					label="PLG_DJJQUERYMONSTER_CUSTOM_UI_VERSION" example="PLG_DJJQUERYMONSTER_CUSTOM_UI_VERSION_EXAMPLE" />					
+	            <field name="customuipath" type="djtext" default="" size="60" showon="uiversion:custom"
+					label="PLG_DJJQUERYMONSTER_CUSTOMUIPATH" 
+					description="PLG_DJJQUERYMONSTER_CUSTOMUIPATH_DESC" example="PLG_DJJQUERYMONSTER_CUSTOM_UI_PATH_EXAMPLE" />
+					
+	            <field name="uitheme" type="list" default="smoothness" label="PLG_DJJQUERYMONSTER_UITHEME">
+	            	<option value="none">PLG_DJJQUERYMONSTER_NONE</option>
+	            	<option value="custom">PLG_DJJQUERYMONSTER_CUSTOMPATH</option>
+	                <option value="base">Base</option>
+	                <option value="black-tie">Black Tie</option>
+	                <option value="blitzer">Blitzer</option>
+	                <option value="cupertino">Cupertino</option>
+	                <option value="dark-hive">Dark Hive</option>
+	                <option value="dot-luv">Dot Luv</option>
+	                <option value="eggplant">Eggplant</option>
+	                <option value="excite-bike">Excite Bike</option>
+	                <option value="flick">Flick</option>
+	                <option value="hot-sneaks">Hot Sneaks</option>
+	                <option value="humanity">Humanity</option>
+	                <option value="le-frog">Le Frog</option>
+	                <option value="mint-choc">Mint Choc</option>
+	                <option value="overcast">Overcast</option>
+	                <option value="pepper-grinder">Pepper Grinder</option>
+	                <option value="redmond">Redmond</option>
+	                <option value="smoothness">Smoothness</option>
+	                <option value="south-street">South Street</option>
+	                <option value="start">Start</option>
+	                <option value="sunny">Sunny</option>
+	                <option value="swanky-purse">Swanky Purse</option>
+	                <option value="trontastic">Trontastic</option>
+	                <option value="ui-darkness">UI Darkness</option>
+	                <option value="ui-lightness">UI Lightness</option>
+	                <option value="vader">Vader</option>
+	            </field>
+	            
+	            <field name="uithemecustom" type="djtext" default="" size="60" showon="uitheme:custom"
+					label="PLG_DJJQUERYMONSTER_CUSTOMTHEME" 
+					description="PLG_DJJQUERYMONSTER_CUSTOMTHEME_DESC" example="PLG_DJJQUERYMONSTER_CUSTOMTHEME_EXAMPLE" />
+				
+				<field name="spacer2" type="spacer" hr="true"/>
+				<field name="compression" type="radio" default="1" class="btn-group"
+	            	label="PLG_DJJQUERYMONSTER_COMPRESSION" 
+	            	description="PLG_DJJQUERYMONSTER_COMPRESSION_DESC">
+	                <option value="1">JYES</option>
+	                <option value="0">JNO</option>	                
+	            </field>
+	            <field name="protocol" type="radio" default="none" class="btn-group"
+	            	label="PLG_DJJQUERYMONSTER_PROTOCOL" 
+	            	description="PLG_DJJQUERYMONSTER_PROTOCOL_DESC">
+	                <option value="none">JNONE</option>
+	                <option value="http">PLG_DJJQUERYMONSTER_HTTP</option>
+	                <option value="https">PLG_DJJQUERYMONSTER_HTTPS</option>
+	            </field>
+	            <field name="protectscripts" type="textarea" cols="50" rows="3" default="" filter="raw"
+	            	label="PLG_DJJQUERYMONSTER_PROTECTSCRIPTS" 
+	            	description="PLG_DJJQUERYMONSTER_PROTECTSCRIPTS_DESC" />
+	            	
+	            <field name="removescripts" type="textarea" cols="50" rows="3" default="" filter="raw"
+	            	label="PLG_DJJQUERYMONSTER_REMOVESCRIPTS" 
+	            	description="PLG_DJJQUERYMONSTER_REMOVESCRIPTS_DESC" /> 
+	            
+	            <field name="spacer3" type="spacer" hr="true"/>
+	            <field name="remove_mootools" type="radio" default="0" class="btn-group"
+	            	label="PLG_DJJQUERYMONSTER_REMOVE_MOOTOOLS" description="PLG_DJJQUERYMONSTER_REMOVE_MOOTOOLS_DESC">
+	                <option value="1">JYES</option>
+	                <option value="0">JNO</option>
+	            </field>
+	            <field name="remove_modal" type="radio" default="1" class="btn-group" showon="remove_mootools:1"
+	            	label="PLG_DJJQUERYMONSTER_REMOVE_MODAL" description="PLG_DJJQUERYMONSTER_REMOVE_MODAL_DESC">
+	                <option value="1">JYES</option>
+	                <option value="0">JNO</option>
+	            </field>
+	            <field name="keepfor" type="sql" default="" multiple="true" showon="remove_mootools:1"
+	            	query="SELECT element as value, name as keepfor FROM #__extensions WHERE type='component' AND protected=0 ORDER BY name"
+	            	label="PLG_DJJQUERYMONSTER_KEEP_FOR" description="PLG_DJJQUERYMONSTER_KEEP_FOR_DESC">
+	            </field>
+	            
+	            <field name="spacer4" type="spacer" hr="true"/>
+	            <field name="debug" type="radio" default="0" class="btn-group"
+	            	label="PLG_DJJQUERYMONSTER_DEBUG" description="PLG_DJJQUERYMONSTER_DEBUG_DESC">
+	                <option value="1">JYES</option>
+	                <option value="0">JNO</option>
+	            </field>
+			</fieldset>
+			
+   		</fields>
+   </config>
+   
+</extension>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_DJCATALOG2_MAP_VIEW">
+	</layout>
+	<fields name="request">
+		<fieldset name="request"
+		addfieldpath="/administrator/components/com_djcatalog2/models/fields"
+		 >
+			<field name="cid" type="djcategory" default="" default_name="COM_DJCATALOG2_SELECT_ROOT_CAT" label="COM_DJCATALOG2_CATEGORY" required="false" extension="com_djcatalog2"/>
+			<field name="pid" type="djproducer" default="" label="COM_DJCATALOG2_PRODUCER" required="false" extension="com_djcatalog2"/>
+		</fieldset>
+	</fields>
+	<fields name="params">
+	    <fieldset 
+		name="global" 
+		label="COM_DJCATALOG2_CONFIG_GLOBAL_SETTINGS_LABEL"
+		addfieldpath="/administrator/components/com_djcatalog2/models/fields">
+		    <field type="djfieldspacer" class="djtitle" label="COM_DJCATALOG2_CONFIG_SPACER_MAP" />
+				<field name="gm_start_location" type="text" default="" label="COM_DJCATALOG2_CONFIG_MAP_START_ADDRESS" description="COM_DJCATALOG2_CONFIG_MAP_START_ADDRESS_DESC" />
+				<field name="gm_type" type="list" default="" label="COM_DJCATALOG2_CONFIG_MAP_TYPE" description="COM_DJCATALOG2_CONFIG_MAP_TYPE_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="ROADMAP">COM_DJCATALOG2_MAP_TYPE_ROADMAP</option>
+					<option value="SATELLITE">COM_DJCATALOG2_MAP_TYPE_SATELLITE</option>
+					<option value="HYBRID">COM_DJCATALOG2_MAP_TYPE_HYBRID</option>
+					<option value="TERRAIN">COM_DJCATALOG2_MAP_TYPE_TERRAIN</option>
+				</field>
+				<field name="gm_zoom" type="list" default="" label="COM_DJCATALOG2_CONFIG_MAP_ZOOM" description="COM_DJCATALOG2_CONFIG_MAP_ZOOM_DESC">
+				    <option value="">JGLOBAL_USE_GLOBAL</option>
+				    <option value="1">1</option>
+				    <option value="2">2</option>
+				    <option value="3">3</option>
+				    <option value="4">4</option>
+				    <option value="5">5</option>
+				    <option value="6">6</option>
+				    <option value="7">7</option>
+				    <option value="8">8</option>
+				    <option value="9">9</option>
+				    <option value="10">10</option>
+				    <option value="12">12</option>
+				    <option value="14">14</option>
+				    <option value="16">16</option>
+				    <option value="18">18</option>
+				    <option value="20">20</option>
+				</field>
+				
+				<field name="gm_map_width" type="text" default="" label="COM_DJCATALOG2_CONFIG_MAP_WIDTH" description="COM_DJCATALOG2_CONFIG_MAP_WIDTH_DESC" />
+				<field name="gm_map_height" type="text" default="" label="COM_DJCATALOG2_CONFIG_MAP_HEIGHT" description="COM_DJCATALOG2_CONFIG_MAP_HEIGHT_DESC" />
+				
+				<field name="show_category_filter_map" default="" type="list" label="COM_DJCATALOG2_CONFIG_MAP_CATEGORY_FILTER" description="COM_DJCATALOG2_CONFIG_MAP_CATEGORY_FILTER_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_producer_filter_map" default="" type="list" label="COM_DJCATALOG2_CONFIG_MAP_PRODUCER_FILTER" description="COM_DJCATALOG2_CONFIG_MAP_PRODUCER_FILTER_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_search_map" default="" type="list" label="COM_DJCATALOG2_CONFIG_MAP_SEARCH_FILTER" description="COM_DJCATALOG2_CONFIG_MAP_SEARCH_FILTER_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="gm_gmaps_link" default="" type="list" label="COM_DJCATALOG2_CONFIG_MAP_GOOGLE_MAPS_LINK" description="COM_DJCATALOG2_CONFIG_MAP_GOOGLE_MAPS_LINK_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+	</fields>
+</metadata>

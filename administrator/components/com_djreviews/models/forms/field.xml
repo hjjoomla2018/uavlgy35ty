@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" />
+		
+		<field name="name" type="text" class="inputbox" size="40" label="COM_DJREVIEWS_NAME" required="true" />
+		
+		<field name="label" type="text" class="inputbox" size="40" label="COM_DJREVIEWS_LABEL"/>
+		
+		<field name="description" type="editor" class="inputbox textarea"
+			label="COM_DJREVIEWS_DESCRIPTION" description="COM_DJREVIEWS_FIELD_DESCRIPTION_DESC"
+			filter="JComponentHelper::filterText"
+			buttons="false" />
+		
+		<field
+			name="published"
+			type="radio"
+			label="COM_DJREVIEWS_PUBLISHED"
+			class="btn-group"
+			default="1">
+			<option
+				value="1">JPUBLISHED</option>
+			<option
+				value="0">JUNPUBLISHED</option>
+		</field>
+		
+		<field
+			name="required"
+			type="radio"
+			label="COM_DJREVIEWS_REQUIRED"
+			class="btn-group"
+			default="0">
+			<option
+				value="1">JYES</option>
+			<option
+				value="0">JNO</option>
+		</field>
+		
+		<!-- <field name="group_id" type="djreviewsratinggroup" class="inputbox" label="COM_DJREVIEWS_RATING_GROUP" required="true" multiple="true"/>  -->
+		
+		<field name="type" type="list" default="rating" label="COM_DJREVIEWS_FIELD_TYPE">
+			<option value="rating">COM_DJREVIEWS_OPT_RATING</option>
+			<option value="text">COM_DJREVIEWS_OPT_TEXT</option>
+			<option value="list">COM_DJREVIEWS_OPT_LIST</option>
+		</field>
+		<field name="weight" default="1" filter="number" showon="type:rating" type="text" class="inputbox input djrevs-number" size="40" label="COM_DJREVIEWS_WEIGHT" description="COM_DJREVIEWS_WEIGHT_DESC"  />
+		<field name="list_options" default="" showon="type:list" type="textarea" rows="5" cols="20" class="input" size="40" label="COM_DJREVIEWS_LIST_ELEMENTS" description="COM_DJREVIEWS_LIST_ELEMENTS_DESC"  />
+		<field name="regular_exp" type="text" showon="type:text" class="input" size="40" label="COM_DJREVIEWS_REGULAR_EXPRESSION" description="COM_DJREVIEWS_REGULAR_EXPRESSION_DESC" />
+			
+		<field name="created" type="calendar"
+			label="JGLOBAL_FIELD_CREATED_LABEL" description="JGLOBAL_FIELD_CREATED_DESC"
+			class="inputbox" size="22" format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc" />
+		
+		<field name="created_by" type="user"
+			label="JGLOBAL_FIELD_CREATED_BY_LABEL" description="JGLOBAL_FIELD_CREATED_BY_Desc" />
+		
+	</fieldset>
+</form>

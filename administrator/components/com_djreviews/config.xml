@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<fieldset name="global" label="COM_DJREVIEWS_CONFIG_GLOBAL_SETTINGS" addfieldpath="/administrator/components/com_djreviews/models/fields">
+	    <field name="theme" type="djreviewstheme" default="bootstrap" label="COM_DJREVIEWS_CONFIG_THEME" description="COM_DJREVIEWS_CONFIG_THEME_DESC" />
+	    <field name="jquery" type="list" default="0" label="COM_DJREVIEWS_CONFIG_JQUERY" description="COM_DJREVIEWS_CONFIG_JQUERY_DESC">
+	        <option value="0">COM_DJREVIEWS_CONFIG_JQUERY_AUTO</option>
+	        <option value="1">COM_DJREVIEWS_CONFIG_JQUERY_INTERNAL</option>
+	        <option value="2">COM_DJREVIEWS_CONFIG_JQUERY_EXTERNAL</option>
+	        <option value="3">COM_DJREVIEWS_CONFIG_JQUERY_NONE</option>
+	    </field>
+	    <field name="date_format" type="list" default="d-m-Y H:i" label="COM_DJREVIEWS_CONFIG_DATE_FORMAT" description="COM_DJREVIEWS_CONFIG_DATE_FORMAT_DESC">
+	        <option value="d-m-Y">dd-mm-yyyy</option>
+	        <option value="d-m-y">dd-mm-yy</option>
+	        <option value="d-m-Y H:i">dd-mm-yyyy hh:mm</option>
+	        <option value="d-m-y H:i">dd-mm-yy hh:mm</option>
+	        
+	        <option value="d.m.Y">dd.mm.yyyy</option>
+	        <option value="d.m.y">dd.mm.yy</option>
+	        <option value="d.m.Y H:i">dd.mm.yyyy hh:mm</option>
+	        <option value="d.m.y H:i">dd.mm.yy hh:mm</option>
+	        
+	        <option value="m/d/Y">mm/dd/yyyy</option>
+	        <option value="m/d/y">mm/dd/yy</option>
+	        <option value="m/d/Y H:i">mm/dd/yyyy hh:mm</option>
+	        <option value="m/d/y H:i">mm/dd/yy hh:mm</option>
+	    </field>
+	    <field name="revlist_limit" type="text" default="10" label="COM_DJREVIEWS_CONFIG_LIST_LIMIT" description="COM_DJREVIEWS_CONFIG_LIST_LIMIT_DESC" />
+	    <field name="revlist_limit_preview" type="text" default="3" label="COM_DJREVIEWS_CONFIG_LIST_LIMIT_PREVIEW" description="COM_DJREVIEWS_CONFIG_LIST_LIMIT_PREVIEW_DESC" />				
+		<field name="reviews" type="radio" default="1" label="COM_DJREVIEWS_PARAM_REVIEWS" description="COM_DJREVIEWS_PARAM_REVIEWS_DESC" class="btn-group">
+	        <option value="1">JYES</option>
+	        <option value="0">JNO</option>
+	    </field>
+	    
+	    <field name="public_avatar" type="imagelist" default="" label="COM_DJREVIEWS_PARAM_PUBLIC_AVATAR" directory="/media/djreviews/avatars" hide_default="true" />
+	    <field name="registered_avatar" type="imagelist" default="" label="COM_DJREVIEWS_PARAM_REGISTERED_AVATAR" directory="/media/djreviews/avatars" hide_default="true" />
+	    
+	    <field name="rating" type="radio" default="1" label="COM_DJREVIEWS_PARAM_RATING" description="COM_DJREVIEWS_PARAM_RATING_DESC" class="btn-group">
+	        <option value="1">JYES</option>
+	        <option value="0">JNO</option>
+	    </field>
+	    <field name="title" type="radio" default="2" label="COM_DJREVIEWS_PARAM_TITLE" description="COM_DJREVIEWS_PARAM_TITLE_DESC" class="btn-group">
+	        <option value="1">JYES</option>
+	        <option value="0">JNO</option>
+	        <option value="2">COM_DJREVIEWS_REQUIRED</option>
+	    </field>
+	    <field name="message" type="radio" default="2" label="COM_DJREVIEWS_PARAM_MESSAGE" description="COM_DJREVIEWS_PARAM_MESSAGE_DESC" class="btn-group">
+	        <option value="1">JYES</option>
+	        <option value="0">JNO</option>
+	        <option value="2">COM_DJREVIEWS_REQUIRED</option>
+	    </field>
+	    <field name="multiple_rating" type="radio" default="0"
+				label="COM_DJREVIEWS_PARAM_MULTIRATING" description="COM_DJREVIEWS_PARAM_MULTIRATING_DESC"
+				class="btn-group">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+	    <field name="followup" type="radio" default="1" label="COM_DJREVIEWS_PARAM_FOLLOWUP" description="COM_DJREVIEWS_PARAM_FOLLOWUP_DESC" class="btn-group">
+	        <option value="1">JYES</option>
+	        <option value="0">JNO</option>
+	    </field>
+	    
+	    <field name="form_layout" type="list" default="default" label="COM_DJREVIEWS_PARAM_FORM_LAYOUT">
+	    	<option value="default">default</option>
+	    	<option value="plain">plain</option>
+	    </field>
+	    
+	    <field name="review_btn" type="list" default="1" label="COM_DJREVIEWS_PARAM_REVIEW_BTN">
+	    	<option value="0">JNO</option>
+	    	<option value="1">JYES</option>
+	    	<option value="2">COM_DJREVIEWS_OPT_LOGGEDIN</option>
+	    </field>
+	    
+		<field name="word_blacklist" type="textarea" label="COM_DJREVIEWS_CONFIG_WORDS_BLACKLIST" cols="50" rows="5" description="COM_DJREVIEWS_CONFIG_WORDS_BLACKLIST_DESC" default="" />	
+		<field name="word_whitelist" type="textarea" label="COM_DJREVIEWS_CONFIG_WORDS_WHITELIST" cols="50" rows="5" description="COM_DJREVIEWS_CONFIG_WORDS_WHITELIST_DESC" default="" />
+		<field name="email_notifications" type="radio" default="1" label="COM_DJREVIEWS_PARAM_EMAIL_NOTIFICATIONS" description="COM_DJREVIEWS_PARAM_EMAIL_NOTIFICATIONS_DESC" class="btn-group">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="contact_list" default="" type="textarea" label="COM_DJREVIEWS_CONFIG_CONTACT_LIST" description="COM_DJREVIEWS_CONFIG_CONTACT_LIST_DESC" rows="5" cols="20" />
+	</fieldset>
+	
+	<!-- <fieldset name="average_rating" label="COM_DJREVIEWS_CONFIG_SIMPLE_AVERAGE_RATING"> -->
+		<!-- <field name="avg_stars_size" type="list" default="medium" label="COM_DJREVIEWS_CONFIG_WORDS_STARS_SIZE" description="COM_DJREVIEWS_CONFIG_WORDS_STARS_SIZE_DESC">
+			<option value="small">COM_DJREVIEWS_CONFIG_SMALL</option>
+			<option value="medium">COM_DJREVIEWS_CONFIG_MEDIUM</option>
+			<option value="large">COM_DJREVIEWS_CONFIG_LARGE</option>
+			<option value="xlarge">COM_DJREVIEWS_CONFIG_EXTRALARGE</option>					
+		</field>
+		 -->	
+	<!-- </fieldset> -->
+	<!-- <fieldset name="criteria_rating" label="COM_DJREVIEWS_CONFIG_RATING_WITH_CRITERIA"> -->
+		<!-- <field name="crit_stars_size" type="list" default="medium" label="COM_DJREVIEWS_CONFIG_WORDS_STARS_SIZE" description="COM_DJREVIEWS_CONFIG_WORDS_STARS_SIZE_DESC">
+			<option value="small">COM_DJREVIEWS_CONFIG_SMALL</option>
+			<option value="medium">COM_DJREVIEWS_CONFIG_MEDIUM</option>
+			<option value="large">COM_DJREVIEWS_CONFIG_LARGE</option>
+			<option value="xlarge">COM_DJREVIEWS_CONFIG_EXTRALARGE</option>					
+		</field> -->
+	<!-- </fieldset> -->
+	<!-- <fieldset name="reviews_list" label="COM_DJREVIEWS_CONFIG_REVIEWS_LIST"> -->
+	    <!-- <field name="revlist_limit" type="text" default="10" label="COM_DJREVIEWS_CONFIG_LIST_LIMIT" description="COM_DJREVIEWS_CONFIG_LIST_LIMIT_DESC" />  -->
+		<!-- <field name="revlist_stars_size" type="list" default="medium" label="COM_DJREVIEWS_CONFIG_WORDS_STARS_SIZE" description="COM_DJREVIEWS_CONFIG_WORDS_STARS_SIZE_DESC">
+			<option value="small">COM_DJREVIEWS_CONFIG_SMALL</option>
+			<option value="medium">COM_DJREVIEWS_CONFIG_MEDIUM</option>
+			<option value="large">COM_DJREVIEWS_CONFIG_LARGE</option>
+			<option value="xlarge">COM_DJREVIEWS_CONFIG_EXTRALARGE</option>					
+		</field>  -->
+	<!-- </fieldset> -->
+	
+    <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">
+		<field name="rules" type="rules"
+			component="com_djreviews"
+			filter="rules"
+			validate="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			section="component" />
+	</fieldset>
+</config>
